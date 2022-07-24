@@ -1,3 +1,19 @@
-<p>
-  pie-details works!
-</p>
+<div class="grid place-items-center"> 
+  <h2 class="title">{{ pie.name }}</h2>
+  <p>Price: <span class="price">{{ pie.price | currency }}</span></p>
+
+  <button 
+    mat-button color="primary"
+    [ngClass]="{
+      'font-bold': !isDetails,
+      'font-normal': isDetails
+    }"
+    (click)="isDetails = !isDetails" 
+  >
+    {{ isDetails ? 'Hide' : 'Show' }} Details
+  </button>
+
+  <div *ngIf="isDetails">
+   <p>{{ pie.description }}</p>
+  </div>
+</div> 

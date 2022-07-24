@@ -1,3 +1,32 @@
-<p>
-  pie-list works!
-</p>
+<p *ngIf="pieService.isLoading">Loading....</p>
+
+<div
+  class="max-w-2xl container mx-auto pt-5" 
+  appearance="fill"
+>
+  <input 
+    matInput color="primary" 
+    type="text" 
+    class="mb-2 border py-2 px-4 w-full"
+    placeholder="Filter pies..."
+    [(ngModel)]="term"
+  >
+</div>
+
+<div 
+  class="content-center mx-auto"
+  *ngIf="pieService.pies as pies; else noPies"
+>
+  <app-pie-details
+    *ngFor="let pie of pies | filterPies: term; let i = index"
+    [pie]="pie"
+  ></app-pie-details>
+</div>
+
+<ng-template #noPies>
+  <p>No pies...</p>
+</ng-template>
+
+<app-modal-form title="Create new pie">
+  <app-create-pie></app-create-pie>
+</app-modal-form>

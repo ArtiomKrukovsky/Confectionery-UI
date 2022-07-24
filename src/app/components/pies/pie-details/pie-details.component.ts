@@ -1,11 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IPie } from '../api/models/pie';
 
 @Component({
-  selector: 'pie-details',
+  selector: 'app-pie-details',
   templateUrl: './pie-details.component.html',
   styleUrls: ['./pie-details.component.css']
 })
 export class PieDetailsComponent implements OnInit {
+  @Input() pie: IPie;
+
+  public isDetails: boolean = false;
 
   constructor() { }
 
