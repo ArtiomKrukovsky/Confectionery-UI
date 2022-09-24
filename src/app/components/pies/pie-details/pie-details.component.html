@@ -1,8 +1,9 @@
-<div class="grid place-items-center"> 
-  <h2 class="title">{{ pie.name }}</h2>
-  <p>Price: <span class="price">{{ pie.price | currency }}</span></p>
+<div class="product grid border place-items-center"> 
+  <h2 class="product__title mb-2">{{ pie.name }}</h2>
+  <img class="product__image w-2/3 mb-1/2" [src]="pie.imageUrl" [alt]="pie.name">
+  <p class="product__price">Price: <span>{{ pie.price | currency }}</span></p>
 
-  <button 
+  <button  
     mat-button color="primary"
     [ngClass]="{
       'font-bold': !isDetails,
@@ -14,6 +15,8 @@
   </button>
 
   <div *ngIf="isDetails">
-   <p>{{ pie.description }}</p>
+   <p 
+    class="product__description p-5"
+   >{{ pie.description }}</p>
   </div>
 </div> 

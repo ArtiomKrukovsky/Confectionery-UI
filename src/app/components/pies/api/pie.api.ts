@@ -22,4 +22,12 @@ export class PieApi {
 
         //return this.httpClient.get<IPie[]>('');
     }
+
+    public save(pie: IPie): Observable<IPie> {
+       return this.httpClient.post<IPie>('', pie);
+    }
+
+    public update(pie: IPie): Observable<IPie>{
+        return this.httpClient.put<IPie>('', pie);
+    }
 }

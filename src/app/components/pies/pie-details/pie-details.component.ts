@@ -4,7 +4,7 @@ import { IPie } from '../api/models/pie';
 @Component({
   selector: 'app-pie-details',
   templateUrl: './pie-details.component.html',
-  styleUrls: ['./pie-details.component.css']
+  styleUrls: ['./pie-details.component.scss']
 })
 export class PieDetailsComponent implements OnInit {
   @Input() pie: IPie;

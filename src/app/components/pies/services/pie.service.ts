@@ -18,11 +18,24 @@ export class PieService {
     this.isLoading = true;
 
     this.pieApi.getAll()
-      .pipe(
-        tap(() => this.isLoading = false
-      )
-    ).subscribe(pies => {
+    .pipe(
+      tap(() => this.isLoading = false)
+    )
+    .subscribe(pies => {
       this.pies = pies;
     });
+  }
+
+  public savePie(pie: IPie) {
+    this.pieApi.save(pie)
+    .pipe(
+      tap(() => this.pies.push(pie))
+    )
+    .subscribe()
+  }
+
+  public updatePie(pie: IPie) {
+    this.pieApi.update(pie)
+    .subscribe()
   }
 }

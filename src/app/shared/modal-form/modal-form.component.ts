@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-modal-form',
@@ -9,9 +10,16 @@ export class ModalFormComponent implements OnInit {
 
   @Input() title: string = 'Title';
 
-  constructor() { }
+  constructor(private modalService: ModalService) { }
 
   ngOnInit() {
   }
 
+  public close() {
+    this.modalService.close();
+  }
+
+  public open() {
+    this.modalService.open();
+  }
 }

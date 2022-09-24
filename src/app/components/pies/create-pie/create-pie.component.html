@@ -6,10 +6,46 @@
     formControlName="title"
   >
 
-  <p 
+  <p
     class="text-red-600 text-tigh px-2"
     *ngIf="title.errors && title.touched"
-  >Please fill title</p>
+  >Pie title is invalid</p>
+
+  <input 
+    type="text"
+    class="border w-full py-2 px-4 mb-2"
+    placeholder="Description"
+    formControlName="description"
+  >
+
+  <p
+    class="text-red-600 text-tigh px-2"
+    *ngIf="description.errors && description.touched"
+  >Pie description is invalid</p>
+
+  <input
+    type="number"
+    class="border w-full py-2 px-4 mb-2"
+    placeholder="Price"
+    formControlName="price"
+  >
+
+  <p
+    class="text-red-600 text-tigh px-2"
+    *ngIf="price.errors && price.touched"
+  ></p>
+
+  <input 
+    type="image"
+    class="border w-full py-2 px-4 mb-2"
+    placeholder="Image"
+    formControlName="imageUrl"
+  >
+
+  <p
+    class="text-red-600 text-tigh px-2"
+    *ngIf="imageUrl.errors && imageUrl.touched"
+  ></p>
 
   <button
     type="submit"
