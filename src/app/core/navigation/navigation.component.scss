@@ -1,0 +1,47 @@
+$color_1: orange;
+
+%border {
+   border-bottom: 3px solid orange; 
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #212121;
+    padding: 1.25rem;
+
+    &__row {
+        margin-left: 2rem;
+    }
+
+    &__link {
+        color: #e5e5e5;
+        font-weight: 600;
+        font-size: 17px;
+        letter-spacing: -0.3px;
+        text-transform: none;
+
+        margin: 0 10px 10px 10px;
+        cursor: pointer;
+
+        &:hover {
+            color:$color_1;
+            border-bottom: 3px solid orange; ;
+        }
+    }
+
+    &--sticky {
+        position: sticky;
+        top: 0;
+    }
+}
+
+.logo {
+    &__image {
+        height: 40px;
+        width: auto;
+    }
+}

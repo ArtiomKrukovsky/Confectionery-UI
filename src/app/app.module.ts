@@ -9,14 +9,11 @@ import { HomeModule } from './core/home/home.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { NavigationModule } from './core/navigation/navigation.module';
-import { HeaderComponent } from './core/header/header.component';
-import { HeaderToolbarComponent } from './core/header/header-toolbar/header-toolbar.component';
+import { HeaderModule } from './core/header/header.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    HeaderToolbarComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +21,7 @@ import { HeaderToolbarComponent } from './core/header/header-toolbar/header-tool
     BrowserAnimationsModule,
     HttpClientModule,
     HomeModule,
+    HeaderModule,
     NavigationModule,
     PiesModule
   ],

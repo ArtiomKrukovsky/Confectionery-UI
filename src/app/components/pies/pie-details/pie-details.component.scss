@@ -1,0 +1,9 @@
+.price {
+    font-weight: bold;
+}
+
+.product {
+    &__title {}
+    &__image {}
+    &__price {}
+}
