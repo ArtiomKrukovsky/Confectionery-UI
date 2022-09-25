@@ -1,16 +1,19 @@
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
     background-color: #262626;
     border-bottom-color: #3a3a3a;
     border-bottom: 1px solid #eee;
 
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        height: 2.5rem;
+    }
+
     &__item {
         font-size: 14px;
         color: #ffffff;
-        padding: 0.8rem 2.5rem;
         
         a {
             padding: 0 0.563rem;

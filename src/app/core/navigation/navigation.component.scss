@@ -1,19 +1,16 @@
-$color_1: orange;
-
-%border {
-   border-bottom: 3px solid orange; 
-}
-
 .menu {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-
     background-color: #212121;
-    padding: 1.25rem;
 
     &__row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        height: 4.375rem;
+    }
+
+    &__body {
         margin-left: 2rem;
     }
 
@@ -28,7 +25,7 @@ $color_1: orange;
         cursor: pointer;
 
         &:hover {
-            color:$color_1;
+            color: orange;
             border-bottom: 3px solid orange; ;
         }
     }
@@ -39,8 +36,8 @@ $color_1: orange;
     }
 }
 
-.logo {
-    &__image {
+.icon {
+    &__img {
         height: 40px;
         width: auto;
     }
