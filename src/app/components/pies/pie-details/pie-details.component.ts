@@ -16,4 +16,8 @@ export class PieDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
+  public open(){
+    
+  }
+
 }

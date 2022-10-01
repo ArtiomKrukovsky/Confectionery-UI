@@ -1,3 +1,5 @@
+<h1>Торты</h1>
+
 <div
   class="max-w-2xl container mx-auto pt-5" 
   appearance="fill"
@@ -13,14 +15,18 @@
 
 <p *ngIf="pieService.isLoading">Loading....</p>
 
-<div 
-  class="grid grid-cols-4 content-center mx-auto"
-  *ngIf="pieService.pies as pies; else noPies"
->
-  <app-pie-details
-    *ngFor="let pie of pies | filterPies: term; let i = index"
-    [pie]="pie"
-  ></app-pie-details>
+<div class="product">
+  <div class="product__list"> 
+    <div 
+      class="product__row"
+      *ngIf="pieService.pies as pies; else noPies"
+    >
+    <app-pie-details
+      class="product__column"
+      *ngFor="let pie of pies | filterPies: term; let i = index"
+      [pie]="pie"
+    ></app-pie-details>
+  </div>
 </div>
 
 <ng-template #noPies>

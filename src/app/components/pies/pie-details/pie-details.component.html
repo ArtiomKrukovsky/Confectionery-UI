@@ -1,22 +1,18 @@
-<div class="product grid border place-items-center"> 
-  <h2 class="product__title mb-2">{{ pie.name }}</h2>
-  <img class="product__image w-2/3 mb-1/2" [src]="pie.imageUrl" [alt]="pie.name">
-  <p class="product__price">Price: <span>{{ pie.price | currency }}</span></p>
+<div class="product-item"> 
+  <div class="product-item__image">
+    <a href="/pies">
+      <img [src]="pie.imageUrl" [alt]="pie.name"> 
+    </a>
+  </div>
+  
+  <a href="/pies" class="product-item__title">{{ pie.name }}</a>
 
-  <button  
-    mat-button color="primary"
-    [ngClass]="{
-      'font-bold': !isDetails,
-      'font-normal': isDetails
-    }"
-    (click)="isDetails = !isDetails" 
-  >
-    {{ isDetails ? 'Hide' : 'Show' }} Details
-  </button>
+  <div class="product-item__details product-details">
+    <p class="product-details__price"><span>{{ pie.price }} р.</span></p>
 
-  <div *ngIf="isDetails">
-   <p 
-    class="product__description p-5"
-   >{{ pie.description }}</p>
+    <button 
+      class="product-details__order-button"
+      (click)="open()"
+    >ЗАКАЗАТЬ</button>
   </div>
 </div> 

@@ -5,7 +5,7 @@ import { PieService } from '../services/pie.service';
 @Component({
   selector: 'app-pie-list',
   templateUrl: './pie-list.component.html',
-  styleUrls: ['./pie-list.component.css']
+  styleUrls: ['./pie-list.component.scss']
 })
 export class PieListComponent implements OnInit {
   public term: string = '';

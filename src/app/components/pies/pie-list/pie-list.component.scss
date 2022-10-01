@@ -1,0 +1,20 @@
+.filter {
+    text-align: center;
+}
+
+.product {
+    &__list {}
+
+    &__row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    &__column {
+        float: left;
+        width: 25%;
+        padding: 10px;
+    }
+}
