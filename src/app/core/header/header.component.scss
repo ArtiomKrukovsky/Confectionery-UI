@@ -14,14 +14,24 @@
     &__item {
         font-size: 14px;
         color: #ffffff;
-        
-        a {
-            padding: 0 0.563rem;
-        }
 
         a:hover {
             color: #d5d5d5;
         }
+    }
+}
+
+.menu-links {
+    a {
+        padding: 0 0.563rem;
+    }
+}
+
+.social-links {
+    &__image{
+        display: inline;
+        width: 35px;
+        padding: 0 5px;
     }
 }
 
