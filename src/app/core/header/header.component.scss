@@ -24,3 +24,15 @@
         }
     }
 }
+
+.header__menu-links{
+    @media (max-width:992px) {
+        display: none;
+    }
+}
+
+.header__social-links {
+    @media (max-width:992px) {
+        display: none;
+    }
+}

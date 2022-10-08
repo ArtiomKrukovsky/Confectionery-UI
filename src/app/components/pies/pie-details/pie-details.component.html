@@ -1,4 +1,4 @@
-<div class="product-item"> 
+<div class="product-item transition"> 
   <div class="product-item__image">
     <a href="/pies">
       <img [src]="pie.imageUrl" [alt]="pie.name"> 
@@ -7,8 +7,12 @@
   
   <a href="/pies" class="product-item__title">{{ pie.name }}</a>
 
-  <div class="product-item__details product-details">
+  <div class="product-item__details transition product-details">
     <p class="product-details__price"><span>{{ pie.price }} р.</span></p>
+
+    <p class="product-details__portions transition">
+      <span>{{ pie.minimumPortions }}-{{ pie.maximumPortions }} порций</span>
+    </p>
 
     <button 
       class="product-details__order-button"

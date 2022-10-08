@@ -43,6 +43,14 @@ $bacis_color: white;
 
     &__price {}
 
+    &__portions {
+        color: #6e6e6e;
+        font-weight: 300;
+        font-size: .85rem;
+
+        display: none;
+    }
+
     &__order-button { 
         padding: 0.75rem 1.15rem;
         font-size: .85rem;
@@ -56,7 +64,16 @@ $bacis_color: white;
         &:hover {
             background: none;
             background-color: $light_orange;
-            color: $bacis_color
+            color: $bacis_color;
+            box-shadow: 0 12px 28px rgba(111, 111, 111, 0.25);
         }
     }
+}
+
+.product-item:hover .product-details__price {
+    display: none;
+}
+
+.product-item:hover .product-details__portions {
+    display: block;
 }

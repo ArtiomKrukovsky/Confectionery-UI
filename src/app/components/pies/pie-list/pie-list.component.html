@@ -1,19 +1,23 @@
-<h1>Торты</h1>
-
-<div
-  class="max-w-2xl container mx-auto pt-5" 
-  appearance="fill"
->
-  <input 
-    matInput color="primary" 
-    type="text" 
-    class="mb-2 border py-2 px-4 w-full"
-    placeholder="Filter pies..."
-    [(ngModel)]="term"  
-  >
+<div class="controls">
+  <div class="controls__row"> 
+    <div class="controls__title">ТОРТЫ</div>
+    <div class="controls__search">
+      <input 
+        type="text"
+        class=""
+        placeholder="Введите текст поиска..."
+        [(ngModel)]="term"
+      >
+    </div>
+  </div>
 </div>
 
-<p *ngIf="pieService.isLoading">Loading....</p>
+<p 
+  class="loading_text" 
+  *ngIf="pieService.isLoading"
+>
+  Загрузка....
+</p>
 
 <div class="product">
   <div class="product__list"> 
@@ -21,16 +25,16 @@
       class="product__row"
       *ngIf="pieService.pies as pies; else noPies"
     >
-    <app-pie-details
-      class="product__column"
-      *ngFor="let pie of pies | filterPies: term; let i = index"
-      [pie]="pie"
-    ></app-pie-details>
+      <app-pie-details
+        class="product__column"
+        *ngFor="let pie of pies | filterPies: term; let i = index"
+        [pie]="pie"
+      ></app-pie-details>
   </div>
 </div>
 
 <ng-template #noPies>
-  <p>No pies...</p>
+  <p>Нет товаров!</p>
 </ng-template>
 
 <app-modal-form *ngIf="isDisplayModal" title="Create new pie">

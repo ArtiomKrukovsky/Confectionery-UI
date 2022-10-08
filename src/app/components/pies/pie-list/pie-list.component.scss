@@ -1,3 +1,6 @@
+$light_orange: #fbc88c;
+$bacis_color: white;
+
 .filter {
     text-align: center;
 }
@@ -16,5 +19,58 @@
         float: left;
         width: 25%;
         padding: 10px;
+
+        @media (max-width:992px) {
+            width: 33.333%;
+            padding: 5px;
+        }
+        @media (max-width:767px) {
+            width: 50%;
+            padding: 5px;
+        }
+        @media (max-width:376px) {
+            width: 100%;
+            padding: 5px;
+        }
+    }
+}
+
+.controls {
+    &__row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 15px;
+        margin-top: 15px;
+
+        @media (max-width:376px) {
+            flex-direction: column; 
+        }
+    }
+
+    &__title {
+        color: $light_orange;
+        
+        font-size: 1.25rem;
+        margin: 0.5rem;
+    }
+
+    &__search {
+
+        input {
+            width: 100%;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 1.25rem;
+
+            border-width: 1px;
+
+            @media (max-width:376px) {
+                width: 250px;
+            }
+        }
     }
 }
