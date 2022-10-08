@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { ModalFormComponent } from 'src/app/shared/modal-form/modal-form.component';
 import { CreatePieComponent } from './create-pie/create-pie.component';
+import { PieViewComponent } from './pie-view/pie-view.component';
 
 @NgModule({
   imports: [
@@ -24,8 +25,12 @@ import { CreatePieComponent } from './create-pie/create-pie.component';
     PieDetailsComponent,
     FilterPiesPipe,
     CreatePieComponent,
-    ModalFormComponent
+    ModalFormComponent,
+    PieViewComponent
   ],
-  exports : [PieListComponent]
+  exports : [
+    PieListComponent, 
+    PieViewComponent
+  ]
 })
 export class PiesModule { }
