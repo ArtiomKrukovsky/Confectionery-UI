@@ -23,6 +23,13 @@ export class PieApi {
         //return this.httpClient.get<IPie[]>('');
     }
 
+    public get(id: string): Observable<IPie> {
+        return of(PIES.find(x => x.id === id) as IPie)
+            .pipe(
+                delay(500)
+            );
+    }
+
     public save(pie: IPie): Observable<IPie> {
        return this.httpClient.post<IPie>('', pie);
     }

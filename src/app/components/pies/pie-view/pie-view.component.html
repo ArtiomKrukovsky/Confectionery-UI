@@ -1,3 +1,35 @@
-<p>
-  pie-view works!
-</p>
+<article 
+  class="pie-view" 
+  *ngIf="!pieService.isLoading && pieService.selectedPie as pie; else pieLoading"
+>
+  <div class="pie-view__row">
+    <div class="pie-view__image">
+      <img [src]="pie.imageUrl" alt="pie">
+    </div>
+    <div class="pie-view__body">
+      <h3 class="pie-view__title">{{ pie.name }}</h3>
+      <div class="pie-view__details">
+        <div class="pie-view__weight">2200</div>
+        <div class="pie-view__portions">{{ pie.minimumPortions }}-{{ pie.maximumPortions }} порций</div>
+      </div>
+      <div class="pie-view__description">
+        <p>{{ pie.description }}</p>
+      </div>
+      <div class="pie-view__price">
+        <p class="pie-view__price--hint">За единицу</p>
+        {{ pie.price }} р.
+      </div>
+      <form class="piew_view__form">
+        <div class="pie-view__counter"></div>
+        <button 
+          type="button" 
+          class="pie-view__order-btn"
+        ></button>
+      </form>
+    </div>
+  </div>
+</article>
+
+<ng-template #pieLoading>
+  <p>Товары загружаются...</p>
+</ng-template>

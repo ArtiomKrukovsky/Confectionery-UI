@@ -10,6 +10,8 @@ export class PieService {
   // todo: extract behavior subjects
 
   public pies: IPie[];
+  public selectedPie: IPie;
+
   public isLoading: boolean = true;
 
   constructor(private pieApi: PieApi) { }
@@ -26,7 +28,17 @@ export class PieService {
     });
   }
 
-  public savePie(pie: IPie) {
+  public fetchPie(id: string) : void {
+    this.pieApi.get(id)
+    .pipe(
+      tap(() => this.isLoading = false)
+    )
+    .subscribe(pie => 
+      this.selectedPie = pie
+    );
+  }
+
+  public savePie(pie: IPie) : void {
     this.pieApi.save(pie)
     .pipe(
       tap(() => this.pies.push(pie))
@@ -34,7 +46,7 @@ export class PieService {
     .subscribe()
   }
 
-  public updatePie(pie: IPie) {
+  public updatePie(pie: IPie) : void {
     this.pieApi.update(pie)
     .subscribe()
   }

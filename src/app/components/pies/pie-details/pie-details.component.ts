@@ -16,7 +16,7 @@ export class PieDetailsComponent implements OnInit {
 
   ngOnInit() {}
 
-  public open(){
+  public openProductView() : void {
     this.router.navigateByUrl(`pies/${this.pie.id}`)
   }
 }

@@ -20,7 +20,7 @@ export const PIES : IPie[] = [
     {
         id: 'beba87bf-d11a-4f82-81e7-fe73e7289403',
         name: 'Морковный пирог',
-        description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
+        description: 'Богатырь нашей пекарни и весьма сытный торт! Настоящий морковный пирог с влажным пряным бисквитом, насыщенный вкусами специй и орехов, с прослойками творожного крема и «юбочкой» из грецкого ореха. Варианты дополнительного декора согласно сезона и доступных на момент заказа ягод. ',
         price: 70,
         imageUrl: 'https://embassy.by/assets/images/products/33/large/morkva-1.jpg',
         maximumPortions: 15,
@@ -34,7 +34,7 @@ export const PIES : IPie[] = [
         ]
     },
     {
-        id: 'beba87bf-d11a-4f82-81e7-fe73e7289403',
+        id: 'fb1c68d5-6ca2-4af2-acbe-c0d9239c1248',
         name: 'Торт Медовик',
         description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
         price: 55,
@@ -50,7 +50,7 @@ export const PIES : IPie[] = [
         ]
     },
     {
-        id: 'beba87bf-d11a-4f82-81e7-fe73e7289403',
+        id: '1448733f-cc7e-4653-a2ce-510bf92f2cd8',
         name: 'Торт Наполеон',
         description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
         price: 77,
@@ -67,7 +67,7 @@ export const PIES : IPie[] = [
     }
     ,
     {
-        id: 'beba87bf-d11a-4f82-81e7-fe73e7289403',
+        id: '90452859-2d7f-4dfd-923b-1419bfaa3d3b',
         name: 'Торт Ангелы Черри',
         description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
         price: 85,
