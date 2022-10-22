@@ -4,7 +4,7 @@ export const PIES : IPie[] = [
     {
         id: 'bc7bc3ed-0b88-4019-aae9-59579b6a6713',
         name: 'Чизкейк',
-        description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
+        description: 'Хрустящий кунжутно-лаймовый кранч.. Знакомы? Если нет, то пришло время познакомиться! Только будьте готовы, кранч будет не один. Вместе с ним на вашу вечеринку придут: шпинатный бисквит, пропитанный натуральным лаймовым сиропом, лаймовый ганаш на белом шоколаде и лучший сливочно-творожный крем в городе. Максимально натурально, исключительно вкусно!',
         price: 45.5,
         imageUrl: 'https://sugarspunrun.com/wp-content/uploads/2019/01/Best-Cheesecake-Recipe-2-1-of-1-4.jpg',
         maximumPortions: 10,
@@ -36,7 +36,7 @@ export const PIES : IPie[] = [
     {
         id: 'fb1c68d5-6ca2-4af2-acbe-c0d9239c1248',
         name: 'Торт Медовик',
-        description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
+        description: 'Классический Медовик, сделанный в лучших традициях: ароматные коржи, пропитанные медом, с прослойками из натурального сметанно-сливочного крема. Он вам точно понравится — слово Кондитера!',
         price: 55,
         imageUrl: 'https://embassy.by/assets/images/products/27/large/dizayn-bez-nazvaniya-7.jpg',
         maximumPortions: 15,

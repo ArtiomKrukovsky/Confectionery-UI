@@ -10,7 +10,7 @@ export class PieService {
   // todo: extract behavior subjects
 
   public pies: IPie[];
-  public selectedPie: IPie;
+  public selectedPie?: IPie;
 
   public isLoading: boolean = true;
 
@@ -49,5 +49,9 @@ export class PieService {
   public updatePie(pie: IPie) : void {
     this.pieApi.update(pie)
     .subscribe()
+  }
+
+  public destroyPie() : void {
+    this.selectedPie = undefined;
   }
 }

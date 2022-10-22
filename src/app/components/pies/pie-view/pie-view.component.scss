@@ -1,3 +1,6 @@
+$light_orange: #fbc88c;
+$bacis_color: white;
+
 .pie-view {
     &__row{
         display: flex;
@@ -15,7 +18,7 @@
         text-transform: uppercase;
         font-size: 2.25rem;
         line-height: 1.7;
-        margin-bottom: 0.667em;
+        margin-bottom: 0.667em; // 24px
     }
 
     &__description {
@@ -27,11 +30,12 @@
     &__image {
         flex: 0 1 40%;
 
-        border: 4px solid #F8F8F8;
-        padding: 0.4375rem;
-
         img {
+            border: 4px solid #F8F8F8;
+            padding: 0.4375rem;
+
             max-width: 100%;
+            max-height: 100%;
         }
     }
 
@@ -40,6 +44,7 @@
         padding: 0px 0px 0px 1em;
     }
 
+    // quantity information
     &__details {
         display: flex;
         justify-content: space-evenly;
@@ -48,14 +53,106 @@
         margin-bottom: 1em;
     }
 
+    &__weight {
+        &:before{
+            display: inline-block;
+            content: '';
+            background-image: url('/assets/icons/weighing-machine.png');
+            background-size: 35px 35px;
+            height: 35px;
+            width: 35px;
+            margin: 0px 0.75rem 0px 0px;
+        }
+    }
+
+    &__portions {
+        &:before{
+            display: inline-block;
+            content: '';
+            background-image: url('/assets/icons/pie-chart.png');
+            background-size: 35px 35px;
+            height: 35px;
+            width: 35px;
+            margin: 0px 0.75rem 0px 0px;
+        }
+    }
+
     &__price {
         font-size: 2.5rem;
         font-weight: 600;
+        margin-bottom: 1em;
 
         &--hint{
             font-size: 1rem;
             color: grey;
             font-weight: 200;
         }
+    }
+
+    // form controls
+    &__form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &__quantity-counter {
+        input {
+            height: 2.875rem;
+            width: 2.5rem;
+            font-size: 1rem;
+            font-weight: 400;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            padding: 0.1875em 0.4375em;
+            margin-right: 1rem;
+        }
+    }
+
+    &__order-btn{
+        padding: 0.75rem 1.15rem;
+        font-size: .85rem;
+        cursor: pointer;
+        color: $light_orange;
+        background: transparent;
+        border: 1px solid $light_orange;
+        outline: none;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            background: none;
+            background-color: $light_orange;
+            color: $bacis_color;
+            box-shadow: 0 12px 28px rgba(111, 111, 111, 0.25);
+        }
+    }
+}
+
+.nav-tab {
+    display: flex;
+    border-bottom: 1px solid #dee2e6;
+
+    // todo: extend margin to element
+    margin-bottom: 1rem;
+
+    &__item {
+        margin-bottom: -1px;
+
+        a {
+            font-size: 1.15rem;
+            color: rgb(65, 65, 65);
+            font-weight: 700;
+            background-color: #fff;
+            border-color: #dee2e6 #dee2e6 #fff;
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: 0.5rem 1rem;
+
+        border: 1px solid transparent;
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
     }
 }

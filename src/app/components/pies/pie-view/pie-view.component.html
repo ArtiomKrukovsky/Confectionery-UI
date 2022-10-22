@@ -12,6 +12,12 @@
         <div class="pie-view__weight">2200</div>
         <div class="pie-view__portions">{{ pie.minimumPortions }}-{{ pie.maximumPortions }} порций</div>
       </div>
+      <!--cover nav tab with the description-->
+      <ul class="nav-tab">
+        <li class="nav-tab__item">
+          <a class="nav-tab__link">Описание</a>
+        </li>
+      </ul>
       <div class="pie-view__description">
         <p>{{ pie.description }}</p>
       </div>
@@ -19,12 +25,14 @@
         <p class="pie-view__price--hint">За единицу</p>
         {{ pie.price }} р.
       </div>
-      <form class="piew_view__form">
-        <div class="pie-view__counter"></div>
+      <form class="pie-view__form">
+        <div class="pie-view__quantity-counter">
+          <input type="number" value="1">
+        </div>
         <button 
           type="button" 
           class="pie-view__order-btn"
-        ></button>
+        >ЗАКАЗАТЬ ТОВАР</button>
       </form>
     </div>
   </div>
