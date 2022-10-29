@@ -1,55 +1,55 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ModalService } from 'src/app/services/modal.service';
+import { PopupService } from 'src/app/services/popup.service';
 import { IPie } from '../api/models/pie';
 import { PieService } from '../services/pie.service';
 
 @Component({
   selector: 'app-create-pie',
   templateUrl: './create-pie.component.html',
-  styleUrls: ['./create-pie.component.css']
+  styleUrls: ['./create-pie.component.scss']
 })
 export class CreatePieComponent implements OnInit {
 
-  form = new FormGroup({
+  public form = new FormGroup({
     title: new FormControl<string>('', [
       Validators.required,
       Validators.minLength(3)
     ]),
     description: new FormControl<string>('', [
       Validators.required,
-      Validators.minLength(15),
-      Validators.maxLength(250)
+      Validators.minLength(150),
+      Validators.maxLength(450)
     ]),
     price: new FormControl<number>(0, [
       Validators.required,
-      Validators.min(0),
-      Validators.max(10000)
+      Validators.min(1),
+      Validators.max(1000)
     ]),
     imageUrl: new FormControl<string>('', [
       Validators.required
     ])
   })
 
-  get title() {
+  public get title() {
     return this.form.controls.title as FormControl;
   }
 
-  get description() {
+  public get description() {
     return this.form.controls.description as FormControl
   }
 
-  get price() {
+  public get price() {
     return this.form.controls.price as FormControl
   }
 
-  get imageUrl() {
+  public get imageUrl() {
     return this.form.controls.imageUrl as FormControl
   }
 
   constructor(
     private pieService: PieService,
-    private modalService: ModalService
+    private popupService: PopupService
   ) { }
 
   ngOnInit() {
@@ -71,6 +71,6 @@ export class CreatePieComponent implements OnInit {
     }
 
     this.pieService.savePie(pie);
-    this.modalService.close();
+    this.popupService.close();
   }
 }

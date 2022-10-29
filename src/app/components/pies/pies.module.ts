@@ -8,9 +8,10 @@ import { FilterPiesPipe } from 'src/app/pipes/filter-pies.pipe';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { ModalFormComponent } from 'src/app/shared/modal-form/modal-form.component';
+import { PopupComponent } from 'src/app/shared/popup/popup.component';
 import { CreatePieComponent } from './create-pie/create-pie.component';
 import { PieViewComponent } from './pie-view/pie-view.component';
+import { OrderPieComponent } from './order-pie/order-pie.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { PieViewComponent } from './pie-view/pie-view.component';
     PieDetailsComponent,
     FilterPiesPipe,
     CreatePieComponent,
-    ModalFormComponent,
+    OrderPieComponent,
+    PopupComponent,
     PieViewComponent
   ],
   exports : [

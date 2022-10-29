@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ModalService {
+export class PopupService {
 
   isVisible$ = new BehaviorSubject<boolean>(false);
 

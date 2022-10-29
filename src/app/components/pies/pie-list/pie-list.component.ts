@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalService } from 'src/app/services/modal.service';
+import { PopupService } from 'src/app/services/popup.service';
 import { PieService } from '../services/pie.service';
 
 @Component({
@@ -13,17 +13,17 @@ export class PieListComponent implements OnInit {
 
   constructor(
     public pieService: PieService,
-    public modalService: ModalService
+    public popupService: PopupService
   ) { }
 
   ngOnInit() {
     this.pieService.fetchPies();
 
     // use behaviour subject handlers
-    this.modalService.isVisible$.subscribe(value => this.isDisplayModal = value);
+    this.popupService.isVisible$.subscribe(value => this.isDisplayModal = value);
   }
 
   public displayModal() {
-    this.modalService.open();
+    this.popupService.open();
   }
 }

@@ -8,30 +8,35 @@
     </div>
     <div class="pie-view__body">
       <h3 class="pie-view__title">{{ pie.name }}</h3>
-      <div class="pie-view__details">
+      <span class="pie-view__parameters">
         <div class="pie-view__weight">2200</div>
         <div class="pie-view__portions">{{ pie.minimumPortions }}-{{ pie.maximumPortions }} порций</div>
-      </div>
-      <!--cover nav tab with the description-->
-      <ul class="nav-tab">
-        <li class="nav-tab__item">
-          <a class="nav-tab__link">Описание</a>
-        </li>
-      </ul>
-      <div class="pie-view__description">
-        <p>{{ pie.description }}</p>
+      </span>
+      <div class="pie-view__details">
+        <ul class="nav-tab pie-view__pivot">
+          <li class="nav-tab__item">
+            <a class="nav-tab__link">Описание</a>
+          </li>
+        </ul>
+        <div class="pie-view__description">
+          <p>{{ pie.description }}</p>
+        </div>
       </div>
       <div class="pie-view__price">
-        <p class="pie-view__price--hint">За единицу</p>
+        <p class="pie-view__price--lable">За единицу</p>
         {{ pie.price }} р.
       </div>
       <form class="pie-view__form">
         <div class="pie-view__quantity-counter">
-          <input type="number" value="1">
+          <input 
+            type="number" 
+            [value]="pieCount"
+          >
         </div>
         <button 
           type="button" 
           class="pie-view__order-btn"
+          (click)="orderPie()"
         >ЗАКАЗАТЬ ТОВАР</button>
       </form>
     </div>
@@ -41,3 +46,10 @@
 <ng-template #pieLoading>
   <p>Товары загружаются...</p>
 </ng-template>
+
+<app-popup *ngIf="isDisplayModal" title="Заказать продукт">
+  <app-order-pie 
+    [productId]="pieId" 
+    [count]="pieCount"
+  ></app-order-pie>
+</app-popup>

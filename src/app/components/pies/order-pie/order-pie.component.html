@@ -1,0 +1,47 @@
+<form 
+  class="form" 
+  [formGroup]="form" 
+  (ngSubmit)="order"
+>
+  <input 
+    type="text" 
+    class="form__input"
+    placeholder="ФИО"
+    formControlName="name"
+  >
+
+  <div *ngIf="name.touched && name.invalid">
+    <p class="error-message" *ngIf="name.errors!['required']">Пожалуйста, введите ваше имя</p>
+  </div>
+
+  <input 
+    type="email" 
+    class="form__input"
+    placeholder="Электронная почта"
+    formControlName="email"
+  >
+
+  <div *ngIf="email.touched && email.invalid">
+    <p class="error-message" *ngIf="email.errors!['required']">Пожалуйста, введите адрес вашей электронной почты</p>
+    <p class="error-message" *ngIf="email.errors!['email']">Введён неверный адрес электронной почты</p>
+  </div>
+
+  <input 
+    type="text" 
+    class="form__input"
+    placeholder="Мобильный телефон"
+    maxlength="12"
+    formControlName="mobileNumber"
+  >
+
+  <div *ngIf="mobileNumber.touched && mobileNumber.invalid">
+    <p class="error-message" *ngIf="mobileNumber.errors!['required']">Пожалуйста, введите номер вашего телефона</p>
+    <p class="error-message" *ngIf="mobileNumber.errors!['pattern']">Введён неверный номер телефона</p>
+  </div>
+
+  <button 
+    type="submit"
+    class="form__button"
+    [disabled]="!form.valid"
+  >ЗАКАЗАТЬ</button>
+</form>

@@ -1,0 +1,13 @@
+<div class="popup">
+  <div class="popup__area"
+    (click)="close()"
+  ></div>
+
+  <div class="popup__body"> 
+    <div class="popup__content">
+      <h1 class="popup__title">{{ title }}</h1>
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
+

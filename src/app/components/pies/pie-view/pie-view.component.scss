@@ -21,12 +21,6 @@ $bacis_color: white;
         margin-bottom: 0.667em; // 24px
     }
 
-    &__description {
-        font-size: 1.10rem;
-        line-height: 1.7;
-        margin-bottom: 3em;
-    }
-
     &__image {
         flex: 0 1 40%;
 
@@ -45,7 +39,7 @@ $bacis_color: white;
     }
 
     // quantity information
-    &__details {
+    &__parameters {
         display: flex;
         justify-content: space-evenly;
         font-size: 1.65rem;
@@ -77,12 +71,23 @@ $bacis_color: white;
         }
     }
 
+    // pivot with short-details
+    &__pivot{
+        margin-bottom: 1rem;
+    }
+
+    &__description {
+        font-size: 1.10rem;
+        line-height: 1.7;
+        margin-bottom: 3em;
+    }
+
     &__price {
         font-size: 2.5rem;
         font-weight: 600;
         margin-bottom: 1em;
 
-        &--hint{
+        &--lable{
             font-size: 1rem;
             color: grey;
             font-weight: 200;
@@ -131,9 +136,6 @@ $bacis_color: white;
 .nav-tab {
     display: flex;
     border-bottom: 1px solid #dee2e6;
-
-    // todo: extend margin to element
-    margin-bottom: 1rem;
 
     &__item {
         margin-bottom: -1px;

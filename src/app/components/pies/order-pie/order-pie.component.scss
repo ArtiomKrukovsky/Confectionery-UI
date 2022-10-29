@@ -1,0 +1,32 @@
+$light_orange: #fbc88c;
+
+.form {
+    &__input {
+        width: 100%;
+        padding: .5rem 1rem;
+        border-width: 1px;
+        margin-bottom: 0.5rem;
+
+        &:nth-child(3){
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__button {
+        padding: 0.5rem 1.5rem;
+        color: white;
+        font-weight: 600;
+        background-color: $light_orange;
+
+        &:disabled {
+            background-color: rgba(212, 211, 211, 0.785);
+        }
+    }
+}
+
+.error-message {
+    color: red;
+    font-weight: 100;
+    padding: 0.25rem;
+}
+
