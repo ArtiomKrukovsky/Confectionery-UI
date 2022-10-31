@@ -1,4 +1,4 @@
-$light_orange: #fbc88c;
+@import 'abstracts/variables';
 
 .form {
     &__input {
@@ -16,7 +16,7 @@ $light_orange: #fbc88c;
         padding: 0.5rem 1.5rem;
         color: white;
         font-weight: 600;
-        background-color: $light_orange;
+        background-color: $light-orange;
 
         &:disabled {
             background-color: rgba(212, 211, 211, 0.785);

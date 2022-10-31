@@ -1,5 +1,4 @@
-$light_orange: #fbc88c;
-$bacis_color: white;
+@import 'abstracts/variables';
 
 .filter {
     text-align: center;
@@ -53,7 +52,7 @@ $bacis_color: white;
     }
 
     &__title {
-        color: $light_orange;
+        color: $light-orange;
         
         font-size: 1.25rem;
         margin: 0.5rem;

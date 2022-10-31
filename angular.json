@@ -32,8 +32,13 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss"
+              "src/app/scss/main.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/app/scss/"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -101,7 +106,7 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss"
+              "src/app/scss/main.scss"
             ],
             "scripts": []
           }

@@ -1,0 +1,19 @@
+@import '../abstracts/variables';
+
+%deault-button {
+    padding: 0.75rem 1.15rem;
+    font-size: .85rem;
+    cursor: pointer;
+    color: $light-orange;
+    background: transparent;
+    border: 1px solid $light-orange;
+    outline: none;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        background: none;
+        background-color: $light-orange;
+        color: $bacis_white;
+        box-shadow: 0 12px 28px rgba(111, 111, 111, 0.25);
+    }
+}
