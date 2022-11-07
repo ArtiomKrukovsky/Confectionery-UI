@@ -9,6 +9,7 @@
         padding-bottom: 100%;
         overflow: hidden;
         position: relative;
+        cursor: pointer;
 
         img {
             height: 100%;
@@ -23,6 +24,7 @@
     &__title {
         display: inline-block;
         margin: .5rem 0px 1rem 0px;
+        cursor: pointer;
 
         &:hover {
             color: $light-orange;

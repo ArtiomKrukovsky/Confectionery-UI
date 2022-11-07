@@ -1,11 +1,11 @@
 <div class="product-item transition"> 
   <div class="product-item__image">
-    <a href="/pies">
+    <a (click)="openProductView()">
       <img [src]="pie.imageUrl" [alt]="pie.name"> 
     </a>
   </div>
   
-  <a href="/pies" class="product-item__title">{{ pie.name }}</a>
+  <a class="product-item__title" (click)="openProductView()">{{ pie.name }}</a>
 
   <div class="product-item__details transition product-details">
     <p class="product-details__price"><span>{{ pie.price }} р.</span></p>
