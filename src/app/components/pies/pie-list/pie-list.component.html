@@ -10,11 +10,7 @@
       >
     </div>
   </div>
-</div>
-
-<app-progress-spinner 
-  *ngIf="pieService.isLoading"
-></app-progress-spinner>  
+</div>  
 
 <div class="product">
   <div class="product__list"> 
@@ -31,8 +27,12 @@
 </div>
 
 <ng-template #noPies>
-  <p>Нет товаров!</p>
+  <app-progress-spinner></app-progress-spinner>
 </ng-template>
+
+<div *ngIf="pieService.pies | filterPies: term as filteredPies">
+  <app-no-product-found *ngIf="filteredPies.length === 0"></app-no-product-found>
+</div>
 
 <app-popup *ngIf="isDisplayModal" title="Добавить продукт">
   <app-create-pie></app-create-pie>
