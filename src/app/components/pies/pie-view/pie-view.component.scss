@@ -5,7 +5,7 @@
     &__row{
         display: flex;
         flex-wrap: wrap;
-        margin: 1.5rem 0px;
+        padding: 1.5rem 0px 1.25rem 0px;
 
         @media (max-width:767px) {
             flex-direction: column; 

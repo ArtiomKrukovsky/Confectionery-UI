@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { Router } from '@angular/router';
+import { WindowScrollingService } from 'src/app/services/window-scrolling.service';
 
 @Component({
   selector: 'app-navigation',
@@ -9,10 +10,32 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 export class NavigationComponent implements OnInit {
 
   public companyLogo: string = "https://pekarni.by/wp-content/uploads/2021/05/logo235x60c.png"
+  public isMenuOpened: boolean = false;
 
-  constructor() { }
+  constructor(
+    private router: Router, 
+    private windowScrollingSerive: WindowScrollingService
+  ) { }
 
   ngOnInit() {
   }
 
+  public redirectToPage(redirectUrl: string) : void {
+    if (this.isMenuOpened) {
+      this.isMenuOpened = false;
+    }
+
+    this.router.navigateByUrl(redirectUrl);
+    this.windowScrollingSerive.enable();
+  }
+
+  public openBurgerMenu(): void {
+    if (this.isMenuOpened) {
+      this.windowScrollingSerive.enable();
+    } else {
+      this.windowScrollingSerive.disable();
+    }
+
+    this.isMenuOpened = !this.isMenuOpened;
+  }
 }

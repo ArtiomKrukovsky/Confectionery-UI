@@ -5,14 +5,59 @@
         <img class="icon__img" [src]="companyLogo" alt="logo">
       </a>
 
-      <span class="menu__body">
-        <a routerLink="pies" class="menu__link">Торты</a>
-        <a routerLink="" class="menu__link">Пироги</a>
-        <a routerLink="" class="menu__link">Капкейки</a>
-        <a routerLink="" class="menu__link">Зефир</a>
-        <a routerLink="" class="menu__link">Мармелад</a>
-        <a routerLink="" class="menu__link">Ещё..</a>
-      </span>
+      <div 
+        class="menu__burger" 
+        [ngClass]="{'active': isMenuOpened}"
+        (click)="openBurgerMenu()"
+      >
+        <span></span>
+      </div>
+
+      <div class="menu__cart"></div>
+
+      <nav  
+        class="menu__body"
+        [ngClass]="{'active': isMenuOpened}"
+      >
+        <ul class="menu__list">
+          <li>
+            <a 
+              class="menu__link"
+              (click)="redirectToPage('pies')"
+            >Торты</a>
+          </li>
+          <li>
+            <a 
+              class="menu__link"
+              (click)="redirectToPage('#')"
+            >Пироги</a>
+          </li>
+          <li>
+            <a 
+              class="menu__link"
+              (click)="redirectToPage('#')"
+            >Капкейки</a>
+          </li>
+          <li>
+            <a 
+              class="menu__link"
+              (click)="redirectToPage('#')"
+            >Зефир</a>
+          </li>
+          <li>
+            <a 
+              class="menu__link"
+              (click)="redirectToPage('#')"
+            >Мармелад</a>
+          </li>
+          <li>
+            <a 
+              class="menu__link"
+              (click)="redirectToPage('#')"
+            >Ещё..</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </div>

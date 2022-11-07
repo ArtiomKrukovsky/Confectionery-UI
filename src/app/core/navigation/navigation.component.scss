@@ -1,6 +1,8 @@
+@import 'abstracts/variables';
+
 .menu {
     background-color: #212121;
-    z-index: 1;
+    z-index: 10;
 
     &__row {
         display: flex;
@@ -15,16 +17,23 @@
         margin-left: 2rem;
     }
 
-    &__link {
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+
+    &__list li {
         color: #e5e5e5;
         font-weight: 600;
         font-size: 17px;
         letter-spacing: -0.3px;
         text-transform: none;
 
-        margin: 0 10px 10px 10px;
+        margin: 0 10px;
         cursor: pointer;
+    }
 
+    &__link {
         &:hover {
             color: orange;
             border-bottom: 3px solid orange;
@@ -35,11 +44,110 @@
         position: sticky;
         top: 0;
     }
+
+    &__burger {
+        display: none;
+    }
+
+    &__cart {
+        display: none;
+    }
 }
 
 .icon {
     &__img {
         height: 40px;
         width: auto;
+    }
+}
+
+@media (max-width:767px) {
+    .menu {
+        &__row {
+            justify-content: space-between;
+        }
+    
+        &__body {
+            display: block;
+            position: absolute;
+            top: 70px;
+            left: -100%;
+            width: 100%;
+            overflow: auto;
+            background: $light-gray;
+            margin: 0;
+            box-shadow: 0 5px 6px rgba(36, 36, 36, 0.37);
+            transition: all 0.4s ease;
+
+            &.active {
+                left: 0;
+            }
+        }
+
+        &__list {
+            display: block;
+        }
+
+        &__list li {
+            margin: 40px 0px 40px 33px;
+            font-size: 1.25rem;
+            color: #212121;
+        }
+    
+        &__icon {
+            order: 2;
+        }
+    
+        &__cart {
+            display: block;
+            order: 3;
+        }
+    
+        &__burger {
+            display: block;
+            position: relative;
+            order: 1;
+            width: 40px;
+            height: 35px;
+            margin-left: 10px;
+            cursor: pointer;
+            
+            &.active span {
+                opacity:0; 
+                transition: 0.5s; 
+            }
+            &.active::before {
+                transform: rotate(38deg);
+                top: 16px;
+                transition: 0.4s;
+            }
+            &.active::after {
+                transform: rotate(-38deg);
+                bottom: 16px;
+                transition: 0.4s;
+            }
+
+            & span,
+            &::before,
+            &::after {
+                height: 3px;
+                width: 100%;
+                position: absolute;
+                background: $light-gray;
+            }
+            &::before,
+            &::after {
+                content: '';
+            }
+            &:before{
+                top: 5px;
+            }
+            & span {
+                top: 16px;
+            }
+            &:after{
+                bottom: 5px;
+            }
+        }
     }
 }
