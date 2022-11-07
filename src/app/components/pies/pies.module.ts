@@ -12,6 +12,7 @@ import { PopupComponent } from 'src/app/shared/popup/popup.component';
 import { CreatePieComponent } from './create-pie/create-pie.component';
 import { PieViewComponent } from './pie-view/pie-view.component';
 import { OrderPieComponent } from './order-pie/order-pie.component';
+import { ProgressSpinnerComponent } from 'src/app/shared/progress-spinner/progress-spinner.component';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { OrderPieComponent } from './order-pie/order-pie.component';
     CreatePieComponent,
     OrderPieComponent,
     PopupComponent,
+    ProgressSpinnerComponent,
     PieViewComponent
   ],
   exports : [

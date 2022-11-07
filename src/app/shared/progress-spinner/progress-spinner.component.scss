@@ -1,0 +1,32 @@
+@import 'abstracts/variables';
+
+.progress-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 50;
+    width: 120px;
+    height: 120px;
+    margin-top: -60px;
+    margin-left: -60px;
+    padding: 15px;
+    background: $golden-color;
+    box-sizing: border-box;
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    --_m: 
+        conic-gradient(#0000,#000),
+        linear-gradient(#000 0 0) content-box;
+    -webkit-mask: var(--_m);
+        mask: var(--_m);
+    -webkit-mask-composite: source-out;
+        mask-composite: subtract;
+    animation: spinning 1s infinite linear;
+
+    @keyframes spinning {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}

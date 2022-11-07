@@ -12,18 +12,15 @@
   </div>
 </div>
 
-<p 
-  class="loading_text" 
+<app-progress-spinner 
   *ngIf="pieService.isLoading"
->
-  Загрузка....
-</p>
+></app-progress-spinner>  
 
 <div class="product">
   <div class="product__list"> 
     <div 
       class="product__row"
-      *ngIf="pieService.pies as pies; else noPies"
+      *ngIf="!pieService.isLoading && pieService.pies as pies; else noPies"
     >
       <app-pie-details
         class="product__column"
