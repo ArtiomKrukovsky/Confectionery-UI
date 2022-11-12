@@ -1,3 +1,29 @@
+<div 
+  class="preview-details"
+  *ngIf="!pieService.isLoading && pieService.selectedPie as pie"
+>
+  <div class="preview-details__row">
+    <div class="preview-details__image">
+      <img [src]="pie.imageUrl" alt="preview image">
+    </div>
+    <div class="preview-details__body">
+      <div class="preview-details__sublines">
+        <div class="preview-details__title">
+          <span class="preview-details__lable">Наименование:</span> {{pie.name}}
+        </div>
+        <div class="preview-details__count">
+          <span class="preview-details__lable">Кол-во:</span> {{quantityOrder}} 
+        </div>
+        <div class="preview-details__price">
+          <span class="preview-details__lable">Цена:</span> {{pie.price}} р.
+        </div>
+      </div>
+      
+      <div class="preview-details__total-line">Итоговая сумма: {{pie.price * quantityOrder}} р.</div>
+    </div>
+  </div>
+</div>
+
 <form 
   class="form" 
   [formGroup]="form" 

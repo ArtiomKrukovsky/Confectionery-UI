@@ -30,7 +30,8 @@
         <div class="pie-view__quantity-counter">
           <input 
             type="number" 
-            [value]="pieCount"
+            [(ngModel)]="pieCount"
+            name="quantity-counter"
           >
         </div>
         <button 
@@ -50,6 +51,6 @@
 <app-popup *ngIf="isDisplayModal" title="Заказать продукт">
   <app-order-pie 
     [productId]="pieId" 
-    [count]="pieCount"
+    [quantityOrder]="pieCount"
   ></app-order-pie>
 </app-popup>

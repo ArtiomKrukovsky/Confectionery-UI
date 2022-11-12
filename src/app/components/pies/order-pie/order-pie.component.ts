@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PopupService } from 'src/app/services/popup.service';
+import { PieService } from '../services/pie.service';
 
 @Component({
   selector: 'app-order-pie',
@@ -9,7 +10,7 @@ import { PopupService } from 'src/app/services/popup.service';
 })
 export class OrderPieComponent implements OnInit {
   @Input() productId: string;
-  @Input() count: number; 
+  @Input() quantityOrder: number; 
 
   public form = new FormGroup({
     name: new FormControl<string>("", [
@@ -36,7 +37,10 @@ export class OrderPieComponent implements OnInit {
     return this.form.controls.mobileNumber as FormControl;
   } 
 
-  constructor(private popupService: PopupService) { }
+  constructor(
+    public pieService: PieService,
+    private popupService: PopupService
+  ) { }
 
   ngOnInit() {
   }
