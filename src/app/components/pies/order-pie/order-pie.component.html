@@ -1,25 +1,31 @@
 <div 
-  class="preview-details"
+  class="order-preview"
   *ngIf="!pieService.isLoading && pieService.selectedPie as pie"
 >
-  <div class="preview-details__row">
-    <div class="preview-details__image">
+  <div class="order-preview__row">
+    <div class="order-preview__image">
       <img [src]="pie.imageUrl" alt="preview image">
     </div>
-    <div class="preview-details__body">
-      <div class="preview-details__sublines">
-        <div class="preview-details__title">
-          <span class="preview-details__lable">Наименование:</span> {{pie.name}}
+    <div class="order-preview__body">
+      <div class="order-preview__sublines">
+        <div class="order-preview__title">
+          <span class="order-preview__lable">Наименование: </span> 
+          <span>{{pie.name}}</span>
         </div>
-        <div class="preview-details__count">
-          <span class="preview-details__lable">Кол-во:</span> {{quantityOrder}} 
+        <div class="order-preview__count">
+          <span class="order-preview__lable">Кол-во: </span> 
+          <span>{{quantityOrder}}</span> 
         </div>
-        <div class="preview-details__price">
-          <span class="preview-details__lable">Цена:</span> {{pie.price}} р.
+        <div class="order-preview__price">
+          <span class="order-preview__lable">Цена: </span>
+          <span>{{pie.price}} р.</span>
         </div>
       </div>
       
-      <div class="preview-details__total-line">Итоговая сумма: {{pie.price * quantityOrder}} р.</div>
+      <div class="order-preview__total-line">
+        <span class="order-preview__lable">Итоговая сумма: </span>
+        <span>{{pie.price * quantityOrder}} р.</span>
+      </div>
     </div>
   </div>
 </div>

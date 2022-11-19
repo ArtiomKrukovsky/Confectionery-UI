@@ -1,4 +1,4 @@
-<div class="product-item transition"> 
+<div class="product-item"> 
   <div class="product-item__image">
     <a (click)="openProductView()">
       <img [src]="pie.imageUrl" [alt]="pie.name"> 
@@ -7,12 +7,14 @@
   
   <a class="product-item__title" (click)="openProductView()">{{ pie.name }}</a>
 
-  <div class="product-item__details transition product-details">
-    <p class="product-details__price"><span>{{ pie.price }} р.</span></p>
-
-    <p class="product-details__portions transition">
-      <span>{{ pie.minimumPortions }}-{{ pie.maximumPortions }} порций</span>
-    </p>
+  <div class="product-item__details product-details">
+    <div class="product-details__price-section price-section">
+      <div class="price-section__price">{{ pie.price }} р.</div>
+      <div class="price-section__action">
+        <span class="price-section__weight">2200 гр</span> <!--replace hardcored value-->
+        <span class="price-section__portions">{{ pie.minimumPortions }}-{{ pie.maximumPortions }} порций</span>
+      </div>
+    </div>
 
     <button 
       class="product-details__order-button"

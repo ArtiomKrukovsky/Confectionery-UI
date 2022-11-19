@@ -43,25 +43,30 @@
     align-items: center;
     justify-content: space-between;
 
-    &__price {}
-
-    &__portions {
-        color: #6e6e6e;
-        font-weight: 300;
-        font-size: .85rem;
-
-        display: none;
-    }
-
     &__order-button { 
         @extend %deault-button;
     }
 }
 
-.product-item:hover .product-details__price {
+.price-section {
+	&__price { }
+	&__action { 
+        display: flex;
+        flex-direction: column;
+        color: #6e6e6e;
+        font-weight: 300;
+        font-size: .875rem;
+
+        display: none;
+    }
+	&__weight { }
+	&__portions { }
+}
+
+.product-item:hover .price-section__price {
     display: none;
 }
 
-.product-item:hover .product-details__portions {
-    display: block;
+.product-item:hover .price-section__action {
+    display: flex;
 }
