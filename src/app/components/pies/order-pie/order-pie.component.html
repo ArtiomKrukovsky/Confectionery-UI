@@ -9,12 +9,11 @@
     <div class="order-preview__body">
       <div class="order-preview__sublines">
         <div class="order-preview__title">
-          <span class="order-preview__lable">Наименование: </span> 
           <span>{{pie.name}}</span>
         </div>
         <div class="order-preview__count">
           <span class="order-preview__lable">Кол-во: </span> 
-          <span>{{quantityOrder}}</span> 
+          <span>{{quantityOrder}} шт.</span> 
         </div>
         <div class="order-preview__price">
           <span class="order-preview__lable">Цена: </span>
@@ -23,7 +22,7 @@
       </div>
       
       <div class="order-preview__total-line">
-        <span class="order-preview__lable">Итоговая сумма: </span>
+        <span class="order-preview__lable">К оплате: </span>
         <span>{{pie.price * quantityOrder}} р.</span>
       </div>
     </div>

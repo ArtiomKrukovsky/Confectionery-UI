@@ -6,6 +6,7 @@
         flex-direction: row;
 
         border: 1px solid #111;
+        border-radius: 10px;
 
         padding: 0.75rem 1rem;
         margin: 1rem 0.75rem;
@@ -14,37 +15,79 @@
 
 	&__image { 
         height: 100px;
-        width: 100px;
+        width: 80px;
         overflow: none;
 
         img {
             height: 100%;
             width: 100%;
             object-fit: cover;
+            border-radius: 8px;
         }
     }
 
 	&__body { 
         display: flex;
         flex-direction: column;
-        font-size: .95rem;
-        font-weight: 500;
-        line-height: 1.25rem;
 
-        margin-left: 0.75rem;
+        margin-left: 1rem;
     }
 
     &__sublines {
         flex: 1 1 auto;
+
+        font-size: 0.875rem;
+        line-height: 1.4;
+        color: #1c1c1c;
     }
 
-    &__lable {
-        font-weight: 600;
+    &__title {
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.375;
+        color: black;
+
+        margin: 0px 0px 0.5em 0px;
     }
 
     &__total-line {
-        color: $light-orange;
-        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1.375;
+        letter-spacing: 0.125em;
+        font-weight: 700;
+        color: black;
+    }
+
+    &__lable {
+        font-size: 0.875rem;
+        font-weight: 400;
+        letter-spacing: 0.071em;
+        line-height: 1.4;
+        color: #8b8b8b;
+    }
+}
+
+@media (max-width:426px) {
+    .order-preview{
+        &__row { 
+            margin: 1rem 0px;
+        }
+
+        &__title {
+            font-size: 0.875rem;
+        }
+    
+        &__total-line{
+            font-size: 0.875rem;
+        }
+    
+        &__sublines{
+            font-size: 0.75rem;
+        }
+    
+        &__lable{
+            font-size: 0.75rem;
+        }
     }
 }
 
