@@ -53,7 +53,7 @@
     &__total-line {
         font-size: 1rem;
         line-height: 1.375;
-        letter-spacing: 0.125em;
+        letter-spacing: 0.1em;
         font-weight: 700;
         color: black;
     }
@@ -98,7 +98,7 @@
         border-width: 1px;
         margin-bottom: 0.5rem;
 
-        &:nth-child(3){
+        &:nth-child(4){
             margin-bottom: 1.5rem;
         }
     }

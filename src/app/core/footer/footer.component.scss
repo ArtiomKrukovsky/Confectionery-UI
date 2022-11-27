@@ -1,0 +1,16 @@
+@import 'abstracts/variables';
+
+.footer {
+	background-color: $dark-brown;
+
+	&__row { 
+		display: flex;
+		height: 60px;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	&__text { 
+		color: white;
+	}
+}

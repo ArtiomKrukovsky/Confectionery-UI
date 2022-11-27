@@ -32,6 +32,7 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/ngx-toastr/toastr.css",
               "src/app/scss/main.scss"
             ],
             "stylePreprocessorOptions": {
@@ -106,6 +107,7 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/ngx-toastr/toastr.css",
               "src/app/scss/main.scss"
             ],
             "scripts": []

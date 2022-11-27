@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './core/home/home.component';
 import { PieListComponent } from './components/pies/pie-list/pie-list.component';
 import { PieViewComponent } from './components/pies/pie-view/pie-view.component';
 

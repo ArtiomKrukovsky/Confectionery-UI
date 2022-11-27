@@ -8,8 +8,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './core/home/home.module';
 import { HttpClientModule } from '@angular/common/http';
 
+import { ToastrModule } from 'ngx-toastr';
+
 import { NavigationModule } from './core/navigation/navigation.module';
 import { HeaderModule } from './core/header/header.module';
+import { FooterModule } from './core/footer/footer.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,12 @@ import { HeaderModule } from './core/header/header.module';
     HomeModule,
     HeaderModule,
     NavigationModule,
-    PiesModule
+    FooterModule,
+    PiesModule,
+    ToastrModule.forRoot({
+      timeOut: 3500,
+      preventDuplicates: true
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

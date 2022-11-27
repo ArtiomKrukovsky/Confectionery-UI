@@ -1,7 +1,7 @@
 @import 'abstracts/variables';
 
 .menu {
-    background-color: #212121;
+    background-color: $dark-brown;
     z-index: 10;
 
     &__row {

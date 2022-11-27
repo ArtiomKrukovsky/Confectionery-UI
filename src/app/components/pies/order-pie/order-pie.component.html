@@ -37,7 +37,7 @@
   <input 
     type="text" 
     class="form__input"
-    placeholder="ФИО"
+    placeholder="ФИО*"
     formControlName="name"
   >
 
@@ -48,7 +48,7 @@
   <input 
     type="email" 
     class="form__input"
-    placeholder="Электронная почта"
+    placeholder="Электронная почта*"
     formControlName="email"
   >
 
@@ -60,7 +60,14 @@
   <input 
     type="text" 
     class="form__input"
-    placeholder="Мобильный телефон"
+    placeholder="Инстаграм"
+    formControlName="instagramProfile"
+  >
+
+  <input 
+    type="tel" 
+    class="form__input"
+    placeholder="Мобильный телефон*"
     maxlength="12"
     formControlName="mobileNumber"
   >
@@ -74,5 +81,6 @@
     type="submit"
     class="form__button"
     [disabled]="!form.valid"
+    (click)="order()"
   >ЗАКАЗАТЬ</button>
 </form>
