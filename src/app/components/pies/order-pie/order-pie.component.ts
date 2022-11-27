@@ -1,9 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
 import { ORDER_TITLE, SUCCESS_ORDER_MESSAGE } from 'src/app/core/constants/notification.constants';
 import { NotificationMessage } from 'src/app/services/notification/models/notification-message';
 import { NotificationService } from 'src/app/services/notification/notification.service';
 import { PopupService } from 'src/app/services/popup.service';
+import { IPie } from '../api/models/pie';
 import { PieService } from '../services/pie.service';
 
 @Component({
@@ -11,9 +13,14 @@ import { PieService } from '../services/pie.service';
   templateUrl: './order-pie.component.html',
   styleUrls: ['./order-pie.component.scss']
 })
-export class OrderPieComponent implements OnInit {
+export class OrderPieComponent implements OnInit, OnDestroy {
   @Input() productId: string;
   @Input() quantityOrder: number; 
+
+  public selectedPie: IPie;
+  public isLoading: boolean;
+
+  private subscriptions$: Subscription;
 
   public form = new FormGroup({
     name: new FormControl<string>("", [
@@ -51,9 +58,16 @@ export class OrderPieComponent implements OnInit {
     public pieService: PieService,
     private popupService: PopupService,
     private notificationService: NotificationService
-  ) { }
+  ) { 
+    this.subscriptions$ = new Subscription();
+    this.subscribeToPieService();
+  }
 
   ngOnInit() {
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions$.unsubscribe();
   }
 
   public order() {
@@ -64,5 +78,10 @@ export class OrderPieComponent implements OnInit {
       
     this.notificationService.showSuccess(successMessage);
     this.popupService.close();
+  }
+
+  private subscribeToPieService(): void {
+    this.subscriptions$.add(this.pieService.SelectedPie.subscribe(selectedPie => this.selectedPie = selectedPie));
+    this.subscriptions$.add(this.pieService.IsLoading.subscribe(isLoading => this.isLoading = isLoading));
   }
 }

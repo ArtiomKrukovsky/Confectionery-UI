@@ -16,7 +16,7 @@
   <div class="product__list"> 
     <div 
       class="product__row"
-      *ngIf="!pieService.isLoading && pieService.pies as pies; else noPies"
+      *ngIf="!isLoading && pies; else noPies"
     >
       <app-pie-details
         class="product__column"
@@ -30,8 +30,8 @@
   <app-progress-spinner></app-progress-spinner>
 </ng-template>
 
-<div *ngIf="pieService.pies | filterPies: term as filteredPies">
-  <app-no-product-found *ngIf="filteredPies.length === 0"></app-no-product-found>
+<div *ngIf="pies | filterPies: term as filteredPies">
+  <app-no-product-found *ngIf="!isLoading && filteredPies.length === 0"></app-no-product-found>
 </div>
 
 <app-popup *ngIf="isDisplayModal" title="Добавить продукт">

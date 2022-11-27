@@ -1,6 +1,6 @@
 <article 
   class="pie-view" 
-  *ngIf="!pieService.isLoading && pieService.selectedPie as pie; else pieLoading"
+  *ngIf="!isLoading && selectedPie as pie; else pieLoading"
 >
   <div class="pie-view__row">
     <div class="pie-view__image">
