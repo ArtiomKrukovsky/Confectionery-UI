@@ -28,9 +28,6 @@ export class PieListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.pieService.fetchPies();
-
-    // use behaviour subject handlers
-    this.popupService.isVisible$.subscribe(value => this.isDisplayModal = value);
   }
 
   ngOnDestroy(): void {
@@ -44,5 +41,6 @@ export class PieListComponent implements OnInit, OnDestroy {
   private subscribeToPieService(): void {
     this.subscriptions$.add(this.pieService.Pies.subscribe(pies => this.pies = pies));
     this.subscriptions$.add(this.pieService.IsLoading.subscribe(isLoading => this.isLoading = isLoading));
+    this.subscriptions$.add(this.popupService.isVisible$.subscribe(value => this.isDisplayModal = value));
   }
 }
