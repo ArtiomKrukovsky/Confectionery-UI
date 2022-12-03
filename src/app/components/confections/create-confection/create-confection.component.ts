@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PopupService } from 'src/app/services/popup.service';
-import { IPie } from '../api/models/pie';
-import { PieService } from '../services/pie.service';
+import { IConfection } from '../api/models/confection';
+import { ConfectionService } from '../services/confection.service';
 
 @Component({
-  selector: 'app-create-pie',
-  templateUrl: './create-pie.component.html',
-  styleUrls: ['./create-pie.component.scss']
+  selector: 'app-create-confection',
+  templateUrl: './create-confection.component.html',
+  styleUrls: ['./create-confection.component.scss']
 })
-export class CreatePieComponent implements OnInit {
+export class CreateConfectionComponent implements OnInit {
 
   public form = new FormGroup({
     title: new FormControl<string>('', [
@@ -48,7 +48,7 @@ export class CreatePieComponent implements OnInit {
   }
 
   constructor(
-    private pieService: PieService,
+    private confectionService: ConfectionService,
     private popupService: PopupService
   ) { }
 
@@ -56,7 +56,7 @@ export class CreatePieComponent implements OnInit {
   }
 
   public submit() {
-    let pie: IPie = {
+    let confection: IConfection = {
       name: this.form.value.title as string,
       description: this.form.value.description as string,
       price: 200,
@@ -70,7 +70,7 @@ export class CreatePieComponent implements OnInit {
       }]
     }
 
-    this.pieService.savePie(pie);
+    this.confectionService.saveConfection(confection);
     this.popupService.close();
   }
 }

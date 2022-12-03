@@ -1,6 +1,6 @@
-import { IPie } from "../components/pies/api/models/pie";
+import { IConfection } from "../components/confections/api/models/confection";
 
-export const PIES : IPie[] = [
+export const CONFECTIONS : IConfection[] = [
     {
         id: 'bc7bc3ed-0b88-4019-aae9-59579b6a6713',
         name: 'Чизкейк',

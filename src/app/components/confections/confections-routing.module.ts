@@ -4,4 +4,4 @@ const routes: Routes = [
   {  },
 ];
 
-export const PiesRoutes = RouterModule.forChild(routes);
+export const ConfectionsRoutes = RouterModule.forChild(routes);

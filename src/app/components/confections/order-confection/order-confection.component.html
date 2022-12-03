@@ -1,15 +1,15 @@
 <div 
   class="order-preview"
-  *ngIf="!isLoading && selectedPie as pie"
+  *ngIf="!isLoading && confection"
 >
   <div class="order-preview__row">
     <div class="order-preview__image">
-      <img [src]="pie.imageUrl" alt="preview image">
+      <img [src]="confection.imageUrl" alt="preview image">
     </div>
     <div class="order-preview__body">
       <div class="order-preview__sublines">
         <div class="order-preview__title">
-          <span>{{pie.name}}</span>
+          <span>{{confection.name}}</span>
         </div>
         <div class="order-preview__count">
           <span class="order-preview__lable">Кол-во: </span> 
@@ -17,13 +17,13 @@
         </div>
         <div class="order-preview__price">
           <span class="order-preview__lable">Цена: </span>
-          <span>{{pie.price}} р.</span>
+          <span>{{confection.price}} р.</span>
         </div>
       </div>
       
       <div class="order-preview__total-line">
         <span class="order-preview__lable">К оплате: </span>
-        <span>{{pie.price * quantityOrder}} р.</span>
+        <span>{{confection.price * quantityOrder}} р.</span>
       </div>
     </div>
   </div>

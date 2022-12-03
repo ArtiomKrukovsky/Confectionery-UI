@@ -5,19 +5,19 @@ import { ORDER_TITLE, SUCCESS_ORDER_MESSAGE } from 'src/app/core/constants/notif
 import { NotificationMessage } from 'src/app/services/notification/models/notification-message';
 import { NotificationService } from 'src/app/services/notification/notification.service';
 import { PopupService } from 'src/app/services/popup.service';
-import { IPie } from '../api/models/pie';
-import { PieService } from '../services/pie.service';
+import { IConfection } from '../api/models/confection';
+import { ConfectionService } from '../services/confection.service';
 
 @Component({
-  selector: 'app-order-pie',
-  templateUrl: './order-pie.component.html',
-  styleUrls: ['./order-pie.component.scss']
+  selector: 'app-order-confection',
+  templateUrl: './order-confection.component.html',
+  styleUrls: ['./order-confection.component.scss']
 })
-export class OrderPieComponent implements OnInit, OnDestroy {
+export class OrderConfectionComponent implements OnInit, OnDestroy {
   @Input() productId: string;
   @Input() quantityOrder: number; 
 
-  public selectedPie: IPie;
+  public confection: IConfection;
   public isLoading: boolean;
 
   private subscriptions$: Subscription;
@@ -55,12 +55,12 @@ export class OrderPieComponent implements OnInit, OnDestroy {
   } 
 
   constructor(
-    public pieService: PieService,
+    public confectionService: ConfectionService,
     private popupService: PopupService,
     private notificationService: NotificationService
   ) { 
     this.subscriptions$ = new Subscription();
-    this.subscribeToPieService();
+    this.subscribeToServices();
   }
 
   ngOnInit() {
@@ -80,8 +80,8 @@ export class OrderPieComponent implements OnInit, OnDestroy {
     this.popupService.close();
   }
 
-  private subscribeToPieService(): void {
-    this.subscriptions$.add(this.pieService.SelectedPie.subscribe(selectedPie => this.selectedPie = selectedPie));
-    this.subscriptions$.add(this.pieService.IsLoading.subscribe(isLoading => this.isLoading = isLoading));
+  private subscribeToServices(): void {
+    this.subscriptions$.add(this.confectionService.SelectedConfection.subscribe(selectedConfection => this.confection = selectedConfection));
+    this.subscriptions$.add(this.confectionService.IsLoading.subscribe(isLoading => this.isLoading = isLoading));
   }
 }

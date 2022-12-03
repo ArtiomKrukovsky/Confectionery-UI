@@ -1,23 +1,21 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
-import { PieViewComponent } from './pie-view.component';
+import { CreateConfectionComponent } from './create-confection.component';
 
-describe('PieViewComponent', () => {
-  let component: PieViewComponent;
-  let fixture: ComponentFixture<PieViewComponent>;
+describe('CreateConfectionComponent', () => {
+  let component: CreateConfectionComponent;
+  let fixture: ComponentFixture<CreateConfectionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PieViewComponent ]
+      declarations: [ CreateConfectionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PieViewComponent);
+    fixture = TestBed.createComponent(CreateConfectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

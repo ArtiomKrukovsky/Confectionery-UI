@@ -1,0 +1,82 @@
+<article 
+  class="confection-view" 
+  *ngIf="!isLoading && confection; else confectionLoading"
+>
+  <div class="confection-view__row">
+    <div class="confection-view__image">
+      <img [src]="confection.imageUrl" alt="Картинка продукта">
+    </div>
+    <div class="confection-view__body">
+      <h3 class="confection-view__title">{{ confection.name }}</h3>
+      <span class="confection-view__parameters">
+        <div class="confection-view__weight">2200</div>
+        <div class="confection-view__portions">{{ confection.minimumPortions }}-{{ confection.maximumPortions }} порций</div>
+      </span>
+      <div class="confection-view__details">
+        <ul class="nav-tab confection-view__pivot">
+          <li class="nav-tab__item">
+            <a class="nav-tab__link">Описание</a>
+          </li>
+        </ul>
+        <div class="confection-view__description">
+          <p>{{ confection.description }}</p>
+        </div>
+      </div>
+      <div class="confection-view__price">
+        <p class="confection-view__price--lable">За единицу</p>
+        {{ confection.price }} р.
+      </div>
+      <form class="confection-view__form">
+        <div class="confection-view__quantity-counter">
+          <input 
+            type="number" 
+            [(ngModel)]="confectionCount"
+            name="quantity-counter"
+          >
+        </div>
+        <button 
+          type="button" 
+          class="confection-view__order-button"
+          (click)="orderConfection()"
+        >ЗАКАЗАТЬ ТОВАР</button>
+      </form>
+
+      <div class="confection-view__delivery-section delivery-section">
+        <div class="delivery-section__item">
+          <span class="delivery-section__pickup-icon"></span>
+          <p>
+            Возможность <br>
+            самовызова
+          </p>
+        </div>
+        <div class="delivery-section__item">
+          <span class="delivery-section__delivery-icon"></span>
+          <p>
+            Персональная <br>
+            доставка
+          </p>
+          
+        </div>
+        <div class="delivery-section__item">
+          <span class="delivery-section__yandex-icon"></span>
+          <p>
+            Яндекс <br>
+            Доставка
+          </p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</article>
+
+<ng-template #confectionLoading>
+  <app-progress-spinner></app-progress-spinner>
+</ng-template>
+
+<app-popup *ngIf="isDisplayModal" title="Заказать продукт">
+  <app-order-confection 
+    [productId]="confectionId" 
+    [quantityOrder]="confectionCount"
+  ></app-order-confection>
+</app-popup>

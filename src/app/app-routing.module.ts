@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PieListComponent } from './components/pies/pie-list/pie-list.component';
-import { PieViewComponent } from './components/pies/pie-view/pie-view.component';
+import { ConfectionListComponent } from './components/confections/confection-list/confection-list.component';
+import { ConfectionViewComponent } from './components/confections/confection-view/confection-view.component';
 
 const routes: Routes = [
-  { path: '', component: PieListComponent },
-  { path: 'pies', component: PieListComponent },
-  { path: 'orders', component: PieListComponent },
-  { path: 'pies/:id', component: PieViewComponent }
+  { path: '', component: ConfectionListComponent },
+  { path: 'cakes', component: ConfectionListComponent },
+  { path: 'orders', component: ConfectionListComponent },
+  { path: 'cakes/:id', component: ConfectionViewComponent }
 ];
 
 @NgModule({

@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { PieListComponent } from './pie-list/pie-list.component';
-import { PieDetailsComponent } from './pie-details/pie-details.component';
-import { FilterPiesPipe } from 'src/app/pipes/filter-pies.pipe';
+import { ConfectionListComponent } from './confection-list/confection-list.component';
+import { ConfectionDetailsComponent } from './confection-details/confection-details.component';
+import { FilterConfectionsPipe } from 'src/app/pipes/filter-confections.pipe';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { PopupComponent } from 'src/app/shared/popup/popup.component';
-import { CreatePieComponent } from './create-pie/create-pie.component';
-import { PieViewComponent } from './pie-view/pie-view.component';
-import { OrderPieComponent } from './order-pie/order-pie.component';
+import { CreateConfectionComponent } from './create-confection/create-confection.component';
+import { ConfectionViewComponent } from './confection-view/confection-view.component';
+import { OrderConfectionComponent } from './order-confection/order-confection.component';
 import { ProgressSpinnerComponent } from 'src/app/shared/progress-spinner/progress-spinner.component';
 import { NoProductFoundComponent } from 'src/app/shared/no-product-found/no-product-found.component';
 
@@ -24,19 +24,19 @@ import { NoProductFoundComponent } from 'src/app/shared/no-product-found/no-prod
     ReactiveFormsModule
   ],
   declarations: [
-    PieListComponent,
-    PieDetailsComponent,
-    FilterPiesPipe,
-    CreatePieComponent,
-    OrderPieComponent,
+    ConfectionListComponent,
+    ConfectionDetailsComponent,
+    FilterConfectionsPipe,
+    CreateConfectionComponent,
+    OrderConfectionComponent,
     PopupComponent,
     ProgressSpinnerComponent,
     NoProductFoundComponent,
-    PieViewComponent
+    ConfectionViewComponent
   ],
   exports : [
-    PieListComponent, 
-    PieViewComponent
+    ConfectionListComponent, 
+    ConfectionViewComponent
   ]
 })
-export class PiesModule { }
+export class ConfectionsModule { }

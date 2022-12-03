@@ -1,23 +1,21 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
-import { OrderPieComponent } from './order-pie.component';
+import { OrderConfectionComponent } from './order-confection.component';
 
-describe('OrderPieComponent', () => {
-  let component: OrderPieComponent;
-  let fixture: ComponentFixture<OrderPieComponent>;
+describe('OrderConfectionComponent', () => {
+  let component: OrderConfectionComponent;
+  let fixture: ComponentFixture<OrderConfectionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OrderPieComponent ]
+      declarations: [ OrderConfectionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OrderPieComponent);
+    fixture = TestBed.createComponent(OrderConfectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

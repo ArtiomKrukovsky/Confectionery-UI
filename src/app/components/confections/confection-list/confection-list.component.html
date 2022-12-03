@@ -16,26 +16,26 @@
   <div class="product__list"> 
     <div 
       class="product__row"
-      *ngIf="!isLoading && pies; else noPies"
+      *ngIf="!isLoading && confections; else noConfections"
     >
-      <app-pie-details
+      <app-confection-details
         class="product__column"
-        *ngFor="let pie of pies | filterPies: term; let i = index"
-        [pie]="pie"
-      ></app-pie-details>
+        *ngFor="let confection of confections | filterConfections: term; let i = index"
+        [confection]="confection"
+      ></app-confection-details>
   </div>
 </div>
 
-<ng-template #noPies>
+<ng-template #noConfections>
   <app-progress-spinner></app-progress-spinner>
 </ng-template>
 
-<div *ngIf="pies | filterPies: term as filteredPies">
-  <app-no-product-found *ngIf="!isLoading && filteredPies.length === 0"></app-no-product-found>
+<div *ngIf="confections | filterConfections: term as filteredConfections">
+  <app-no-product-found *ngIf="!isLoading && filteredConfections.length === 0"></app-no-product-found>
 </div>
 
 <app-popup *ngIf="isDisplayModal" title="Добавить продукт">
-  <app-create-pie></app-create-pie>
+  <app-create-confection></app-create-confection>
 </app-popup>
 
 <button

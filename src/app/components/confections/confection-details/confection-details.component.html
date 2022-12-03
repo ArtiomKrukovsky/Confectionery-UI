@@ -1,18 +1,18 @@
 <div class="product-item"> 
   <div class="product-item__image">
     <a (click)="openProductView()">
-      <img [src]="pie.imageUrl" [alt]="pie.name"> 
+      <img [src]="confection.imageUrl" [alt]="confection.name"> 
     </a>
   </div>
   
-  <a class="product-item__title" (click)="openProductView()">{{ pie.name }}</a>
+  <a class="product-item__title" (click)="openProductView()">{{ confection.name }}</a>
 
   <div class="product-item__details product-details">
     <div class="product-details__price-section price-section">
-      <div class="price-section__price">{{ pie.price }} р.</div>
+      <div class="price-section__price">{{ confection.price }} р.</div>
       <div class="price-section__action">
         <span class="price-section__weight">2200 гр</span> <!--replace hardcored value-->
-        <span class="price-section__portions">{{ pie.minimumPortions }}-{{ pie.maximumPortions }} порций</span>
+        <span class="price-section__portions">{{ confection.minimumPortions }}-{{ confection.maximumPortions }} порций</span>
       </div>
     </div>
 

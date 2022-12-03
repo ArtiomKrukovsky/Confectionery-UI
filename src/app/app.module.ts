@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PiesModule } from './components/pies/pies.module';
+import { ConfectionsModule } from './components/confections/confections.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './core/home/home.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -27,7 +27,7 @@ import { FooterModule } from './core/footer/footer.module';
     HeaderModule,
     NavigationModule,
     FooterModule,
-    PiesModule,
+    ConfectionsModule,
     ToastrModule.forRoot({
       timeOut: 3500,
       preventDuplicates: true
