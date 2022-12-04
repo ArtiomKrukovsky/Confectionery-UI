@@ -1,4 +1,4 @@
-<div class="controls">
+<!-- <div class="controls">
   <div class="controls__row"> 
     <div class="controls__title">ТОРТЫ</div>
     <div class="controls__search">
@@ -10,18 +10,21 @@
       >
     </div>
   </div>
-</div>  
+</div>   -->
 
-<div class="product">
+<div class="confection-section">
+  <div class="confection-section__header">
+    <div class="confection-section__title">ТОРТЫ</div>
+  </div>
   <div 
-    class="product__row"
+    class="confection-section__body"
     *ngIf="!isLoading && confections; else noConfections"
   >
-    <app-confection-details
-      class="product__column"
+    <app-confection-card
+      class="confection-section__item"
       *ngFor="let confection of confections | filterConfections: term; let i = index"
       [confection]="confection"
-    ></app-confection-details>
+    ></app-confection-card>
 </div>
 
 <ng-template #noConfections>

@@ -3,14 +3,12 @@ import { Router } from '@angular/router';
 import { IConfection } from '../api/models/confection';
 
 @Component({
-  selector: 'app-confection-details',
-  templateUrl: './confection-details.component.html',
-  styleUrls: ['./confection-details.component.scss']
+  selector: 'app-confection-card',
+  templateUrl: './confection-card.component.html',
+  styleUrls: ['./confection-card.component.scss']
 })
-export class ConfectionDetailsComponent implements OnInit {
+export class ConfectionCardComponent implements OnInit {
   @Input() confection: IConfection;
-
-  public isDetails: boolean = false;
 
   constructor(private router: Router) { }
 

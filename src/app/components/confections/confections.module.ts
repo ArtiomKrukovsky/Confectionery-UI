@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ConfectionCatalogComponent } from './confection-catalog/confection-catalog.component';
-import { ConfectionDetailsComponent } from './confection-details/confection-details.component';
+import { ConfectionCardComponent } from './confection-card/confection-card.component';
 import { FilterConfectionsPipe } from 'src/app/pipes/filter-confections.pipe';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -27,7 +27,7 @@ import { ConfectionSectionComponent } from './confection-section/confection-sect
   declarations: [
     ConfectionCatalogComponent,
     ConfectionSectionComponent,
-    ConfectionDetailsComponent,
+    ConfectionCardComponent,
     ConfectionViewComponent,
     CreateConfectionComponent,
     OrderConfectionComponent,

@@ -1,7 +1,7 @@
 @import 'abstracts/variables';
 @import 'components/buttons';
 
-.product-item {
+.confection-card {
     font-size: 1.25rem;
     font-weight: 500;
 
@@ -37,7 +37,7 @@
     }
 }
 
-.product-details {
+.card-details {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -63,10 +63,10 @@
 	&__portions { }
 }
 
-.product-item:hover .price-section__price {
+.confection-card:hover .price-section__price {
     display: none;
 }
 
-.product-item:hover .price-section__action {
+.confection-card:hover .price-section__action {
     display: flex;
 }
