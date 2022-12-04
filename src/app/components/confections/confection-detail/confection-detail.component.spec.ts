@@ -1,21 +1,21 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConfectionViewComponent } from './confection-view.component';
+import { ConfectionDetailComponent } from './confection-detail.component';
 
-describe('ConfectionViewComponent', () => {
-  let component: ConfectionViewComponent;
-  let fixture: ComponentFixture<ConfectionViewComponent>;
+describe('ConfectionDetailComponent', () => {
+  let component: ConfectionDetailComponent;
+  let fixture: ComponentFixture<ConfectionDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConfectionViewComponent ]
+      declarations: [ ConfectionDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ConfectionViewComponent);
+    fixture = TestBed.createComponent(ConfectionDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

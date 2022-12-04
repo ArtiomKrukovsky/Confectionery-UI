@@ -1,33 +1,33 @@
 <article 
-  class="confection-view" 
+  class="confection-detail" 
   *ngIf="!isLoading && confection; else confectionLoading"
 >
-  <div class="confection-view__row">
-    <div class="confection-view__image">
+  <div class="confection-detail__row">
+    <div class="confection-detail__image">
       <img [src]="confection.imageUrl" alt="Картинка продукта">
     </div>
-    <div class="confection-view__body">
-      <h3 class="confection-view__title">{{ confection.name }}</h3>
-      <span class="confection-view__parameters">
-        <div class="confection-view__weight">2200</div>
-        <div class="confection-view__portions">{{ confection.minimumPortions }}-{{ confection.maximumPortions }} порций</div>
+    <div class="confection-detail__body">
+      <h3 class="confection-detail__title">{{ confection.name }}</h3>
+      <span class="confection-detail__parameters">
+        <div class="confection-detail__weight">2200</div>
+        <div class="confection-detail__portions">{{ confection.minimumPortions }}-{{ confection.maximumPortions }} порций</div>
       </span>
-      <div class="confection-view__details">
-        <ul class="nav-tab confection-view__pivot">
+      <div class="confection-detail__details">
+        <ul class="nav-tab confection-detail__pivot">
           <li class="nav-tab__item">
             <a class="nav-tab__link">Описание</a>
           </li>
         </ul>
-        <div class="confection-view__description">
+        <div class="confection-detail__description">
           <p>{{ confection.description }}</p>
         </div>
       </div>
-      <div class="confection-view__price">
-        <p class="confection-view__price--lable">За единицу</p>
+      <div class="confection-detail__price">
+        <p class="confection-detail__price--lable">За единицу</p>
         {{ confection.price }} р.
       </div>
-      <form class="confection-view__form">
-        <div class="confection-view__quantity-counter">
+      <form class="confection-detail__form">
+        <div class="confection-detail__quantity-counter">
           <input 
             type="number" 
             [(ngModel)]="confectionCount"
@@ -36,12 +36,12 @@
         </div>
         <button 
           type="button" 
-          class="confection-view__order-button"
+          class="confection-detail__order-button"
           (click)="orderConfection()"
         >ЗАКАЗАТЬ ТОВАР</button>
       </form>
 
-      <div class="confection-view__delivery-section delivery-section">
+      <div class="confection-detail__delivery-section delivery-section">
         <div class="delivery-section__item">
           <span class="delivery-section__pickup-icon"></span>
           <p>

@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { PopupComponent } from 'src/app/shared/popup/popup.component';
 import { CreateConfectionComponent } from './create-confection/create-confection.component';
-import { ConfectionViewComponent } from './confection-view/confection-view.component';
+import { ConfectionDetailComponent } from './confection-detail/confection-detail.component';
 import { OrderConfectionComponent } from './order-confection/order-confection.component';
 import { ProgressSpinnerComponent } from 'src/app/shared/progress-spinner/progress-spinner.component';
 import { NoProductFoundComponent } from 'src/app/shared/no-product-found/no-product-found.component';
@@ -28,7 +28,7 @@ import { ConfectionSectionComponent } from './confection-section/confection-sect
     ConfectionCatalogComponent,
     ConfectionSectionComponent,
     ConfectionCardComponent,
-    ConfectionViewComponent,
+    ConfectionDetailComponent,
     CreateConfectionComponent,
     OrderConfectionComponent,
     FilterConfectionsPipe,
@@ -38,7 +38,7 @@ import { ConfectionSectionComponent } from './confection-section/confection-sect
   ],
   exports : [
     ConfectionCatalogComponent, 
-    ConfectionViewComponent,
+    ConfectionDetailComponent,
     ConfectionSectionComponent
   ]
 })

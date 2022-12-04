@@ -6,11 +6,11 @@ import { IConfection } from '../api/models/confection';
 import { ConfectionService } from '../services/confection.service';
 
 @Component({
-  selector: 'app-confection-view',
-  templateUrl: './confection-view.component.html',
-  styleUrls: ['./confection-view.component.scss']
+  selector: 'app-confection-detail',
+  templateUrl: './confection-detail.component.html',
+  styleUrls: ['./confection-detail.component.scss']
 })
-export class ConfectionViewComponent implements OnInit, OnDestroy {
+export class ConfectionDetailComponent implements OnInit, OnDestroy {
   public confection: IConfection;
   public isLoading: boolean;
 

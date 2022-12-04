@@ -1,11 +1,11 @@
 <div class="confection-card"> 
   <div class="confection-card__image">
-    <a (click)="openProductView()">
+    <a (click)="openProductDetail()">
       <img [src]="confection.imageUrl" [alt]="confection.name"> 
     </a>
   </div>
   
-  <a class="confection-card__title" (click)="openProductView()">{{ confection.name }}</a>
+  <a class="confection-card__title" (click)="openProductDetail()">{{ confection.name }}</a>
 
   <div class="confection-card__details card-details">
     <div class="card-details__price-section price-section">
@@ -18,7 +18,7 @@
 
     <button 
       class="card-details__order-button"
-      (click)="openProductView()"
+      (click)="openProductDetail()"
     >ЗАКАЗАТЬ</button>
   </div>
 </div> 

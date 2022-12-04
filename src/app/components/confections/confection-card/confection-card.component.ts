@@ -14,7 +14,7 @@ export class ConfectionCardComponent implements OnInit {
 
   ngOnInit() {}
 
-  public openProductView() : void {
+  public openProductDetail() : void {
     this.router.navigateByUrl(`cakes/${this.confection.id}`)
   }
 }
