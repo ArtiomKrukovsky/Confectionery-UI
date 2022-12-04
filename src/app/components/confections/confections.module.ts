@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { ConfectionListComponent } from './confection-list/confection-list.component';
+import { ConfectionCatalogComponent } from './confection-catalog/confection-catalog.component';
 import { ConfectionDetailsComponent } from './confection-details/confection-details.component';
 import { FilterConfectionsPipe } from 'src/app/pipes/filter-confections.pipe';
 
@@ -14,6 +14,7 @@ import { ConfectionViewComponent } from './confection-view/confection-view.compo
 import { OrderConfectionComponent } from './order-confection/order-confection.component';
 import { ProgressSpinnerComponent } from 'src/app/shared/progress-spinner/progress-spinner.component';
 import { NoProductFoundComponent } from 'src/app/shared/no-product-found/no-product-found.component';
+import { ConfectionSectionComponent } from './confection-section/confection-section.component';
 
 @NgModule({
   imports: [
@@ -24,19 +25,21 @@ import { NoProductFoundComponent } from 'src/app/shared/no-product-found/no-prod
     ReactiveFormsModule
   ],
   declarations: [
-    ConfectionListComponent,
+    ConfectionCatalogComponent,
+    ConfectionSectionComponent,
     ConfectionDetailsComponent,
-    FilterConfectionsPipe,
+    ConfectionViewComponent,
     CreateConfectionComponent,
     OrderConfectionComponent,
+    FilterConfectionsPipe,
     PopupComponent,
     ProgressSpinnerComponent,
     NoProductFoundComponent,
-    ConfectionViewComponent
   ],
   exports : [
-    ConfectionListComponent, 
-    ConfectionViewComponent
+    ConfectionCatalogComponent, 
+    ConfectionViewComponent,
+    ConfectionSectionComponent
   ]
 })
 export class ConfectionsModule { }

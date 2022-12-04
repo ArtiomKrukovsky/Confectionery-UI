@@ -1,0 +1,9 @@
+<div 
+  class="confection-catalog"
+  *ngFor="let confectionMapping in confectionMappings"
+>
+  <app-confection-section 
+    [sectionTitle]="confectionMapping.confetionType" 
+    [confections]="confectionMapping.confetions"
+  ></app-confection-section>
+</div>

@@ -1,16 +1,19 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { PopupService } from 'src/app/services/popup.service';
+import { ConfectionType } from '../api/enums/confection-type.enum';
 import { IConfection } from '../api/models/confection';
 import { ConfectionService } from '../services/confection.service';
 
 @Component({
-  selector: 'app-confection-list',
-  templateUrl: './confection-list.component.html',
-  styleUrls: ['./confection-list.component.scss']
+  selector: 'app-confection-section',
+  templateUrl: './confection-section.component.html',
+  styleUrls: ['./confection-section.component.scss']
 })
-export class ConfectionListComponent implements OnInit, OnDestroy {
-  public confections: IConfection[];
+export class ConfectionSectionComponent implements OnInit {
+  @Input() sectionTitle: string;
+  @Input() confections: IConfection[];
+
   public isLoading: boolean;
 
   public term: string = '';

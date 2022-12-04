@@ -33,9 +33,6 @@ export class ConfectionViewComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.confectionId = this.activatedRoute.snapshot.params['id'];
     this.confectionService.fetchConfection(this.confectionId);
-
-    // use behaviour subject handlers
-    this.popupService.isVisible$.subscribe(value => this.isDisplayModal = value);
   }
 
   ngOnDestroy(): void {
@@ -49,5 +46,6 @@ export class ConfectionViewComponent implements OnInit, OnDestroy {
   private subscribeToServices(): void {
     this.subscriptions$.add(this.confectionService.SelectedConfection.subscribe(selectedConfection => this.confection = selectedConfection));
     this.subscriptions$.add(this.confectionService.IsLoading.subscribe(isLoading => this.isLoading = isLoading));
+    this.subscriptions$.add(this.popupService.isVisible$.subscribe(value => this.isDisplayModal = value));
   }
 }

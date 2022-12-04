@@ -1,12 +1,6 @@
 @import 'abstracts/variables';
 
-.filter {
-    text-align: center;
-}
-
 .product {
-    &__list {}
-
     &__row {
         display: flex;
         flex-direction: row;

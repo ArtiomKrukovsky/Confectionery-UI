@@ -2,11 +2,16 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { IConfection } from '../api/models/confection';
 import { ConfectionApi } from '../api/confection.api';
+import { IConfectionMapping } from '../api/models/confectionMapping';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConfectionService implements OnDestroy {
+
+  public get ConfectionMappings(): Observable<IConfectionMapping[]> {
+    return this.confectionMappings$.asObservable();
+  } 
 
   public get Confections(): Observable<IConfection[]> {
     return this.confections$.asObservable();
@@ -31,6 +36,7 @@ export class ConfectionService implements OnDestroy {
     ingredients: []
   }
 
+  private confectionMappings$: BehaviorSubject<IConfectionMapping[]>;
   private confections$: BehaviorSubject<IConfection[]>;
   private selectedConfection$: BehaviorSubject<IConfection>;
   private isLoading$: BehaviorSubject<boolean>;
@@ -42,12 +48,26 @@ export class ConfectionService implements OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.confectionMappings$.next([]);
+    this.confectionMappings$.complete();
     this.confections$.next([]);
     this.confections$.complete();
     this.selectedConfection$.next(this.defaultConfection);
     this.selectedConfection$.complete();
     this.isLoading$.next(false);
     this.isLoading$.complete();
+  }
+
+  public fetchConfectionMappings() : void {
+    this.isLoading$.next(true);
+
+    this.confectionApi.getAllMappings()
+    .pipe(
+      tap(() => this.isLoading$.next(false))
+    )
+    .subscribe(confectionMappings => {
+      this.confectionMappings$.next(confectionMappings);
+    });
   }
 
   public fetchConfections() : void {

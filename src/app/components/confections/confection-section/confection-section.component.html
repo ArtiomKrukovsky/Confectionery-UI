@@ -13,17 +13,15 @@
 </div>  
 
 <div class="product">
-  <div class="product__list"> 
-    <div 
-      class="product__row"
-      *ngIf="!isLoading && confections; else noConfections"
-    >
-      <app-confection-details
-        class="product__column"
-        *ngFor="let confection of confections | filterConfections: term; let i = index"
-        [confection]="confection"
-      ></app-confection-details>
-  </div>
+  <div 
+    class="product__row"
+    *ngIf="!isLoading && confections; else noConfections"
+  >
+    <app-confection-details
+      class="product__column"
+      *ngFor="let confection of confections | filterConfections: term; let i = index"
+      [confection]="confection"
+    ></app-confection-details>
 </div>
 
 <ng-template #noConfections>
