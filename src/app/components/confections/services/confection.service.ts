@@ -42,6 +42,7 @@ export class ConfectionService implements OnDestroy {
   private isLoading$: BehaviorSubject<boolean>;
 
   constructor(private confectionApi: ConfectionApi) { 
+    this.confectionMappings$ = new BehaviorSubject<IConfectionMapping[]>([]); 
     this.confections$ = new BehaviorSubject<IConfection[]>([]);
     this.selectedConfection$ = new BehaviorSubject<IConfection>(this.defaultConfection);
     this.isLoading$ = new BehaviorSubject<boolean>(false);
@@ -61,7 +62,7 @@ export class ConfectionService implements OnDestroy {
   public fetchConfectionMappings() : void {
     this.isLoading$.next(true);
 
-    this.confectionApi.getAllMappings()
+    this.confectionApi.getAllConfectionMappings()
     .pipe(
       tap(() => this.isLoading$.next(false))
     )
@@ -73,7 +74,7 @@ export class ConfectionService implements OnDestroy {
   public fetchConfections() : void {
     this.isLoading$.next(true);
 
-    this.confectionApi.getAll()
+    this.confectionApi.getAllConfections()
     .pipe(
       tap(() => this.isLoading$.next(false))
     )
@@ -85,7 +86,7 @@ export class ConfectionService implements OnDestroy {
   public fetchConfection(id: string) : void {
     this.isLoading$.next(true);
 
-    this.confectionApi.get(id)
+    this.confectionApi.getConfection(id)
     .pipe(
       tap(() => this.isLoading$.next(false))
     )

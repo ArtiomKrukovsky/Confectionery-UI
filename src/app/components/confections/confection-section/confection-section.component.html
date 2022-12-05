@@ -14,32 +14,18 @@
 
 <div class="confection-section">
   <div class="confection-section__header">
-    <div class="confection-section__title">ТОРТЫ</div>
+    <div class="confection-section__title">{{ sectionTitle }}</div>
   </div>
-  <div 
-    class="confection-section__body"
-    *ngIf="!isLoading && confections; else noConfections"
-  >
+  <div class="confection-section__body">
     <app-confection-card
       class="confection-section__item"
-      *ngFor="let confection of confections | filterConfections: term; let i = index"
+      *ngFor="let confection of confections; let i = index"
       [confection]="confection"
     ></app-confection-card>
 </div>
 
-<ng-template #noConfections>
-  <app-progress-spinner></app-progress-spinner>
-</ng-template>
-
-<div *ngIf="confections | filterConfections: term as filteredConfections">
-  <app-no-product-found *ngIf="!isLoading && filteredConfections.length === 0"></app-no-product-found>
-</div>
-
-<app-popup *ngIf="isDisplayModal" title="Добавить продукт">
-  <app-create-confection></app-create-confection>
-</app-popup>
-
-<button
-  class="rounded-full bg-red-700 text-white fixed right-5 bottom-5 py-2 px-4"
-  (click)="displayModal()"
->+</button>
+<!-- <app-confection-card
+  class="confection-section__item"
+  *ngFor="let confection of confections | filterConfections: term; let i = index"
+  [confection]="confection"
+></app-confection-card> -->

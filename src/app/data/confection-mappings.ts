@@ -87,5 +87,26 @@ export const CONFECTION_MAPPINGS : IConfectionMapping[] = [
                 ]
             }
         ]
+    },
+    {
+        confetionType: ConfectionType.Dessert,
+        confetions: [
+            {
+                id: 'c54ecd44-9e87-4ca1-9262-f1fc9d4e2819',
+                name: 'Меренговый рулет',
+                description: 'i-Гоголь-Моголь или французская меренга. На вид десерт выглядит симпатичным, при этом он больше вкусный, чем красивый, представляете? Оказывает терапевтическое воздействие через удовлетворение потребности: «хочется чего-то вкусненького»',
+                price: 55,
+                imageUrl: 'https://embassy.by/assets/images/products/56/large/dizayn-bez-nazvaniya.jpg',
+                maximumPortions: 12,
+                minimumPortions: 8,
+                ingredients: [
+                    {
+                        name: 'Milk',
+                        isAllergen: true,
+                        relativeAmount: 10
+                    }
+                ]
+            }
+        ]
     }
 ]

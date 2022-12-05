@@ -41,42 +41,42 @@
 }
 
 //todo: remove after refactoring
-.controls {
-    &__row {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+// .controls {
+//     &__row {
+//         display: flex;
+//         flex-direction: row;
+//         flex-wrap: wrap;
 
-        align-items: center;
-        justify-content: space-between;
+//         align-items: center;
+//         justify-content: space-between;
 
-        padding: 0 15px;
-        margin-top: 15px;
+//         padding: 0 15px;
+//         margin-top: 15px;
 
-        @media (max-width:376px) {
-            flex-direction: column; 
-        }
-    }
+//         @media (max-width:376px) {
+//             flex-direction: column; 
+//         }
+//     }
 
-    &__title {
-        color: $light-orange;
+//     &__title {
+//         color: $light-orange;
         
-        font-size: 1.25rem;
-        margin: 0.5rem;
-    }
+//         font-size: 1.25rem;
+//         margin: 0.5rem;
+//     }
 
-    &__search {
+//     &__search {
 
-        input {
-            width: 100%;
-            margin-bottom: 0.5rem;
-            padding: 0.5rem 1.25rem;
+//         input {
+//             width: 100%;
+//             margin-bottom: 0.5rem;
+//             padding: 0.5rem 1.25rem;
 
-            border-width: 1px;
+//             border-width: 1px;
 
-            @media (max-width:376px) {
-                width: 250px;
-            }
-        }
-    }
-}
+//             @media (max-width:376px) {
+//                 width: 250px;
+//             }
+//         }
+//     }
+// }

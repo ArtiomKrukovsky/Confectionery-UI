@@ -16,7 +16,7 @@ export class ConfectionApi {
     constructor(private httpClient: HttpClient){
     }
 
-    public getAllMappings(): Observable<IConfectionMapping[]> {
+    public getAllConfectionMappings(): Observable<IConfectionMapping[]> {
         return of(CONFECTION_MAPPINGS)
             .pipe(
                 delay(500)
@@ -25,7 +25,7 @@ export class ConfectionApi {
         //return this.httpClient.get<IConfection[]>('');
     }
 
-    public getAll(): Observable<IConfection[]> {
+    public getAllConfections(): Observable<IConfection[]> {
         return of(CONFECTIONS)
             .pipe(
                 delay(500)
@@ -34,7 +34,7 @@ export class ConfectionApi {
         //return this.httpClient.get<IConfection[]>('');
     }
 
-    public get(id: string): Observable<IConfection> {
+    public getConfection(id: string): Observable<IConfection> {
         return of(CONFECTIONS.find(x => x.id === id) as IConfection)
             .pipe(
                 delay(500)

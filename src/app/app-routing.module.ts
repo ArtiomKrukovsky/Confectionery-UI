@@ -5,9 +5,9 @@ import { ConfectionSectionComponent } from './components/confections/confection-
 import { ConfectionDetailComponent } from './components/confections/confection-detail/confection-detail.component';
 
 const routes: Routes = [
-  { path: '', component: ConfectionSectionComponent },
-  { path: 'cakes', component: ConfectionSectionComponent },
-  { path: 'orders', component: ConfectionSectionComponent },
+  { path: '', component: ConfectionCatalogComponent },
+  { path: 'cakes', component: ConfectionCatalogComponent },
+  { path: 'orders', component: ConfectionCatalogComponent },
   { path: 'cakes/:id', component: ConfectionDetailComponent }
 ];
 
