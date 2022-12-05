@@ -1,7 +1,7 @@
 export enum ConfectionType {
-    Cake,
-    Dessert,
-    Tartlet,
+    Cakes,
+    Desserts,
+    Tartelettes,
     Meringue,
     Marshmallow,
     Marmalade

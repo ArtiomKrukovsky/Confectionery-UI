@@ -20,6 +20,7 @@
     <app-confection-card
       class="confection-section__item"
       *ngFor="let confection of confections; let i = index"
+      [confectionType]="confectionType"
       [confection]="confection"
     ></app-confection-card>
 </div>

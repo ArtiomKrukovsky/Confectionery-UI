@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ConfectionType } from 'src/app/shared/enums/confection-type.enum';
+import { ConfectionTitlesByTypeMapper } from 'src/app/shared/maps/confection-type.map';
 import { IConfection } from '../api/models/confection';
 
 @Component({
@@ -7,12 +9,20 @@ import { IConfection } from '../api/models/confection';
   styleUrls: ['./confection-section.component.scss']
 })
 export class ConfectionSectionComponent implements OnInit {
-  @Input() sectionTitle: string;
+  @Input() confectionType: ConfectionType;
   @Input() confections: IConfection[];
+
+  public sectionTitle: string;
 
   //public term: string = '';
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit(): void {
+    this.sectionTitle = this.computeConfectionTitle();
+  }
+
+  private computeConfectionTitle(): string {
+    return ConfectionTitlesByTypeMapper.get(this.confectionType);
+  }
 }

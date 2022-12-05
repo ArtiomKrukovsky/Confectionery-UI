@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { ORDER_TITLE, SUCCESS_ORDER_MESSAGE } from 'src/app/core/constants/notification.constants';
+import { ORDER_TITLE, SUCCESS_ORDER_MESSAGE } from 'src/app/shared/constants/notification.constants';
 import { NotificationMessage } from 'src/app/services/notification/models/notification-message';
 import { NotificationService } from 'src/app/services/notification/notification.service';
 import { PopupService } from 'src/app/services/popup.service';

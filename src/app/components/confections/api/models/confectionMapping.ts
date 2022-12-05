@@ -1,4 +1,4 @@
-import { ConfectionType } from "../enums/confection-type.enum";
+import { ConfectionType } from "../../../../shared/enums/confection-type.enum";
 import { IConfection } from "./confection";
 
 export interface IConfectionMapping {

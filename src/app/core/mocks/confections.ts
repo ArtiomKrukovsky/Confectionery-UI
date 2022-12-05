@@ -1,4 +1,4 @@
-import { IConfection } from "../components/confections/api/models/confection";
+import { IConfection } from "../../components/confections/api/models/confection";
 
 export const CONFECTIONS : IConfection[] = [
     {
@@ -64,8 +64,7 @@ export const CONFECTIONS : IConfection[] = [
                 relativeAmount: 10
             }
         ]
-    }
-    ,
+    },
     {
         id: '90452859-2d7f-4dfd-923b-1419bfaa3d3b',
         name: 'Торт Ангелы Черри',
@@ -81,5 +80,21 @@ export const CONFECTIONS : IConfection[] = [
                 relativeAmount: 10
             }
         ]
+    },
+    {
+        id: 'c54ecd44-9e87-4ca1-9262-f1fc9d4e2819',
+                name: 'Меренговый рулет',
+                description: 'i-Гоголь-Моголь или французская меренга. На вид десерт выглядит симпатичным, при этом он больше вкусный, чем красивый, представляете? Оказывает терапевтическое воздействие через удовлетворение потребности: «хочется чего-то вкусненького»',
+                price: 55,
+                imageUrl: 'https://embassy.by/assets/images/products/56/large/dizayn-bez-nazvaniya.jpg',
+                maximumPortions: 12,
+                minimumPortions: 8,
+                ingredients: [
+                    {
+                        name: 'Milk',
+                        isAllergen: true,
+                        relativeAmount: 10
+                    }
+                ]
     }
 ]

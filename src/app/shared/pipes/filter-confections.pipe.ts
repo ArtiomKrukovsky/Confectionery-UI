@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { IConfection } from '../components/confections/api/models/confection';
+import { IConfection } from '../../components/confections/api/models/confection';
 
 @Pipe({
   name: 'filterConfections'

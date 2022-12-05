@@ -1,9 +1,9 @@
-import { ConfectionType } from "../components/confections/api/enums/confection-type.enum";
-import { IConfectionMapping } from "../components/confections/api/models/confectionMapping";
+import { ConfectionType } from "../../shared/enums/confection-type.enum";
+import { IConfectionMapping } from "../../components/confections/api/models/confectionMapping";
 
 export const CONFECTION_MAPPINGS : IConfectionMapping[] = [
     {
-        confetionType: ConfectionType.Cake,
+        confetionType: ConfectionType.Cakes,
         confetions: [
             {
                 id: 'bc7bc3ed-0b88-4019-aae9-59579b6a6713',
@@ -89,7 +89,7 @@ export const CONFECTION_MAPPINGS : IConfectionMapping[] = [
         ]
     },
     {
-        confetionType: ConfectionType.Dessert,
+        confetionType: ConfectionType.Desserts,
         confetions: [
             {
                 id: 'c54ecd44-9e87-4ca1-9262-f1fc9d4e2819',

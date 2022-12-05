@@ -5,9 +5,9 @@ import { IConfection } from "./models/confection";
 
 import { of } from 'rxjs/internal/observable/of';
 
-import { CONFECTIONS } from '../../../data/confections'
+import { CONFECTIONS } from '../../../core/mocks/confections'
 import { IConfectionMapping } from "./models/confectionMapping";
-import { CONFECTION_MAPPINGS } from "src/app/data/confection-mappings";
+import { CONFECTION_MAPPINGS } from "src/app/core/mocks/confection-mappings";
 
 @Injectable({
     providedIn: 'root'

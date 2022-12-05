@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ConfectionTypeMap } from 'src/app/core/constants/confection.constants';
 import { PopupService } from 'src/app/services/popup.service';
-import { ConfectionType } from '../api/enums/confection-type.enum';
+import { ConfectionTitlesByTypeMapper } from 'src/app/shared/maps/confection-type.map';
+import { ConfectionType } from '../../../shared/enums/confection-type.enum';
 import { IConfectionMapping } from '../api/models/confectionMapping';
 import { ConfectionService } from '../services/confection.service';
 
@@ -29,10 +29,6 @@ export class ConfectionCatalogComponent implements OnInit {
 
   ngOnInit(): void {
     this.confectionService.fetchConfectionMappings();
-  }
-
-  public mapConfectionTypeToTitle(confectionType: ConfectionType): string {
-    return ConfectionTypeMap.get(confectionType);
   }
 
   public displayModal(): void {
