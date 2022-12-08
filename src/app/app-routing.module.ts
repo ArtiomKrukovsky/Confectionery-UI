@@ -10,6 +10,8 @@ const routes: Routes = [
   { path: 'orders', component: ConfectionCatalogComponent },
   { path: 'desserts', component: ConfectionCatalogComponent },
   { path: 'desserts/:id', component: ConfectionDetailComponent },
+  { path: 'tartelettes', component: ConfectionCatalogComponent },
+  { path: 'tartelettes/:id', component: ConfectionDetailComponent },
 ];
 
 @NgModule({

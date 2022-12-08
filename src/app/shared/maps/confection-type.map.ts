@@ -3,7 +3,7 @@ import { ConfectionType } from "../enums/confection-type.enum";
 
 type ConfectionTypeMap = { get<T extends ConfectionType>(type: T): string }
 
-export const ConfectionTitlesByTypeMapper = new Map([
+export const ConfectionTitlesByTypeMap = new Map([
     [ConfectionType.Cakes, ConfectionTitles.CAKES],
     [ConfectionType.Desserts, ConfectionTitles.DESSERTS],
     [ConfectionType.Tartelettes, ConfectionTitles.TARTELETTES],
@@ -12,7 +12,7 @@ export const ConfectionTitlesByTypeMapper = new Map([
     [ConfectionType.Marmalade, ConfectionTitles.MARMALADE],
 ]) as ConfectionTypeMap;
 
-export const ConfectionRoutesByTypeMapper = new Map([
+export const ConfectionRoutesByTypeMap = new Map([
     [ConfectionType.Cakes, ConfectionRoutes.CAKES],
     [ConfectionType.Desserts, ConfectionRoutes.DESSERTS],
     [ConfectionType.Tartelettes, ConfectionRoutes.TARTELETTES],

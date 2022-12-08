@@ -106,6 +106,59 @@ export const CONFECTION_MAPPINGS : IConfectionMapping[] = [
                         relativeAmount: 10
                     }
                 ]
+            },
+            {
+                id: '167fa5de-1853-4a06-b767-0a3cd8ae4f76',
+                name: 'Картошка',
+                description: 'Пирожное на основе шоколадного бисквита с марципаном, ванильного бисквита с добавлением шоколада, орехов и пасты «Пралине».',
+                price: 7.6,
+                imageUrl: 'https://brioche.by/sites/default/files/styles/prodteaser/public/product/%D0%BA%D0%B0%D1%80%D1%82%D0%BE%D1%85%D0%B0.jpg',
+                maximumPortions: 6,
+                minimumPortions: 4,
+                ingredients: [
+                    {
+                        name: 'Milk',
+                        isAllergen: true,
+                        relativeAmount: 10
+                    }
+                ]
+            },
+            {
+                id: 'd5bfed98-88b2-4ed0-abb7-c789e22fd874',
+                name: 'Тирамису',
+                description: 'Печенье Савоярди, именуемое «дамским пальчиком» пропитанное кофе, под слоем воздушного маскарпоне',
+                price: 10,
+                imageUrl: 'https://embassy.by/assets/images/products/47/large/tiramisu-1.jpg',
+                maximumPortions: 4,
+                minimumPortions: 4,
+                ingredients: [
+                    {
+                        name: 'Milk',
+                        isAllergen: true,
+                        relativeAmount: 10
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        confetionType: ConfectionType.Tartelettes,
+        confetions: [
+            {
+                id: 'e71118f7-4ba2-4ac4-a8b5-88e79b17dc0c',
+                name: 'Тарталетка «Монблан»',
+                description: 'В основании тарталетки «Монблан» от Brioche Paris песочно-миндальное тесто, ванильный крем и свежая голубика.',
+                price: 12,
+                imageUrl: 'https://brioche.by/sites/default/files/styles/prodteaser/public/product/21DF4E10-DF55-4B1D-9CE2-05F0C5589CB9-407-0000017741F5FA08.jpg',
+                maximumPortions: 4,
+                minimumPortions: 4,
+                ingredients: [
+                    {
+                        name: 'Milk',
+                        isAllergen: true,
+                        relativeAmount: 10
+                    }
+                ]
             }
         ]
     }
