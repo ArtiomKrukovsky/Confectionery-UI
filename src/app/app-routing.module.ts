@@ -4,6 +4,7 @@ import { ConfectionCatalogComponent } from './components/confections/confection-
 import { ConfectionDetailComponent } from './components/confections/confection-detail/confection-detail.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'catalog', pathMatch: 'full' },
   { path: 'catalog', component: ConfectionCatalogComponent },
   { path: 'orders', component: ConfectionCatalogComponent },
   { path: 'cakes/:id', component: ConfectionDetailComponent },
