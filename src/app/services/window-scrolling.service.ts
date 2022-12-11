@@ -1,4 +1,4 @@
-import { Injectable, Renderer2, RendererFactory2, RendererStyleFlags2 } from '@angular/core';
+import { Injectable, Renderer2, RendererFactory2} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -16,5 +16,13 @@ export class WindowScrollingService {
 
     public enable(): void {
         this.renderer.removeClass(document.body, 'locked');
+    }
+
+    public scroll(identifier: string): void {
+        const htmlComponent = document.getElementById(identifier);
+        
+        if(htmlComponent) {
+            htmlComponent.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+        }
     }
 }
