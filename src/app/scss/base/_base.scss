@@ -1,6 +1,8 @@
-html, body { height: 100%; }
+html{
+    scroll-behavior: smooth;
+}
+
 body { 
-    width: 100%;
     font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
 }
 

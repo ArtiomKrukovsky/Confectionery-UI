@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ConfectionType } from 'src/app/shared/enums/confection-type.enum';
-import { ConfectionTitlesByTypeMap } from 'src/app/shared/maps/confection-type.map';
 import { IConfection } from '../api/models/confection';
+import { ConfectionService } from '../services/confection.service';
 
 @Component({
   selector: 'app-confection-section',
@@ -16,13 +16,13 @@ export class ConfectionSectionComponent implements OnInit {
 
   //public term: string = '';
 
-  constructor() {}
+  constructor(private confecionService: ConfectionService) {}
 
   ngOnInit(): void {
-    this.sectionTitle = this.computeConfectionTitle();
+    this.computeSectionTitle();
   }
 
-  private computeConfectionTitle(): string {
-    return ConfectionTitlesByTypeMap.get(this.confectionType);
+  private computeSectionTitle(): void {
+    this.sectionTitle = this.confecionService.computeConfectionTitle(this.confectionType);
   }
 }

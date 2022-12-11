@@ -1,7 +1,7 @@
 <div class="menu menu--sticky">
   <div class="container">
     <div class="menu__row">
-      <a class="menu__icon icon" routerLink="/">
+      <a class="menu__icon icon" routerLink="/catalog">
         <img class="icon__img" [src]="companyLogo" alt="logo">
       </a>
 
@@ -23,19 +23,22 @@
           <li>
             <a 
               class="menu__link"
-              (click)="redirectToPage('cakes')"
+              routerLink="/catalog" 
+              fragment="cakes"
             >Торты</a>
           </li>
           <li>
             <a 
               class="menu__link"
-              (click)="redirectToPage('#')"
+              routerLink="/catalog" 
+              fragment="desserts"
             >Пирожные</a>
           </li>
           <li>
             <a 
               class="menu__link"
-              (click)="redirectToPage('#')"
+              routerLink="/catalog" 
+              fragment="tartelettes"
             >Тарталетки</a>
           </li>
           <li>

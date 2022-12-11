@@ -7,6 +7,7 @@
     *ngFor="let confectionMapping of confectionMappings"
   >
     <app-confection-section 
+      [id]="computeSectionRoute(confectionMapping.confetionType)"
       [confectionType]="confectionMapping.confetionType" 
       [confections]="confectionMapping.confetions"
     ></app-confection-section>

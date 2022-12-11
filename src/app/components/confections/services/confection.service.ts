@@ -3,6 +3,8 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { IConfection } from '../api/models/confection';
 import { ConfectionApi } from '../api/confection.api';
 import { IConfectionMapping } from '../api/models/confectionMapping';
+import { ConfectionRoutesByTypeMap, ConfectionTitlesByTypeMap } from 'src/app/shared/maps/confection-type.map';
+import { ConfectionType } from 'src/app/shared/enums/confection-type.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -107,5 +109,13 @@ export class ConfectionService implements OnDestroy {
     // update confection subject
     this.confectionApi.update(confection)
     .subscribe()
+  }
+
+  public computeConfectionRoute(confectionType: ConfectionType): string {
+    return ConfectionRoutesByTypeMap.get(confectionType);
+  }
+
+  public computeConfectionTitle(confectionType: ConfectionType): string {
+    return ConfectionTitlesByTypeMap.get(confectionType);
   }
 }

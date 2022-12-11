@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { PopupService } from 'src/app/services/popup.service';
-import { ConfectionTitlesByTypeMap } from 'src/app/shared/maps/confection-type.map';
 import { ConfectionType } from '../../../shared/enums/confection-type.enum';
 import { IConfectionMapping } from '../api/models/confectionMapping';
 import { ConfectionService } from '../services/confection.service';
@@ -33,6 +32,10 @@ export class ConfectionCatalogComponent implements OnInit {
 
   public displayModal(): void {
     this.popupService.open();
+  }
+
+  public computeSectionRoute(confectionType: ConfectionType): string {
+    return this.confectionService.computeConfectionRoute(confectionType);
   }
 
   private subscribeToServices() {

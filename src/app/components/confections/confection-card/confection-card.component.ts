@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfectionType } from 'src/app/shared/enums/confection-type.enum';
-import { ConfectionRoutesByTypeMap } from 'src/app/shared/maps/confection-type.map';
 import { IConfection } from '../api/models/confection';
+import { ConfectionService } from '../services/confection.service';
 
 @Component({
   selector: 'app-confection-card',
@@ -13,15 +13,18 @@ export class ConfectionCardComponent implements OnInit {
   @Input() confectionType: ConfectionType;
   @Input() confection: IConfection;
 
-  constructor(private router: Router) { }
+  constructor(
+    private confectionService: ConfectionService, 
+    private router: Router
+  ) { }
 
   ngOnInit() {}
 
   public openProductDetail() : void {
-    this.router.navigateByUrl(`${this.computeConfectionRoute()}/${this.confection.id}`)
+    this.router.navigateByUrl(`${this.computeSectionRoute()}/${this.confection.id}`);
   }
 
-  private computeConfectionRoute(): string {
-    return ConfectionRoutesByTypeMap.get(this.confectionType);
+  private computeSectionRoute(): string {
+    return this.confectionService.computeConfectionRoute(this.confectionType);
   }
 }
