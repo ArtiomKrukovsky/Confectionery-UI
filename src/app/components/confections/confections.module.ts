@@ -8,14 +8,14 @@ import { FilterConfectionsPipe } from 'src/app/shared/pipes/filter-confections.p
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { PopupComponent } from 'src/app/shared/components/popup/popup.component';
 import { CreateConfectionComponent } from './create-confection/create-confection.component';
 import { ConfectionDetailComponent } from './confection-detail/confection-detail.component';
 import { OrderConfectionComponent } from './order-confection/order-confection.component';
-import { NoProductFoundComponent } from 'src/app/shared/components/no-product-found/no-product-found.component';
 import { ConfectionSectionComponent } from './confection-section/confection-section.component';
-import { ProgressSpinnerComponent } from 'src/app/shared/components/progress-spinner/progress-spinner.component';
-import { ScrollSidebarComponent } from 'src/app/shared/components/scroll-sidebar/scroll-sidebar.component';
+import { ScrollSidebarModule } from 'src/app/shared/components/scroll-sidebar/scroll-sidebar.module';
+import { ProgressSpinnerModule } from 'src/app/shared/components/progress-spinner/progress-spinner.module';
+import { PopupModule } from 'src/app/shared/components/popup/popup.module';
+import { NoProductFoundModule } from 'src/app/shared/components/no-product-found/no-product-found.module';
 
 @NgModule({
   imports: [
@@ -23,7 +23,11 @@ import { ScrollSidebarComponent } from 'src/app/shared/components/scroll-sidebar
     FormsModule,
     MatButtonModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PopupModule,
+    NoProductFoundModule,
+    ScrollSidebarModule,
+    ProgressSpinnerModule
   ],
   declarations: [
     ConfectionCatalogComponent,
@@ -32,11 +36,7 @@ import { ScrollSidebarComponent } from 'src/app/shared/components/scroll-sidebar
     ConfectionDetailComponent,
     CreateConfectionComponent,
     OrderConfectionComponent,
-    FilterConfectionsPipe,
-    PopupComponent,
-    ProgressSpinnerComponent,
-    NoProductFoundComponent,
-    ScrollSidebarComponent
+    FilterConfectionsPipe
   ],
   exports : [
     ConfectionCatalogComponent, 
