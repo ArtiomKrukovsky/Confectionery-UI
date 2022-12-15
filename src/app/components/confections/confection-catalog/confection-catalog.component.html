@@ -22,6 +22,8 @@
   <app-no-product-found *ngIf="!isLoading && filteredConfections.length === 0"></app-no-product-found>
 </div> -->
 
+<app-scroll-sidebar></app-scroll-sidebar>
+
 <app-popup *ngIf="isDisplayModal" title="Добавить продукт">
   <app-create-confection></app-create-confection>
 </app-popup>

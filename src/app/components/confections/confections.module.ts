@@ -15,6 +15,7 @@ import { OrderConfectionComponent } from './order-confection/order-confection.co
 import { NoProductFoundComponent } from 'src/app/shared/components/no-product-found/no-product-found.component';
 import { ConfectionSectionComponent } from './confection-section/confection-section.component';
 import { ProgressSpinnerComponent } from 'src/app/shared/components/progress-spinner/progress-spinner.component';
+import { ScrollSidebarComponent } from 'src/app/shared/components/scroll-sidebar/scroll-sidebar.component';
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import { ProgressSpinnerComponent } from 'src/app/shared/components/progress-spi
     PopupComponent,
     ProgressSpinnerComponent,
     NoProductFoundComponent,
+    ScrollSidebarComponent
   ],
   exports : [
     ConfectionCatalogComponent, 

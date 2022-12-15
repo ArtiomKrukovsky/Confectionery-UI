@@ -1,0 +1,36 @@
+@import 'abstracts/variables';
+
+.scroll-sidebar {
+    display: none;
+    position: fixed;
+    width: 55px;
+    height: 100vh;
+    left: 0;
+    top: 70px;
+    background-color: $transparent-gray;
+    z-index: 10;
+    cursor: pointer;
+
+    &:hover{
+        background-color: rgba(23, 23, 23, 0.466);
+    }
+
+	&__content {
+        position: relative;
+        height: 100%;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 125px;
+        left: 16.5px;
+        background-image: url('/assets/icons/arrow.svg');
+        background-size: 22px 56px;
+        width: 22px;
+        height: 56px;
+    }
+
+    &--visible{
+        display: block;
+    }
+}
