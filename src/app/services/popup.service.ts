@@ -11,12 +11,12 @@ export class PopupService {
   constructor(private windowScrollingService: WindowScrollingService) { }
 
   public open() {
-    this.windowScrollingService.disable();
+    this.windowScrollingService.disableScrolling();
     this.isVisible$.next(true);
   }
 
   public close() {
-    this.windowScrollingService.enable();
+    this.windowScrollingService.enableScrolling();
     this.isVisible$.next(false);
   }
 }

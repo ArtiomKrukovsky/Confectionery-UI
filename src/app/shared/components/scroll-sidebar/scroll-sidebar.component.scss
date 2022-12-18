@@ -12,7 +12,8 @@
     cursor: pointer;
 
     &:hover{
-        background-color: rgba(23, 23, 23, 0.466);
+        transition: 0.225s ease-in-out;
+        background-color: rgba(72, 72, 72, 0.450);
     }
 
 	&__content {
@@ -23,14 +24,38 @@
     &__icon {
         position: absolute;
         top: 125px;
-        left: 16.5px;
+        left: 18.25px;
         background-image: url('/assets/icons/arrow.svg');
-        background-size: 22px 56px;
-        width: 22px;
-        height: 56px;
+        background-size: 18.5px 42px;
+        width: 18.5px;
+        height: 42px;
     }
 
     &--visible{
         display: block;
+    }
+}
+
+@media (max-width:767px) {
+    .scroll-sidebar {
+        right: 10px;
+        bottom: 10px;
+        top: auto;
+        left: auto;
+        width: 55px;
+        height: 55px;
+        background-color: #c4c4c4;
+        border-radius: 50%;
+        box-shadow: 2px 7px 15px $shadow;
+        overflow: hidden;
+
+        &__icon {
+            left: 17.5px;
+            top: 17.5px;
+            background-image: url('/assets/icons/arrow_up_white.svg');
+            background-size: 20px 20px;
+            width: 20px;
+            height: 20px;
+        }
     }
 }

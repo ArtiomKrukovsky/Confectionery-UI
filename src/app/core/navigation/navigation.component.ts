@@ -26,14 +26,14 @@ export class NavigationComponent implements OnInit {
     }
 
     this.router.navigateByUrl(redirectUrl);
-    this.windowScrollingSerive.enable();
+    this.windowScrollingSerive.enableScrolling();
   }
 
   public openBurgerMenu(): void {
     if (this.isMenuOpened) {
-      this.windowScrollingSerive.enable();
+      this.windowScrollingSerive.enableScrolling();
     } else {
-      this.windowScrollingSerive.disable();
+      this.windowScrollingSerive.disableScrolling();
     }
 
     this.isMenuOpened = !this.isMenuOpened;

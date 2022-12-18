@@ -1,5 +1,11 @@
-<div class="scroll-sidebar scroll-sidebar--visible">
-  <div class="scroll-sidebar__content">
+<div 
+  class="scroll-sidebar"
+  [ngClass]="{ 'scroll-sidebar--visible' : scrollY >= pageHeight }"
+>
+  <div 
+    class="scroll-sidebar__content"
+    (click)="scrollToTop()"
+  >
     <div class="scroll-sidebar__icon"></div>
   </div>
 </div>
