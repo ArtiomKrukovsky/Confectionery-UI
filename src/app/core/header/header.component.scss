@@ -29,9 +29,15 @@
 
 .social-links {
     &__image{
-        display: inline;
         width: 35px;
+        height: 35px;
         padding: 0 5px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
     }
 }
 
@@ -42,6 +48,10 @@
 }
 
 .header__social-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
     @media (max-width:992px) {
         display: none;
     }
