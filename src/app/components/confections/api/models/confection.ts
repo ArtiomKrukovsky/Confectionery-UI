@@ -1,12 +1,13 @@
-import { IIngredient } from "./ingredient";
-
 export interface IConfection {
     id?: string,
     name: string,
     description: string,
     price: number,
-    imageUrl: string,
+    imageUrl: string, // will be receving as a sep call
     minimumPortions: number,
     maximumPortions: number,
-    ingredients: IIngredient[]
+    weight: number,
+	isLimited: boolean,
+	minimumOrderCount?: number,
+	isOutOfStock: boolean
 }

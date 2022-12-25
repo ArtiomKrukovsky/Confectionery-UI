@@ -35,7 +35,9 @@ export class ConfectionService implements OnDestroy {
     imageUrl: '',
     minimumPortions: 0,
     maximumPortions: 0,
-    ingredients: []
+    weight: 0,
+    isLimited: false,
+    isOutOfStock: false
   }
 
   private confectionMappings$: BehaviorSubject<IConfectionMapping[]>;

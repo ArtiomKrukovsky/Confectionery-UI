@@ -63,11 +63,10 @@ export class CreateConfectionComponent implements OnInit {
       imageUrl: 'https://sugarspunrun.com/wp-content/uploads/2019/01/Best-Cheesecake-Recipe-2-1-of-1-4.jpg',
       maximumPortions: 7,
       minimumPortions: 10,
-      ingredients: [{
-        name: 'strawberry',
-        isAllergen: true,
-        relativeAmount: 1.0
-      }]
+      weight: 1100,
+      isLimited: false,
+      minimumOrderCount: undefined,
+      isOutOfStock: false
     }
 
     this.confectionService.saveConfection(confection);
