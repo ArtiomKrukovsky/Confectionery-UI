@@ -44,8 +44,16 @@ export class ConfectionDetailComponent implements OnInit, OnDestroy {
   }
 
   private subscribeToServices(): void {
-    this.subscriptions$.add(this.confectionService.SelectedConfection.subscribe(selectedConfection => this.confection = selectedConfection));
+    this.subscriptions$.add(this.confectionService.SelectedConfection.subscribe(selectedConfection => {
+      this.confection = selectedConfection;
+      this.setDefaultConfectionCount();
+    }));
+
     this.subscriptions$.add(this.confectionService.IsLoading.subscribe(isLoading => this.isLoading = isLoading));
     this.subscriptions$.add(this.popupService.isVisible$.subscribe(value => this.isDisplayModal = value));
+  }
+
+  private setDefaultConfectionCount(): void {
+    this.confectionCount = this.confection.minimumOrderCount ?? 1;
   }
 }
