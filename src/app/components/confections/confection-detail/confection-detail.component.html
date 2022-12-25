@@ -8,10 +8,6 @@
     </div>
     <div class="confection-detail__body">
       <h3 class="confection-detail__title">{{ confection.name }}</h3>
-      <span class="confection-detail__parameters">
-        <div class="confection-detail__weight">{{ confection.weight }} гр</div>
-        <div class="confection-detail__portions">{{ confection.minimumPortions }}-{{ confection.maximumPortions }} порций</div>
-      </span>
       <div class="confection-detail__details">
         <ul class="nav-tab confection-detail__pivot">
           <li class="nav-tab__item">
@@ -22,6 +18,7 @@
           <p>{{ confection.description }}</p>
         </div>
       </div>
+      <div class="confection-detail__weight">Масса: {{ confection.weight }} гр</div>
       <div class="confection-detail__price">
         <p class="confection-detail__price--lable">За единицу</p>
         {{ confection.price }} р.

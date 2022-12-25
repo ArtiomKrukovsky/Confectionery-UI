@@ -61,10 +61,8 @@ export class CreateConfectionComponent implements OnInit {
       description: this.form.value.description as string,
       price: 200,
       imageUrl: 'https://sugarspunrun.com/wp-content/uploads/2019/01/Best-Cheesecake-Recipe-2-1-of-1-4.jpg',
-      maximumPortions: 7,
-      minimumPortions: 10,
       weight: 1100,
-      isLimited: false,
+      isOrderCountLimited: false,
       minimumOrderCount: undefined,
       isOutOfStock: false
     }

@@ -33,10 +33,8 @@ export class ConfectionService implements OnDestroy {
     description: '',
     price: 0,
     imageUrl: '',
-    minimumPortions: 0,
-    maximumPortions: 0,
     weight: 0,
-    isLimited: false,
+    isOrderCountLimited: false,
     isOutOfStock: false
   }
 

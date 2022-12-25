@@ -4,10 +4,8 @@ export interface IConfection {
     description: string,
     price: number,
     imageUrl: string, // will be receving as a sep call
-    minimumPortions: number,
-    maximumPortions: number,
     weight: number,
-	isLimited: boolean,
+	isOrderCountLimited: boolean,
 	minimumOrderCount?: number,
 	isOutOfStock: boolean
 }

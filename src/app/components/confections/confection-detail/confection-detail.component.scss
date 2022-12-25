@@ -38,48 +38,21 @@
         padding: 0px 3em;
     }
 
-    // quantity information
-    &__parameters {
-        display: flex;
-        justify-content: space-evenly;
-        font-size: 1.4rem;
-        font-weight: 500;
-        margin-bottom: 1.07em;
-    }
-
-    &__weight {
-        &:before{
-            display: inline-block;
-            content: '';
-            background-image: url('/assets/icons/weighing-machine.png');
-            background-size: 35px 35px;
-            height: 35px;
-            width: 35px;
-            margin: 0px 0.75rem 0px 0px;
-        }
-    }
-
-    &__portions {
-        &:before{
-            display: inline-block;
-            content: '';
-            background-image: url('/assets/icons/pie-chart.png');
-            background-size: 35px 35px;
-            height: 35px;
-            width: 35px;
-            margin: 0px 0.75rem 0px 0px;
-        }
-    }
-
     // pivot with short-details
     &__pivot{
         margin-bottom: 1rem;
     }
 
     &__description {
-        font-size: 1.10rem;
+        font-size: 1.10rem; // 17,6
         line-height: 1.7;
-        margin-bottom: 3em;
+        margin-bottom: 1.36em; 
+    }
+
+    &__weight {
+        font-size: 1.4rem; // 22,4
+        font-weight: 500;
+        margin-bottom: 1.07em;
     }
 
     &__price {
