@@ -20,12 +20,12 @@ export class NavigationComponent implements OnInit {
   ngOnInit() {
   }
 
-  public redirectToPage(redirectUrl: string) : void {
+  public navigateTo(routerLink: string, fragment: string = ''): void {
     if (this.isMenuOpened) {
       this.isMenuOpened = false;
     }
 
-    this.router.navigateByUrl(redirectUrl);
+    this.router.navigate([routerLink], { fragment });
     this.windowScrollingSerive.enableScrolling();
   }
 

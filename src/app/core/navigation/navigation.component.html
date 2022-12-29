@@ -23,34 +23,31 @@
           <li>
             <a 
               class="menu__link"
-              routerLink="/catalog"
-              fragment="cakes"
+              (click)="navigateTo('/catalog', 'cakes')"
             >Торты</a>
           </li>
           <li>
             <a 
               class="menu__link"
-              routerLink="/catalog" 
-              fragment="desserts"
+              (click)="navigateTo('/catalog', 'desserts')"
             >Пирожные</a>
           </li>
           <li>
             <a 
               class="menu__link"
-              routerLink="/catalog" 
-              fragment="tartelettes"
+              (click)="navigateTo('/catalog', 'tartelettes')"
             >Тарталетки</a>
           </li>
           <li>
             <a 
               class="menu__link"
-              (click)="redirectToPage('#')"
+              (click)="navigateTo('#')"
             >Зефир</a>
           </li>
           <li>
             <a 
               class="menu__link"
-              (click)="redirectToPage('#')"
+              (click)="navigateTo('#')"
             >Ещё..</a>
           </li>
         </ul>
