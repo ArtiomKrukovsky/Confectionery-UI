@@ -16,6 +16,7 @@ import { ScrollSidebarModule } from 'src/app/shared/components/scroll-sidebar/sc
 import { ProgressSpinnerModule } from 'src/app/shared/components/progress-spinner/progress-spinner.module';
 import { PopupModule } from 'src/app/shared/components/popup/popup.module';
 import { NoProductFoundModule } from 'src/app/shared/components/no-product-found/no-product-found.module';
+import { BadgeModule } from 'src/app/shared/components/badge/badge.module';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { NoProductFoundModule } from 'src/app/shared/components/no-product-found
     PopupModule,
     NoProductFoundModule,
     ScrollSidebarModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    BadgeModule
   ],
   declarations: [
     ConfectionCatalogComponent,

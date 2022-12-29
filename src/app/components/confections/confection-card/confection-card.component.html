@@ -4,6 +4,13 @@
       <img [src]="confection.imageUrl" [alt]="confection.name"> 
     </a>
   </div>
+
+  <app-badge 
+    class="confection-card__badge"
+    *ngIf="confection.isOrderCountLimited" 
+    [badgeText]="computeBadgeLimitationText()"
+    badgeTheme="default"
+  ></app-badge>
   
   <a class="confection-card__title" (click)="openProductDetail()">{{ confection.name }}</a>
 

@@ -1,0 +1,12 @@
+@import 'abstracts/variables';
+
+.badge {
+    background-color: $light-orange;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: black;
+    padding: 0.25rem 0.5rem;
+
+    &--danger {}
+    &--primary{}
+}

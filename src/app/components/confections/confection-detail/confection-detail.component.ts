@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PopupService } from 'src/app/services/popup.service';
+import { DEFAULT_ORDER_COUNT } from 'src/app/shared/constants/order.constants';
 import { IConfection } from '../api/models/confection';
 import { ConfectionService } from '../services/confection.service';
 
@@ -46,14 +47,16 @@ export class ConfectionDetailComponent implements OnInit, OnDestroy {
   private subscribeToServices(): void {
     this.subscriptions$.add(this.confectionService.SelectedConfection.subscribe(selectedConfection => {
       this.confection = selectedConfection;
-      this.setDefaultConfectionCount();
+      this.setMinimunConfectionOrderCount();
     }));
 
     this.subscriptions$.add(this.confectionService.IsLoading.subscribe(isLoading => this.isLoading = isLoading));
     this.subscriptions$.add(this.popupService.isVisible$.subscribe(value => this.isDisplayModal = value));
   }
 
-  private setDefaultConfectionCount(): void {
-    this.confectionCount = this.confection.minimumOrderCount ?? 1;
+  private setMinimunConfectionOrderCount(): void {
+    this.confectionCount = this.confection.isOrderCountLimited 
+      ? this.confection.minimumOrderCount
+      : DEFAULT_ORDER_COUNT;
   }
 }

@@ -2,6 +2,7 @@
 @import 'components/buttons';
 
 .confection-card {
+    position: relative;
     font-size: 1.25rem;
     font-weight: 500;
 
@@ -19,6 +20,12 @@
             left: 0;
             right: 0;
         }
+    }
+
+    &__badge {
+        position: absolute;
+        right: 0;
+        top: 0;
     }
 
     &__title {

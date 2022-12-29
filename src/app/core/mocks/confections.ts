@@ -9,7 +9,7 @@ export const CONFECTIONS : IConfection[] = [
         imageUrl: 'https://sugarspunrun.com/wp-content/uploads/2019/01/Best-Cheesecake-Recipe-2-1-of-1-4.jpg',
         weight: 1100,
         isOrderCountLimited: false,
-        minimumOrderCount: undefined,
+        minimumOrderCount: 1,
         isOutOfStock: false 
     },
     {
@@ -20,7 +20,7 @@ export const CONFECTIONS : IConfection[] = [
         imageUrl: 'https://embassy.by/assets/images/products/33/large/morkva-1.jpg',
         weight: 1600,
         isOrderCountLimited: false,
-        minimumOrderCount: undefined,
+        minimumOrderCount: 1,
         isOutOfStock: false
     },
     {
@@ -31,7 +31,7 @@ export const CONFECTIONS : IConfection[] = [
         imageUrl: 'https://embassy.by/assets/images/products/27/large/dizayn-bez-nazvaniya-7.jpg',
         weight: 1600,
         isOrderCountLimited: false,
-        minimumOrderCount: undefined,
+        minimumOrderCount: 1,
         isOutOfStock: false
     },
     {
@@ -42,7 +42,7 @@ export const CONFECTIONS : IConfection[] = [
         imageUrl: 'https://embassy.by/assets/images/products/67/large/naos.jpg',
         weight: 2000,
         isOrderCountLimited: false,
-        minimumOrderCount: undefined,
+        minimumOrderCount: 1,
         isOutOfStock: false
     },
     {
@@ -53,7 +53,7 @@ export const CONFECTIONS : IConfection[] = [
         imageUrl: 'https://embassy.by/assets/images/products/65/large/angela.jpg',
         weight: 1900,
         isOrderCountLimited: false,
-        minimumOrderCount: undefined,
+        minimumOrderCount: 1,
         isOutOfStock: false
     },
     {
@@ -64,7 +64,7 @@ export const CONFECTIONS : IConfection[] = [
         imageUrl: 'https://embassy.by/assets/images/products/56/large/dizayn-bez-nazvaniya.jpg',
         weight: 1170,
         isOrderCountLimited: false,
-        minimumOrderCount: undefined,
+        minimumOrderCount: 1,
         isOutOfStock: false
     },
     {

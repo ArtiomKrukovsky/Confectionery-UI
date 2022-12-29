@@ -63,7 +63,7 @@ export class CreateConfectionComponent implements OnInit {
       imageUrl: 'https://sugarspunrun.com/wp-content/uploads/2019/01/Best-Cheesecake-Recipe-2-1-of-1-4.jpg',
       weight: 1100,
       isOrderCountLimited: false,
-      minimumOrderCount: undefined,
+      minimumOrderCount: 1,
       isOutOfStock: false
     }
 

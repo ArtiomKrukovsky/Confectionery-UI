@@ -6,6 +6,6 @@ export interface IConfection {
     imageUrl: string, // will be receving as a sep call
     weight: number,
 	isOrderCountLimited: boolean,
-	minimumOrderCount?: number,
+	minimumOrderCount: number,
 	isOutOfStock: boolean
 }
