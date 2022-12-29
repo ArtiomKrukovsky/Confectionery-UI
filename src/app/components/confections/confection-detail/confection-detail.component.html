@@ -19,10 +19,19 @@
         </div>
       </div>
       <div class="confection-detail__weight">Масса: {{ confection.weight }} гр</div>
+
       <div class="confection-detail__price">
         <p class="confection-detail__price--lable">За единицу</p>
         {{ confection.price }} р.
       </div>
+
+      <div 
+        *ngIf="confection.isOrderCountLimited"
+        class="confection-detail__limitaion-lable"
+      >
+        * Минимальный заказ - {{ confection.minimumOrderCount }} шт.
+      </div>
+
       <form class="confection-detail__form">
         <div class="confection-detail__quantity-counter">
           <input 
