@@ -20,6 +20,8 @@ export class OrderConfectionComponent implements OnInit, OnDestroy {
   public confection: IConfection;
   public isLoading: boolean;
 
+  public totalLine: string = '';
+
   private subscriptions$: Subscription;
 
   public form = new FormGroup({
@@ -64,13 +66,14 @@ export class OrderConfectionComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.calculateTotalLine();
   }
 
   ngOnDestroy(): void {
     this.subscriptions$.unsubscribe();
   }
 
-  public order() {
+  public order(): void {
     let successMessage: NotificationMessage = {
       title: ORDER_TITLE,
       message: SUCCESS_ORDER_MESSAGE
@@ -78,6 +81,10 @@ export class OrderConfectionComponent implements OnInit, OnDestroy {
       
     this.notificationService.showSuccess(successMessage);
     this.popupService.close();
+  }
+
+  private calculateTotalLine(): void {
+    this.totalLine = (this.confection.price * this.quantityOrder).toFixed(2);
   }
 
   private subscribeToServices(): void {
