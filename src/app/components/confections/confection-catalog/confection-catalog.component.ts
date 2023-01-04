@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PopupService } from 'src/app/services/popup.service';
 import { ConfectionType } from '../../../shared/enums/confection-type.enum';
@@ -12,22 +13,25 @@ import { ConfectionService } from '../services/confection.service';
 })
 export class ConfectionCatalogComponent implements OnInit {
   public confectionMappings: IConfectionMapping[];
-  public isLoading: boolean;
-
   public isDisplayModal: boolean;
 
   private subscriptions$: Subscription;
 
   constructor(
+    public popupService: PopupService,
     private confectionService: ConfectionService,
-    public popupService: PopupService
+    private route: ActivatedRoute
   ) {
     this.subscriptions$ = new Subscription();
     this.subscribeToServices();
   }
 
   ngOnInit(): void {
-    this.confectionService.fetchConfectionMappings();
+    // the logic was transformed to resolvers, because of anchor navigation problems
+    // the problem might be solved in new versions of angular
+    this.route.data.subscribe(({ confectionMappings }) => {
+      this.confectionMappings = confectionMappings;
+    });
   }
 
   public displayModal(): void {
@@ -39,8 +43,6 @@ export class ConfectionCatalogComponent implements OnInit {
   }
 
   private subscribeToServices() {
-    this.subscriptions$.add(this.confectionService.IsLoading.subscribe(isLoading => this.isLoading = isLoading));
-    this.subscriptions$.add(this.confectionService.ConfectionMappings.subscribe(confectionMappings => this.confectionMappings = confectionMappings));
     this.subscriptions$.add(this.popupService.isVisible$.subscribe(value => this.isDisplayModal = value));
   }
 }

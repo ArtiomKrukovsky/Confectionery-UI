@@ -17,10 +17,12 @@ import { ProgressSpinnerModule } from 'src/app/shared/components/progress-spinne
 import { PopupModule } from 'src/app/shared/components/popup/popup.module';
 import { NoProductFoundModule } from 'src/app/shared/components/no-product-found/no-product-found.module';
 import { BadgeModule } from 'src/app/shared/components/badge/badge.module';
+import { ConfectionsRoutingModule } from './confections-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    ConfectionsRoutingModule,
     FormsModule,
     MatButtonModule,
     MatInputModule,

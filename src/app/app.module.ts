@@ -13,6 +13,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { NavigationModule } from './core/navigation/navigation.module';
 import { HeaderModule } from './core/header/header.module';
 import { FooterModule } from './core/footer/footer.module';
+import { ProgressSpinnerModule } from './shared/components/progress-spinner/progress-spinner.module';
 
 import { Router, Scroll } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
@@ -31,6 +32,7 @@ import { filter } from 'rxjs/operators';
     HeaderModule,
     NavigationModule,
     FooterModule,
+    ProgressSpinnerModule,
     ConfectionsModule,
     ToastrModule.forRoot({
       timeOut: 3500,

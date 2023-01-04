@@ -1,6 +1,6 @@
 <div 
   class="confection-catalog"
-  *ngIf="!isLoading && confectionMappings; else noConfectionMappings"
+  *ngIf="confectionMappings"
 >
   <div 
     class="confection-catalog__content"
@@ -13,10 +13,6 @@
     ></app-confection-section>
   </div>
 </div>
-
-<ng-template #noConfectionMappings>
-  <app-progress-spinner></app-progress-spinner>
-</ng-template>
 
 <!-- <div *ngIf="confections | filterConfections: term as filteredConfections">
   <app-no-product-found *ngIf="!isLoading && filteredConfections.length === 0"></app-no-product-found>

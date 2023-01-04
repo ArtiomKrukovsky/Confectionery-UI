@@ -5,7 +5,10 @@ import { ConfectionDetailComponent } from './components/confections/confection-d
 
 const routes: Routes = [
   { path: '', redirectTo: 'catalog', pathMatch: 'full' },
-  { path: 'catalog', component: ConfectionCatalogComponent },
+  {
+    path: 'catalog',
+    loadChildren: () => import('./components/confections/confections.module').then((m) => m.ConfectionsModule)
+  },
   { path: 'orders', component: ConfectionCatalogComponent },
   { path: 'cakes/:id', component: ConfectionDetailComponent },
   { path: 'desserts/:id', component: ConfectionDetailComponent },
