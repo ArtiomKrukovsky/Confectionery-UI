@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PopupService } from 'src/app/services/popup.service';
@@ -11,7 +11,7 @@ import { ConfectionService } from '../services/confection.service';
   templateUrl: './confection-catalog.component.html',
   styleUrls: ['./confection-catalog.component.scss']
 })
-export class ConfectionCatalogComponent implements OnInit {
+export class ConfectionCatalogComponent implements OnInit, OnDestroy {
   public confectionMappings: IConfectionMapping[];
   public isDisplayModal: boolean;
 
@@ -32,6 +32,10 @@ export class ConfectionCatalogComponent implements OnInit {
     this.route.data.subscribe(({ confectionMappings }) => {
       this.confectionMappings = confectionMappings;
     });
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions$.unsubscribe();
   }
 
   public displayModal(): void {
