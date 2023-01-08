@@ -4,6 +4,9 @@ import { PopupService } from 'src/app/services/popup.service';
 import { IConfection } from '../api/models/confection';
 import { ConfectionService } from '../services/confection.service';
 
+/*
+  will be moved to the separate admin application
+*/
 @Component({
   selector: 'app-create-confection',
   templateUrl: './create-confection.component.html',
