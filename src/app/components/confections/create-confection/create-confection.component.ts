@@ -63,10 +63,10 @@ export class CreateConfectionComponent implements OnInit {
       name: this.form.value.title as string,
       description: this.form.value.description as string,
       price: 200,
-      imageUrl: 'https://sugarspunrun.com/wp-content/uploads/2019/01/Best-Cheesecake-Recipe-2-1-of-1-4.jpg',
+      pictureUrl: 'https://sugarspunrun.com/wp-content/uploads/2019/01/Best-Cheesecake-Recipe-2-1-of-1-4.jpg',
       weight: 1100,
       isOrderCountLimited: false,
-      minimumOrderCount: 1,
+      minimumOrderCount: 1, 
       isOutOfStock: false
     }
 

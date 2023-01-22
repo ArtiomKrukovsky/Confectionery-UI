@@ -1,0 +1,1 @@
+export const CONFECTION_URL = 'confection';

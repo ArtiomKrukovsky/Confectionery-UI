@@ -6,7 +6,7 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ConfectionApi } from '../api/confection.api';
-import { IConfectionMapping } from '../api/models/confectionMapping';
+import { IConfectionMapping } from '../api/models/confection-mapping';
 
 @Injectable({
   providedIn: 'root'

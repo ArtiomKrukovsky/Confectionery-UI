@@ -1,4 +1,4 @@
-export interface IPicture {
+export interface IConfectionPicture {
     id: string;
     shortName: string;
     extension: string;

@@ -4,7 +4,13 @@
 >
   <div class="confection-detail__row">
     <div class="confection-detail__image">
-      <img [src]="confection.imageUrl" alt="Картинка продукта">
+      <img *ngIf="confection.pictureUrl as picture; else noPictureFound"
+        [src]="picture" 
+        alt="Картинка продукта">
+        
+      <ng-template #noPictureFound>
+        <img src="/assets/images/no_image_available.png" alt="Нет картинки">
+      </ng-template>
     </div>
     <div class="confection-detail__body">
       <h3 class="confection-detail__title">{{ confection.name }}</h3>
