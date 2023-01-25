@@ -3,8 +3,8 @@ import { IConfectionMapping } from "../../components/confections/api/models/conf
 
 export const CONFECTION_MAPPINGS : IConfectionMapping[] = [
     {
-        confetionType: ConfectionType.Cakes,
-        confetions: [
+        confectionType: ConfectionType.Cakes,
+        confections: [
             {
                 id: 'bc7bc3ed-0b88-4019-aae9-59579b6a6713',
                 name: 'Чизкейк',
@@ -31,13 +31,7 @@ export const CONFECTION_MAPPINGS : IConfectionMapping[] = [
                 isOrderCountLimited: false,
                 minimumOrderCount: 1,
                 isOutOfStock: false,
-                pictures: [
-                    {
-                        id: '906b6ab0-d74a-4829-b9b2-def3cefe07fa',
-                        shortName: 'Carrot cake',
-                        url: 'https://embassy.by/assets/images/products/33/large/morkva-1.jpg'
-                    }
-                ]
+                pictures: []
             },
             {
                 id: 'fb1c68d5-6ca2-4af2-acbe-c0d9239c1248',
@@ -93,8 +87,8 @@ export const CONFECTION_MAPPINGS : IConfectionMapping[] = [
         ]
     },
     {
-        confetionType: ConfectionType.Desserts,
-        confetions: [
+        confectionType: ConfectionType.Desserts,
+        confections: [
             {
                 id: 'c54ecd44-9e87-4ca1-9262-f1fc9d4e2819',
                 name: 'Меренговый рулет',
@@ -149,8 +143,8 @@ export const CONFECTION_MAPPINGS : IConfectionMapping[] = [
         ]
     },
     {
-        confetionType: ConfectionType.Tartelettes,
-        confetions: [
+        confectionType: ConfectionType.Tartelettes,
+        confections: [
             {
                 id: 'e71118f7-4ba2-4ac4-a8b5-88e79b17dc0c',
                 name: 'Тарталетка «Монблан»',
