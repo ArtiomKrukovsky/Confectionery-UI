@@ -63,11 +63,17 @@ export class CreateConfectionComponent implements OnInit {
       name: this.form.value.title as string,
       description: this.form.value.description as string,
       price: 200,
-      pictureUrl: 'https://sugarspunrun.com/wp-content/uploads/2019/01/Best-Cheesecake-Recipe-2-1-of-1-4.jpg',
       weight: 1100,
       isOrderCountLimited: false,
       minimumOrderCount: 1, 
-      isOutOfStock: false
+      isOutOfStock: false,
+      pictures: [
+        {
+          id: 'aec32681-ff1f-4bf6-ae40-fc704ca0172a',
+          shortName: 'N/A Cake',
+          url: 'https://sugarspunrun.com/wp-content/uploads/2019/01/Best-Cheesecake-Recipe-2-1-of-1-4.jpg'
+        }
+      ]
     }
 
     this.confectionService.saveConfection(confection);

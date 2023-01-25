@@ -1,13 +1,14 @@
-import { SafeUrl } from "@angular/platform-browser";
+import { IConfectionPicture } from "./confection-picture";
 
 export interface IConfection {
     id?: string,
     name: string,
     description: string,
     price: number,
-    pictureUrl: SafeUrl,
     weight: number,
 	isOrderCountLimited: boolean,
 	minimumOrderCount: number,
-	isOutOfStock: boolean
+	isOutOfStock: boolean,
+    
+    pictures: IConfectionPicture[]
 }

@@ -4,11 +4,12 @@
 >
   <div class="confection-detail__row">
     <div class="confection-detail__image">
-      <img *ngIf="confection.pictureUrl as picture; else noPictureFound"
+      <img 
+        *ngIf="confection.pictures[0] as picture; else noPictureFound"
         referrerPolicy="no-referrer"
-        [src]="picture" 
-        alt="Картинка продукта">
-        
+        [src]="picture.url" 
+        [alt]="confection.name"
+      >
       <ng-template #noPictureFound>
         <img src="/assets/images/no_image_available.png" alt="Нет картинки">
       </ng-template>

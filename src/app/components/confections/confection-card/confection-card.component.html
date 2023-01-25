@@ -1,7 +1,14 @@
 <div class="confection-card"> 
   <div class="confection-card__image">
     <a (click)="openProductDetail()">
-      <img [src]="confection.pictureUrl" [alt]="confection.name"> 
+      <img 
+        *ngIf="confection.pictures[0] as picture; else noPictureFound" 
+        [src]="picture.url" 
+        [alt]="confection.name"
+      > 
+      <ng-template #noPictureFound>
+        <img src="/assets/images/no_image_available.png" alt="Нет картинки">
+      </ng-template>
     </a>
   </div>
 

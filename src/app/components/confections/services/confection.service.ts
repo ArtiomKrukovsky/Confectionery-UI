@@ -4,11 +4,6 @@ import { IConfection } from '../api/models/confection';
 import { ConfectionApi } from '../api/confection.api';
 import { ConfectionRoutesByTypeMap, ConfectionTitlesByTypeMap } from 'src/app/shared/maps/confection-type.map';
 import { ConfectionType } from 'src/app/shared/enums/confection-type.enum';
-import { ConfectionPictureApi } from '../api/confection-picture.api';
-import { ImageProcessingService } from 'src/app/services/image-processing.service';
-import { IConfectionPicture } from '../api/models/confection-picture';
-import { SafeUrl } from '@angular/platform-browser';
-import { EMPTY_URL } from 'src/app/shared/constants/common.constants';
 
 @Injectable({
   providedIn: 'root'
@@ -32,11 +27,17 @@ export class ConfectionService implements OnDestroy {
     name: '',
     description: '',
     price: 0,
-    pictureUrl: '',
     weight: 0,
     minimumOrderCount: 1,
     isOrderCountLimited: false,
-    isOutOfStock: false
+    isOutOfStock: false,
+    pictures: [
+      {
+        id: '',
+        shortName: '',
+        url: ''
+      }
+    ]
   }
 
   private confections$: BehaviorSubject<IConfection[]>;
@@ -44,9 +45,7 @@ export class ConfectionService implements OnDestroy {
   private isLoading$: BehaviorSubject<boolean>;
 
   constructor(
-    private confectionApi: ConfectionApi, 
-    private confectionPictureApi: ConfectionPictureApi,
-    private imageProcessingService: ImageProcessingService
+    private confectionApi: ConfectionApi
   ) { 
     this.confections$ = new BehaviorSubject<IConfection[]>([]);
     this.selectedConfection$ = new BehaviorSubject<IConfection>(this.defaultConfection);
@@ -77,15 +76,11 @@ export class ConfectionService implements OnDestroy {
   public fetchConfection(id: string) : void {
     this.isLoading$.next(true);
 
-    forkJoin([
-      this.confectionApi.getConfection(id),
-      this.confectionPictureApi.getConfectionPicture(id)
-    ])
+    this.confectionApi.getConfection(id)
     .pipe(
       tap(() => this.isLoading$.next(false))
     )
-    .subscribe(([confection, confectionPicture]) => {
-      confection.pictureUrl = this.getConfectionPictureUrl(confectionPicture);
+    .subscribe((confection) => {
       this.selectedConfection$.next(confection);
     });
   }
@@ -104,16 +99,5 @@ export class ConfectionService implements OnDestroy {
 
   public computeConfectionTitle(confectionType: ConfectionType): string {
     return ConfectionTitlesByTypeMap.get(confectionType);
-  }
-
-  private getConfectionPictureUrl(confectionPicture: IConfectionPicture): SafeUrl {
-    if (!confectionPicture) {
-      return EMPTY_URL;
-    }
-
-    return this.imageProcessingService.getImageUrl(
-      confectionPicture.extension, 
-      confectionPicture.content
-    );
   }
 }
