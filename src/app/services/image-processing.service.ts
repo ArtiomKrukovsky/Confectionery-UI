@@ -4,7 +4,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 @Injectable({
   providedIn: 'root'
 })
-export class ImageService {
+export class ImageProcessingService {
 
   constructor(private sanitizer: DomSanitizer) { }
 

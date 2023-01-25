@@ -5,7 +5,7 @@ import { ConfectionApi } from '../api/confection.api';
 import { ConfectionRoutesByTypeMap, ConfectionTitlesByTypeMap } from 'src/app/shared/maps/confection-type.map';
 import { ConfectionType } from 'src/app/shared/enums/confection-type.enum';
 import { ConfectionPictureApi } from '../api/confection-picture.api';
-import { ImageService } from 'src/app/services/image.service';
+import { ImageProcessingService } from 'src/app/services/image-processing.service';
 import { IConfectionPicture } from '../api/models/confection-picture';
 import { SafeUrl } from '@angular/platform-browser';
 import { EMPTY_URL } from 'src/app/shared/constants/common.constants';
@@ -46,7 +46,7 @@ export class ConfectionService implements OnDestroy {
   constructor(
     private confectionApi: ConfectionApi, 
     private confectionPictureApi: ConfectionPictureApi,
-    private imageService: ImageService
+    private imageProcessingService: ImageProcessingService
   ) { 
     this.confections$ = new BehaviorSubject<IConfection[]>([]);
     this.selectedConfection$ = new BehaviorSubject<IConfection>(this.defaultConfection);
@@ -111,7 +111,7 @@ export class ConfectionService implements OnDestroy {
       return EMPTY_URL;
     }
 
-    return this.imageService.getImageUrl(
+    return this.imageProcessingService.getImageUrl(
       confectionPicture.extension, 
       confectionPicture.content
     );

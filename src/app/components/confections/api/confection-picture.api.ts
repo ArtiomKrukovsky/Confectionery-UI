@@ -15,6 +15,8 @@ export class ConfectionPictureApi {
 
     public getConfectionPicture(confectionId: string): Observable<IConfectionPicture> {
         // todo: add queries and params
-        return this.httpClient.get<IConfectionPicture>(`${environment.apiUrl}${CONFECTION_URL}/${confectionId}/picture`);
+        var url = `${environment.apiUrl}${CONFECTION_URL}/${confectionId}/picture`;
+
+        return this.httpClient.get<IConfectionPicture>(url);
     }
 }
