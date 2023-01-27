@@ -8,6 +8,7 @@
         padding: 1.5rem 0px 1.25rem 0px;
 
         @media (max-width:767px) {
+            flex-wrap: nowrap;
             flex-direction: column; 
         }
     }
