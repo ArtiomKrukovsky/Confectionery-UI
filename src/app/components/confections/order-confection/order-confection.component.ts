@@ -74,7 +74,7 @@ export class OrderConfectionComponent implements OnInit, OnDestroy {
   }
 
   public order(): void {
-    let successMessage: NotificationMessage = {
+    const successMessage: NotificationMessage = {
       title: ORDER_TITLE,
       message: SUCCESS_ORDER_MESSAGE
     }

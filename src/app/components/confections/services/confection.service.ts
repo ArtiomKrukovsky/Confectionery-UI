@@ -1,9 +1,11 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { BehaviorSubject, forkJoin, Observable, tap } from 'rxjs';
+import { BehaviorSubject, catchError, Observable, tap, throwError } from 'rxjs';
 import { IConfection } from '../api/models/confection';
 import { ConfectionApi } from '../api/confection.api';
 import { ConfectionRoutesByTypeMap, ConfectionTitlesByTypeMap } from 'src/app/shared/maps/confection-type.map';
 import { ConfectionType } from 'src/app/shared/enums/confection-type.enum';
+import { ErrorHandleService } from 'src/app/services/error-handle.service';
+import { GET_CONFECTION_ERROR_MESSAGE } from 'src/app/shared/constants/notification.constants';
 
 @Injectable({
   providedIn: 'root'
@@ -45,7 +47,8 @@ export class ConfectionService implements OnDestroy {
   private isLoading$: BehaviorSubject<boolean>;
 
   constructor(
-    private confectionApi: ConfectionApi
+    private confectionApi: ConfectionApi,
+    private errorHandleService: ErrorHandleService
   ) { 
     this.confections$ = new BehaviorSubject<IConfection[]>([]);
     this.selectedConfection$ = new BehaviorSubject<IConfection>(this.defaultConfection);
@@ -68,8 +71,9 @@ export class ConfectionService implements OnDestroy {
     .pipe(
       tap(() => this.isLoading$.next(false))
     )
-    .subscribe(confections => {
-      this.confections$.next(confections);
+    .subscribe({
+      next: (confections) => this.confections$.next(confections), 
+      error: (error) => this.errorHandleService.handle(error)
     });
   }
 
@@ -80,8 +84,9 @@ export class ConfectionService implements OnDestroy {
     .pipe(
       tap(() => this.isLoading$.next(false))
     )
-    .subscribe((confection) => {
-      this.selectedConfection$.next(confection);
+    .subscribe({
+      next: (confection) => this.selectedConfection$.next(confection), 
+      error: (error) => this.errorHandleService.handle(error)
     });
   }
 
