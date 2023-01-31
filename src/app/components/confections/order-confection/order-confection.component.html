@@ -45,11 +45,11 @@
     type="text" 
     class="form__input"
     placeholder="ФИО*"
-    formControlName="name"
+    formControlName="fullName"
   >
 
-  <div *ngIf="name.touched && name.invalid">
-    <p class="error-message" *ngIf="name.errors!['required']">Пожалуйста, введите ваше имя</p>
+  <div *ngIf="fullName.touched && fullName.invalid">
+    <p class="error-message" *ngIf="fullName.errors!['required']">Пожалуйста, введите ваше имя</p>
   </div>
 
   <input 

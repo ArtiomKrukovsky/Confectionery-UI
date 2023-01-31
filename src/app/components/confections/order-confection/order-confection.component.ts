@@ -25,7 +25,7 @@ export class OrderConfectionComponent implements OnInit, OnDestroy {
   private subscriptions$: Subscription;
 
   public form = new FormGroup({
-    name: new FormControl<string>("", [
+    fullName: new FormControl<string>("", [
       Validators.required, 
       Validators.minLength(3)
     ]),
@@ -40,8 +40,8 @@ export class OrderConfectionComponent implements OnInit, OnDestroy {
     ])
   })
 
-  public get name() {
-    return this.form.controls.name as FormControl;
+  public get fullName() {
+    return this.form.controls.fullName as FormControl;
   }
 
   public get email() {
