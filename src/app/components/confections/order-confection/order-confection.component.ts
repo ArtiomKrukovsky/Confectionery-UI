@@ -1,11 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { ORDER_TITLE, SUCCESS_ORDER_MESSAGE } from 'src/app/shared/constants/notification.constants';
-import { NotificationMessage } from 'src/app/services/notification/models/notification-message';
-import { NotificationService } from 'src/app/services/notification/notification.service';
-import { PopupService } from 'src/app/services/popup.service';
-import { IConfection } from '../api/models/confection';
+import { IConfection } from '../api/models/confection/confection';
 import { ConfectionService } from '../services/confection.service';
 
 @Component({
@@ -14,7 +10,7 @@ import { ConfectionService } from '../services/confection.service';
   styleUrls: ['./order-confection.component.scss']
 })
 export class OrderConfectionComponent implements OnInit, OnDestroy {
-  @Input() productId: string;
+  @Input() confectionId: string;
   @Input() quantityOrder: number; 
 
   public confection: IConfection;
@@ -57,9 +53,7 @@ export class OrderConfectionComponent implements OnInit, OnDestroy {
   } 
 
   constructor(
-    public confectionService: ConfectionService,
-    private popupService: PopupService,
-    private notificationService: NotificationService
+    public confectionService: ConfectionService
   ) { 
     this.subscriptions$ = new Subscription();
     this.subscribeToServices();
@@ -74,13 +68,15 @@ export class OrderConfectionComponent implements OnInit, OnDestroy {
   }
 
   public order(): void {
-    const successMessage: NotificationMessage = {
-      title: ORDER_TITLE,
-      message: SUCCESS_ORDER_MESSAGE
-    }
-      
-    this.notificationService.showSuccess(successMessage);
-    this.popupService.close();
+    this.confectionService.orderConfection(
+      this.confectionId, 
+      this.confection.price, 
+      this.quantityOrder, 
+      this.fullName.value as string,
+      this.email.value as string,
+      this.instagramProfile.value as string,
+      this.mobileNumber.value as string
+    );
   }
 
   private calculateTotalLine(): void {

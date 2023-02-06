@@ -2,9 +2,9 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http"
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
-import { IConfection } from "./models/confection";
+import { IConfection } from "./models/confection/confection";
 
-import { IConfectionMapping } from "./models/confection-mapping";
+import { IConfectionMapping } from "./models/confection/confection-mapping";
 import { CONFECTION_URL } from "src/app/shared/constants/api.constants";
 
 @Injectable({

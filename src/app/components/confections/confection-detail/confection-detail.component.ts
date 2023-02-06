@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PopupService } from 'src/app/services/popup.service';
 import { DEFAULT_ORDER_COUNT } from 'src/app/shared/constants/order.constants';
-import { IConfection } from '../api/models/confection';
+import { IConfection } from '../api/models/confection/confection';
 import { ConfectionService } from '../services/confection.service';
 
 @Component({

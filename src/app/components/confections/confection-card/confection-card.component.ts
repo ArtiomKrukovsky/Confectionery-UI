@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { computeOrderLimitaionText } from 'src/app/shared/constants/order.constants';
 import { ConfectionType } from 'src/app/shared/enums/confection-type.enum';
-import { IConfection } from '../api/models/confection';
+import { IConfection } from '../api/models/confection/confection';
 import { ConfectionService } from '../services/confection.service';
 
 @Component({

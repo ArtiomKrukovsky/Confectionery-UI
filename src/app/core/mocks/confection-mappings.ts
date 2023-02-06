@@ -1,5 +1,5 @@
 import { ConfectionType } from "../../shared/enums/confection-type.enum";
-import { IConfectionMapping } from "../../components/confections/api/models/confection-mapping";
+import { IConfectionMapping } from "../../components/confections/api/models/confection/confection-mapping";
 
 export const CONFECTION_MAPPINGS : IConfectionMapping[] = [
     {

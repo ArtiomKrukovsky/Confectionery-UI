@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PopupService } from 'src/app/services/popup.service';
-import { IConfection } from '../api/models/confection';
+import { IConfection } from '../api/models/confection/confection';
 import { ConfectionService } from '../services/confection.service';
 
 /*

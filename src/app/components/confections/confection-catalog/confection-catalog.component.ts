@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PopupService } from 'src/app/services/popup.service';
 import { ConfectionType } from '../../../shared/enums/confection-type.enum';
-import { IConfectionMapping } from '../api/models/confection-mapping';
+import { IConfectionMapping } from '../api/models/confection/confection-mapping';
 import { ConfectionService } from '../services/confection.service';
 
 @Component({
