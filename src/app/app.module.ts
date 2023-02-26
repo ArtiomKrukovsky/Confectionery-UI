@@ -19,6 +19,7 @@ import { Router, Scroll } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 import { filter } from 'rxjs/operators';
 import { HttpErrorInterceptor } from './core/interceptors/http-error.interceptor';
+import { InformationModule } from './components/information/information.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { HttpErrorInterceptor } from './core/interceptors/http-error.interceptor
     FooterModule,
     ProgressSpinnerModule,
     ConfectionsModule,
+    InformationModule,
     ToastrModule.forRoot({
       timeOut: 3500,
       preventDuplicates: true

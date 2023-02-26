@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
-import { ConfectionCatalogComponent } from './components/confections/confection-catalog/confection-catalog.component';
 import { ConfectionDetailComponent } from './components/confections/confection-detail/confection-detail.component';
 
 const routes: Routes = [
@@ -9,10 +8,13 @@ const routes: Routes = [
     path: 'catalog',
     loadChildren: () => import('./components/confections/confections.module').then((m) => m.ConfectionsModule)
   },
-  { path: 'orders', component: ConfectionCatalogComponent },
   { path: 'cakes/:id', component: ConfectionDetailComponent },
   { path: 'desserts/:id', component: ConfectionDetailComponent },
   { path: 'tartelettes/:id', component: ConfectionDetailComponent },
+  {
+    path: 'info',
+    loadChildren: () => import('./components/information/information.module').then((m) => m.InformationModule)
+  }
 ];
 
 const routerOptions: ExtraOptions = {

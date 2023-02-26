@@ -24,6 +24,10 @@
 .menu-links {
     a {
         padding: 0 0.563rem;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
