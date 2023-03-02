@@ -1,4 +1,9 @@
 .payment {
-	&__title { }
-	&__content { }
+	&__title { 
+        margin: .7em 0;
+    }
+
+	&__content p { 
+        margin: 0 0 1em 0;
+    }
 }

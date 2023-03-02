@@ -3,12 +3,12 @@
 @import 'abstracts/mixins';
 
 // vendors
-@import 'vendors/tailwind';
+//@import 'vendors/tailwind';
 
 // base
-@import 'base/base';
 @import 'base/reset';
 @import 'base/typography';
+@import 'base/base';
 
 // layout
 

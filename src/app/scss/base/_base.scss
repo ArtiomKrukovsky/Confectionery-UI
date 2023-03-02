@@ -30,3 +30,33 @@ body.locked {
         max-width: none;
     }
 }
+
+.m-conteiner {
+    max-width: 992px;
+    margin: 0px auto; // centering
+    padding: 0px 15px;
+}
+
+p {
+   margin: 0px 0px .75rem 0px;
+}
+
+.title-underlined {
+    font-size: 2.5rem;
+    line-height: 1.125;
+    text-align: center;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 3px;
+        background-color: $light-orange;
+        margin: 15px auto;
+    }
+}
+
+.text {
+    font-size: 1.10rem; // 17,6
+    line-height: 1.5;
+}
