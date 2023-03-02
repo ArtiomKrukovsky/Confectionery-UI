@@ -50,9 +50,7 @@
     align-items: center;
     justify-content: space-between;
 
-    &__order-button { 
-        @extend %deault-button;
-    }
+    &__order-button { }
 }
 
 .price-section {
