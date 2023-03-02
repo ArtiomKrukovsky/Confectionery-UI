@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
-import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   imports: [
-    CommonModule,
-    MatSliderModule 
+    CommonModule
   ],
   declarations: [HomeComponent],
   exports: [HomeComponent]

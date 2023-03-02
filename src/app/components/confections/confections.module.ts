@@ -6,8 +6,6 @@ import { ConfectionCatalogComponent } from './confection-catalog/confection-cata
 import { ConfectionCardComponent } from './confection-card/confection-card.component';
 import { FilterConfectionsPipe } from 'src/app/shared/pipes/filter-confections.pipe';
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
 import { CreateConfectionComponent } from './create-confection/create-confection.component';
 import { ConfectionDetailComponent } from './confection-detail/confection-detail.component';
 import { OrderConfectionComponent } from './order-confection/order-confection.component';
@@ -24,8 +22,6 @@ import { ConfectionsRoutingModule } from './confections-routing.module';
     CommonModule,
     ConfectionsRoutingModule,
     FormsModule,
-    MatButtonModule,
-    MatInputModule,
     ReactiveFormsModule,
     PopupModule,
     NoProductFoundModule,
