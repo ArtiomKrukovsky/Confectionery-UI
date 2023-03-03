@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PopupService } from 'src/app/services/popup.service';
+import { ResolverService } from 'src/app/services/resolver.service';
 import { ConfectionType } from '../../../shared/enums/confection-type.enum';
 import { IConfectionMapping } from '../api/models/confection/confection-mapping';
 import { ConfectionService } from '../services/confection.service';
@@ -13,13 +14,16 @@ import { ConfectionService } from '../services/confection.service';
 })
 export class ConfectionCatalogComponent implements OnInit, OnDestroy {
   public confectionMappings: IConfectionMapping[];
+
   public isDisplayModal: boolean;
+  public isLoading: boolean;
 
   private subscriptions$: Subscription;
 
   constructor(
     public popupService: PopupService,
     private confectionService: ConfectionService,
+    private progressSpinnerService: ResolverService,
     private route: ActivatedRoute
   ) {
     this.subscriptions$ = new Subscription();
@@ -48,5 +52,6 @@ export class ConfectionCatalogComponent implements OnInit, OnDestroy {
 
   private subscribeToServices() {
     this.subscriptions$.add(this.popupService.isVisible$.subscribe(value => this.isDisplayModal = value));
+    this.subscriptions$.add(this.progressSpinnerService.isLoading$.subscribe(value => this.isLoading = value));
   }
 }

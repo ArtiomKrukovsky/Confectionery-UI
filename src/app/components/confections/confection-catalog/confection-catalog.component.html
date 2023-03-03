@@ -14,6 +14,10 @@
   </div>
 </div>
 
+<div *ngIf="confectionMappings">
+  <app-no-product-found *ngIf="!isLoading && !confectionMappings.length"></app-no-product-found>
+</div>
+
 <!-- <div *ngIf="confections | filterConfections: term as filteredConfections">
   <app-no-product-found *ngIf="!isLoading && filteredConfections.length === 0"></app-no-product-found>
 </div> -->
