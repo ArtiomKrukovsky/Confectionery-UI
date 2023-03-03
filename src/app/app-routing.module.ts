@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'cakes/:id', component: ConfectionDetailComponent },
   { path: 'desserts/:id', component: ConfectionDetailComponent },
   { path: 'tartelettes/:id', component: ConfectionDetailComponent },
+  { path: 'marshmallow/:id', component: ConfectionDetailComponent },
   {
     path: 'info',
     loadChildren: () => import('./components/information/information.module').then((m) => m.InformationModule)
