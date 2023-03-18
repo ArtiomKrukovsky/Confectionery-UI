@@ -12,4 +12,4 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [LoginComponent],
   exports: [LoginComponent]
 })
-export class AuthorizationModule { }
+export class AuthenticationModule { }

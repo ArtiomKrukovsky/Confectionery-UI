@@ -10,7 +10,7 @@
         <form 
           class="login__form form"
           [formGroup]="form" 
-          (ngSubmit)="authorize"
+          (ngSubmit)="logIn"
         >
           <input 
             type="email" 
@@ -38,7 +38,7 @@
             type="submit" 
             class="form__button" 
             [disabled]="!form.valid" 
-            (click)="authorize()"
+            (click)="logIn()"
           >Зайти</button>
         </form>
       </div>

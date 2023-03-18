@@ -1,9 +1,10 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthorizationModule } from './components/authorization/authorization.module';
+import { AuthenticationModule } from './components/authentication/authentication.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { AuthorizationModule } from './components/authorization/authorization.mo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthorizationModule
+    AuthenticationModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
