@@ -1,0 +1,131 @@
+@import 'projects/administration-portal/src/app/scss/abstracts/variables';
+
+$module-height: 700px;
+
+.login {
+    width: 100%;
+    height: 100%;
+
+	&__container { 
+		max-width: 1175px;
+		height: inherit;
+		margin: 0 auto;
+		padding: 0px 15px;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@media (max-width: $md2) {
+			max-width: 750px;
+		}
+		@media (max-width: $md3) {
+			max-width: none;
+		}
+	}
+
+	&__module { 
+		width: 100%;
+		height: $module-height;
+		display: flex;
+		padding: 10px;
+		border-radius: 20px;
+		box-shadow: $shadow-gray 0px 2px 8px 0px;
+
+		@media (max-width: $md2) {
+			flex-direction: column;
+		}
+	}
+
+	&--half { 
+		flex: 0 0 50%;
+	}
+
+	&__content { 
+		padding: 4.375rem 3.125rem;
+
+		@media (max-width: $md3) {
+			padding: 4.375rem 1.5rem;
+		}
+	}
+
+	&__logo { 
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding-bottom: 3.75rem;
+	}
+
+	&__title { 
+		font-size: 2rem;
+ 		font-weight: 500;
+ 		line-height: 1.1875;
+ 		margin-bottom: 3.75rem;
+	}
+
+	&__side-image { 
+		height: calc( $module-height - 20px );
+ 		overflow: none;
+
+		img {
+			height: 100%;
+			width: 100%;
+ 			border-top-right-radius: 20px;
+ 			border-bottom-right-radius: 20px;
+			object-fit: cover;
+ 		}
+
+		@media (max-width: $md2) {
+			display: none;
+		}
+	}
+}
+
+.form {
+	&__input { 
+		width: 100%;
+		padding: 1rem 2rem;
+		border: 1px solid $light-gray;
+		border-radius: 15px;
+
+		margin-bottom: 1rem;
+
+		&:nth-child(2) {
+			margin-bottom: 2rem;
+		}
+	}
+
+	&__button { 
+		width: 100%;
+ 		color: white;
+ 		background: $light-orange;
+ 		padding: 16px 0;
+ 		border-radius: 30px;
+
+		&:hover {
+			background: $base-orange;
+			transition: 0.3s ease-in-out;
+		}
+
+		&:disabled {
+			cursor: not-allowed;
+            background-color: rgba(212, 211, 211, 0.785);
+        }
+	}
+
+	&__message-box { }
+}
+
+.logo {
+    &__img {
+        height: 85px;
+        width: auto;
+    }
+}
+
+.error-message { 
+	font-size: .95rem;
+	color: red;
+	font-weight: 300;
+	padding: 0.3rem;
+}

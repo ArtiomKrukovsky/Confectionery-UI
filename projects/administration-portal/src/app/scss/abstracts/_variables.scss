@@ -1,0 +1,17 @@
+// Container Parameters
+$minWidth: 320px;
+$maxWidth: 1920px;
+$maxWidthContainer: 1024px;
+$md1: $maxWidthContainer + 12 + px;
+$md2: 991.98px;
+$md3: 767.98px;
+$md4: 479.98px;
+
+// Default Colors
+$shadow-gray: rgba(99, 99, 99, 0.25) !default;
+
+$light-gray: #AEAEAE !default;
+
+$light-orange: #fbc88c !default;
+$base-orange: #f8b569 !default;
+$golden-color: #eac994 !default;

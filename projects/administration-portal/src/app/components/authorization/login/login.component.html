@@ -1,0 +1,50 @@
+<section class="login">
+  <div class="login__container">
+    <div class="login__module">
+      <div class="login__content login--half">
+        <a class="login__logo logo">
+          <img class="logo__img" src="../../../assets/images/logo_7.png" alt="logo">
+        </a>
+
+        <h2 class="login__title title">Log In</h2>
+        <form 
+          class="login__form form"
+          [formGroup]="form" 
+          (ngSubmit)="authorize"
+        >
+          <input 
+            type="email" 
+            class="form__input input"
+            placeholder="Электронная почта*"
+            formControlName="email"
+          >
+          <div class="form__message-box" *ngIf="email.touched && email.invalid">
+            <p class="error-message" *ngIf="email.errors!['required']">Пожалуйста, введите адрес вашей электронной почты</p>
+            <p class="error-message" *ngIf="email.errors!['email']">Введён неверный адрес электронной почты</p>
+          </div>
+  
+          <input 
+            type="password" 
+            class="form__input input"
+            placeholder="Пароль*"
+            formControlName="password"
+          >
+          <div class="form__message-box" *ngIf="password.touched && password.invalid">
+            <p class="error-message" *ngIf="password.errors!['required']">Пожалуйста, введите ваш пароль</p>
+            <p class="error-message" *ngIf="password.errors!['password']">Введён неверный пароль</p>
+          </div>
+  
+          <button 
+            type="submit" 
+            class="form__button" 
+            [disabled]="!form.valid" 
+            (click)="authorize()"
+          >Зайти</button>
+        </form>
+      </div>
+      <div class="login__side-image login--half">
+        <img src="/assets/images/bg_login.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</section>

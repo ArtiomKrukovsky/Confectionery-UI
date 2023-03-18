@@ -140,8 +140,13 @@
               "projects/administration-portal/src/assets"
             ],
             "styles": [
-              "projects/administration-portal/src/styles.scss"
+              "projects/administration-portal/src/app/scss/main.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "/src/app/scss/"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -212,7 +217,7 @@
               "projects/administration-portal/src/assets"
             ],
             "styles": [
-              "projects/administration-portal/src/styles.scss"
+              "projects/administration-portal/src/app/scss/main.scss"
             ],
             "scripts": []
           }

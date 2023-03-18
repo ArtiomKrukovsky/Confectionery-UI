@@ -1,0 +1,22 @@
+@import '../abstracts/variables';
+
+body { 
+    font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
+    font-size: 20px;
+}
+
+._container {
+    max-width: $maxWidthContainer;
+    margin: 0px auto; // centering
+    padding: 0px 15px;
+    @media (max-width: $md1) {
+        max-width: 970px;
+    }
+    @media (max-width: $md2) {
+        max-width: 750px;
+    }
+    @media (max-width: $md3) {
+        max-width: none;
+        padding: 0 10px;
+    }
+}
