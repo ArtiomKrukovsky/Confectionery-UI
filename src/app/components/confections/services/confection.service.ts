@@ -118,7 +118,7 @@ export class ConfectionService implements OnDestroy {
     }
 
     this.userApi.getUser(newUser.email)
-    .pipe( 
+    .pipe(
       switchMap(user => {
         if(user) {
           const userId = user.id as string;
