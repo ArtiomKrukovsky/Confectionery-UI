@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthenticationModule } from './components/authentication/authentication.module';
+import { HeaderModule } from './core/header/header.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AuthenticationModule } from './components/authentication/authentication
     BrowserModule,
     AppRoutingModule,
     AuthenticationModule,
-    HttpClientModule
+    HttpClientModule,
+    HeaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

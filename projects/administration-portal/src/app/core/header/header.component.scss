@@ -1,0 +1,37 @@
+@import 'projects/administration-portal/src/app/scss/abstracts/variables';
+
+.header {
+	&__content { }
+	&__menu { }
+}
+
+.menu {
+	&__icon { }
+	&__body { }
+	&__list { 
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 82px;
+        padding: 10px 0;
+
+        li {
+            margin: 0px 0px 0px 33px;
+        }
+    }
+	&__link { 
+        font-size: 20px;
+        font-weight: 500;
+        color: #000;
+        transition: color 0.3s ease 0s;
+        @media (min-width: $md2) {
+            &:hover {
+                color: $light-orange;
+            }
+        }
+    }
+}
+
+.icon-menu { 
+    display: none;
+}

@@ -1,0 +1,97 @@
+@import 'projects/administration-portal/src/app/scss/abstracts/variables';
+
+.order-list {
+	&__container { 
+        margin-top: 15px;
+    }
+
+	&__title { 
+        margin: 0px 0px 10px 0px;
+    }
+
+	&__tab-menu { 
+        margin: 0px 0px 25px 0px;
+    }
+
+	&__toolbar { 
+        background-color: #fbfbfb;
+        border-radius: 5px;
+    }
+}
+
+.tab-menu {
+	&__list { 
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        height: 49px;
+        border-bottom: 1.70px solid #aeaeae;
+
+        li {
+            margin: 0px 25px 0px 0px;
+        }
+    }
+
+	&__link { 
+        font-size: 16px;
+        font-weight: 500;
+        color: #aeaeae;
+
+        &--active {
+            color: #4f4f4f;
+        }
+    }
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    height: 55px;
+    padding: 0px 17px;
+
+	&__search {
+        height: 35px; 
+        margin-right: 25px;
+        padding: 0px 38px;
+        border: 1px solid #e7e8eb;
+        border-radius: 3px;
+
+        font-size: 13px;
+        font-weight: 400;
+        color: #aeaeae;
+        font-size: 13px;
+
+        flex: 0 1 65%;
+    }
+
+    &__controls {
+        display: flex;
+        justify-content: center;
+
+        flex: 0 1 35%;
+    }
+
+	&__btn { }
+}
+
+.btn { 
+    background: #fff;
+    border: 1px solid #e7e8eb;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0px 9px;
+    height: 35px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #aeaeae;
+}
+
+.title { 
+    font-size: 24px;
+    font-weight: 500;
+    color: $light-orange;
+}
