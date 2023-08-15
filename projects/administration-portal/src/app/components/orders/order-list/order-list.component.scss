@@ -6,7 +6,7 @@
     }
 
 	&__title { 
-        margin: 0px 0px 10px 0px;
+        margin: 0px 0px 15px 0px;
     }
 
 	&__tab-menu { 
@@ -20,26 +20,49 @@
 }
 
 .tab-menu {
+    &__content {
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        overscroll-behavior: contain auto;
+    }
+
 	&__list { 
         display: flex;
         justify-content: flex-start;
-        align-items: center;
-
-        height: 49px;
-        border-bottom: 1.70px solid #aeaeae;
-
-        li {
-            margin: 0px 25px 0px 0px;
-        }
+        background: #ffffff;
+        border-bottom: 2px solid #dee2e6;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        flex-wrap: wrap;
     }
 
 	&__link { 
+        display: inline-block;
+        border-bottom: 2px solid #dee2e6;
+        background: #ffffff;
+        color: #6c757d;
+        padding: 0.85rem;
         font-size: 16px;
         font-weight: 500;
         color: #aeaeae;
+        margin: 0 0 -2px 0;
 
         &--active {
             color: #4f4f4f;
+            border-color: #4f4f4f;
+        }
+
+        &:hover {
+            border-color: #6c757d;
+            color: #6c757d; 
+        }
+
+        // todo: find another color for focus and active
+        &:focus {
+            color: #4f4f4f;
+            border-color: #4f4f4f;
         }
     }
 }
