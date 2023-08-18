@@ -15,7 +15,7 @@
 
 	&__toolbar { 
         background-color: #fbfbfb;
-        border-radius: 5px;
+        border-radius: 7px;
     }
 }
 
@@ -48,6 +48,7 @@
         font-weight: 500;
         color: #aeaeae;
         margin: 0 0 -2px 0;
+        transition: border-color 0.2s ease 0s, color 0.2s ease 0s;
 
         &--active {
             color: #4f4f4f;
@@ -68,14 +69,16 @@
 }
 
 .toolbar {
-    display: flex;
-    align-items: center;
-    height: 55px;
-    padding: 0px 17px;
+    &__row {
+        display: flex;
+        align-items: center;
+        height: 60px;
+        padding: 0px 25px;
+    }
 
 	&__search {
-        height: 35px; 
-        margin-right: 25px;
+        height: 37px; 
+        margin: 0px 25px 0px 0px;
         padding: 0px 38px;
         border: 1px solid #e7e8eb;
         border-radius: 3px;
@@ -83,19 +86,22 @@
         font-size: 13px;
         font-weight: 400;
         color: #aeaeae;
-        font-size: 13px;
 
-        flex: 0 1 65%;
+        flex: 1 1 auto;
     }
 
     &__controls {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
 
-        flex: 0 1 35%;
+        flex: 0 1 34%;
     }
 
-	&__btn { }
+    &__btn-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
 }
 
 .btn { 
@@ -107,8 +113,8 @@
     justify-content: center;
     text-align: center;
     padding: 0px 9px;
-    height: 35px;
-    font-size: 13px;
+    height: 37px;
+    font-size: 14px;
     font-weight: 400;
     color: #aeaeae;
 }
