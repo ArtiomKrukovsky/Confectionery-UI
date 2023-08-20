@@ -16,6 +16,7 @@
 	&__toolbar { 
         background-color: #fbfbfb;
         border-radius: 7px;
+        margin: 0px 0px 35px 0px;
     }
 }
 
@@ -83,7 +84,7 @@
         border: 1px solid #e7e8eb;
         border-radius: 3px;
 
-        font-size: 13px;
+        font-size: 0.875rem;
         font-weight: 400;
         color: #aeaeae;
 
@@ -104,8 +105,90 @@
     }
 }
 
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.5;
+    color: #9A9797;
+
+	&__header {  
+        border-bottom: 2px solid #dee2e6;
+
+        th {
+            padding: 0.75rem;
+            vertical-align: bottom;
+        }
+    }
+
+    &__body { 
+        tr {
+            transition: background-color 0.45s ease 0s;
+
+            &:hover {
+                background-color: #dee2e636;
+            }
+        }
+
+        td {
+            font-size: 0.9375rem;
+            font-weight: 300;
+            padding: 1rem 0.75rem;
+        } 
+    }
+
+    &__checkbox {
+        margin-bottom: 25px;
+    }
+}
+
+.checkbox {
+    display: block;
+    position: relative;
+    cursor: pointer;
+
+    &__input {
+        display: none;
+    }
+
+    &__indicator {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        border-radius: 4px;
+        border: 2px solid #ccc;
+        background: transparent;
+    
+        &:after {
+            content: '';
+            position: absolute;
+            display: none;
+            transform: rotate(45deg);
+            height: 17px;
+            width: 9px;
+            margin: -2px 0px 4px 4px;
+            border-bottom: 3.5px solid white;
+            border-right: 3.5px solid white
+        }
+    }
+
+    &__input:checked ~ &__indicator {
+        border: 2px solid #007bff;
+        background: #007bff;
+    }
+
+    &__input:checked ~ &__indicator:after {
+        display: block;
+        color: #fff;
+    }
+}
+
 .btn { 
-    background: #fff;
+    background: white;
     border: 1px solid #e7e8eb;
     border-radius: 4px;
     display: inline-flex;
@@ -114,13 +197,19 @@
     text-align: center;
     padding: 0px 9px;
     height: 37px;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 400;
     color: #aeaeae;
+    transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
+
+    &:hover {
+        border-color: #9b9a9a;
+        color: #9b9a9a; 
+    }
 }
 
 .title { 
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 500;
     color: $light-orange;
 }
