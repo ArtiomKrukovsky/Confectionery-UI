@@ -18,6 +18,16 @@
         border-radius: 7px;
         margin: 0px 0px 35px 0px;
     }
+
+    &__table{
+        margin: 0px 0px 25px 0px;
+    }
+
+    &__pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .tab-menu {
@@ -142,6 +152,95 @@
     &__checkbox {
         margin-bottom: 25px;
     }
+}
+
+.pagination {
+    
+	&__items { 
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__item {
+        margin: 0px 0px 0px 8px;
+    }
+
+	&__btn {
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        font-size: 0.875rem;
+        font-weight: 700;
+        line-height: 1.42;
+        background-color: #fff;
+        border: 1px solid #E7E8EB;
+        transition: background-color .3s ease 0s;
+
+        &:hover {
+            background-color: #E7E8EB;
+        }
+
+		&--arrow-left,
+        &--arrow-right { 
+            background-color: #E7E8EB;
+            position: relative;
+        }
+
+        &--arrow-right {
+            //todo: use svg icons
+            &::before {
+                content: '';
+                position: absolute;
+                left: 10px;
+                top: 12px;
+                width: 10px;
+                height: 2px;
+                background-color: #AEAEAE;
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 10px;
+                top: 18px;
+                width: 10px;
+                height: 2px;
+                background-color: #AEAEAE;
+                transform: rotate(135deg);
+            }
+        }
+
+        &--arrow-left {
+            //todo: use svg icons
+            &::before {
+                content: '';
+                position: absolute;
+                left: 10px;
+                top: 12px;
+                width: 10px;
+                height: 2px;
+                background-color: #AEAEAE;
+                transform: rotate(-45deg);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 10px;
+                top: 18px;
+                width: 10px;
+                height: 2px;
+                background-color: #AEAEAE;
+                transform: rotate(-135deg);
+            }
+        }
+
+
+
+		&--number { }
+		&--more { }
+	}
 }
 
 .checkbox {

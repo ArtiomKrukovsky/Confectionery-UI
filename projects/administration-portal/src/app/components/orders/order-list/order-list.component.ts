@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderListComponent implements OnInit {
 
+  public paginationStartNumber: number = 1;
+  public paginationEndNumber: number = 9;
+
   constructor() { }
 
   ngOnInit() {
