@@ -41,40 +41,35 @@
 	&__list { 
         display: flex;
         justify-content: flex-start;
-        background: #ffffff;
-        border-bottom: 2px solid #dee2e6;
+        flex-wrap: wrap;
+
+        background: white;
+        border-bottom: 2px solid $lightest-gray;
         margin: 0;
         padding: 0;
         list-style-type: none;
-        flex-wrap: wrap;
     }
 
 	&__link { 
         display: inline-block;
-        border-bottom: 2px solid #dee2e6;
-        background: #ffffff;
+        border-bottom: 2px solid $lightest-gray;
+        background: white;
         color: #6c757d;
         padding: 0.85rem;
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 500;
-        color: #aeaeae;
+        color: $light-gray;
         margin: 0 0 -2px 0;
         transition: border-color 0.2s ease 0s, color 0.2s ease 0s;
 
         &--active {
-            color: #4f4f4f;
-            border-color: #4f4f4f;
+            color: $dark-gray;
+            border-color: $dark-gray;
         }
 
         &:hover {
-            border-color: #6c757d;
-            color: #6c757d; 
-        }
-
-        // todo: find another color for focus and active
-        &:focus {
-            color: #4f4f4f;
-            border-color: #4f4f4f;
+            color: $dark-gray;
+            border-color: $dark-gray;
         }
     }
 }
@@ -91,12 +86,12 @@
         height: 37px; 
         margin: 0px 25px 0px 0px;
         padding: 0px 38px;
-        border: 1px solid #e7e8eb;
+        border: 1px solid $gray-stroke;
         border-radius: 3px;
 
         font-size: 0.875rem;
         font-weight: 400;
-        color: #aeaeae;
+        color: $light-gray;
 
         flex: 1 1 auto;
     }
@@ -122,10 +117,17 @@
     font-size: 1rem;
     text-align: center;
     line-height: 1.5;
-    color: #9A9797;
+    color: $medium-gray;
+
+    &__column {
+        //todo: highlight columns
+        &--highlighted {
+            color:$dark-gray;
+        }
+    }
 
 	&__header {  
-        border-bottom: 2px solid #dee2e6;
+        border-bottom: 2px solid $lightest-gray;
 
         th {
             padding: 0.75rem;
@@ -138,7 +140,7 @@
             transition: background-color 0.45s ease 0s;
 
             &:hover {
-                background-color: #dee2e636;
+                background-color: $lightest-gray-alfa;
             }
         }
 
@@ -155,7 +157,6 @@
 }
 
 .pagination {
-    
 	&__items { 
         display: flex;
         flex-direction: row;
@@ -166,80 +167,52 @@
     }
 
 	&__btn {
-        width: 32px;
-        height: 32px;
+        width: 35px;
+        height: 35px;
         border-radius: 4px;
-        font-size: 0.875rem;
+        font-size: 1rem;
         font-weight: 700;
         line-height: 1.42;
-        background-color: #fff;
-        border: 1px solid #E7E8EB;
+        color: $dark-gray;
+        background-color: white;
+        border: 1px solid $gray-stroke;
         transition: background-color .3s ease 0s;
 
         &:hover {
-            background-color: #E7E8EB;
+            background-color: $gray-stroke;
         }
 
 		&--arrow-left,
         &--arrow-right { 
-            background-color: #E7E8EB;
             position: relative;
         }
 
-        &--arrow-right {
-            //todo: use svg icons
-            &::before {
-                content: '';
-                position: absolute;
-                left: 10px;
-                top: 12px;
-                width: 10px;
-                height: 2px;
-                background-color: #AEAEAE;
-                transform: rotate(45deg);
-            }
-
-            &::after {
-                content: '';
-                position: absolute;
-                left: 10px;
-                top: 18px;
-                width: 10px;
-                height: 2px;
-                background-color: #AEAEAE;
-                transform: rotate(135deg);
-            }
+        &--arrow-right::before {
+            display: inline-block;
+            content: '';
+            background: url('/assets/icons/vector-right.png') no-repeat;
+            background-size: 7.41px 12px;
+            height: 12px;
+            width: 7.41px;
+            margin: 5px 0px 0px 2px;
         }
 
-        &--arrow-left {
-            //todo: use svg icons
-            &::before {
-                content: '';
-                position: absolute;
-                left: 10px;
-                top: 12px;
-                width: 10px;
-                height: 2px;
-                background-color: #AEAEAE;
-                transform: rotate(-45deg);
-            }
-
-            &::after {
-                content: '';
-                position: absolute;
-                left: 10px;
-                top: 18px;
-                width: 10px;
-                height: 2px;
-                background-color: #AEAEAE;
-                transform: rotate(-135deg);
-            }
+        &--arrow-left::before {
+            display: inline-block;
+            content: '';
+            background: url('/assets/icons/vector-left.png') no-repeat;
+            background-size: 7.41px 12px;
+            height: 12px;
+            width: 7.41px;
+            margin: 5px 2px 0px 0px;
         }
-
-
 
 		&--number { }
 		&--more { }
+
+        &--disabled {
+            background-color: $gray-stroke;
+        }
 	}
 }
 
@@ -282,23 +255,22 @@
 
     &__input:checked ~ &__indicator:after {
         display: block;
-        color: #fff;
+        color: white;
     }
 }
 
 .btn { 
     background: white;
-    border: 1px solid #e7e8eb;
+    border: 1px solid $gray-stroke;
     border-radius: 4px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0px 9px;
-    height: 37px;
     font-size: 0.875rem;
     font-weight: 400;
-    color: #aeaeae;
+    padding: 0.5rem 0.5625rem;
+    color: $light-gray;
     transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
 
     &:hover {

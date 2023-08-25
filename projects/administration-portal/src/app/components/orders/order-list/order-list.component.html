@@ -42,6 +42,16 @@
     </div>
 
     <table class="order-list__table order-table">
+      <colgroup>
+        <col class="order-table__column">
+        <col class="order-table__column">
+        <col class="order-table__column order-table__column--highlighted">
+        <col class="order-table__column">
+        <col class="order-table__column">
+        <col class="order-table__column">
+        <col class="order-table__column">
+        <col class="order-table__column order-table__column--highlighted">
+      </colgroup>
       <thead class="order-table__header">
         <tr class="order-table__row">
           <th></th>
@@ -100,13 +110,43 @@
           <td>12</td>
           <td>140.12 BYN</td>
         </tr>
+        <tr class="order-table__row">
+          <td>
+            <label class="order-table__checkbox checkbox">
+              <input class="checkbox__input" type="checkbox">
+              <div class="checkbox__indicator"></div>
+            </label>
+          </td>
+          <td>HJ098713</td>
+          <td>Hanna Marina</td>
+          <td>Traifli</td>
+          <td>Completed</td>
+          <td>20.07.2023</td>
+          <td>12</td>
+          <td>140.12 BYN</td>
+        </tr>
+        <tr class="order-table__row">
+          <td>
+            <label class="order-table__checkbox checkbox">
+              <input class="checkbox__input" type="checkbox">
+              <div class="checkbox__indicator"></div>
+            </label>
+          </td>
+          <td>HJ098713</td>
+          <td>Hanna Marina</td>
+          <td>Traifli</td>
+          <td>Completed</td>
+          <td>20.07.2023</td>
+          <td>12</td>
+          <td>140.12 BYN</td>
+        </tr>
       </tbody>
     </table>
 
     <div class="order-list__pagination">
       <div class="pagination__items">
         <div class="pagination__item">
-          <button class="pagination__btn pagination__btn--arrow-left"></button>
+          <button class="pagination__btn pagination__btn--arrow-left pagination__btn--disabled"></button>
         </div>
         <div class="pagination__item">
           <button class="pagination__btn pagination__btn--number">{{ paginationStartNumber }}</button>
