@@ -1,0 +1,45 @@
+@import 'projects/administration-portal/src/app/scss/abstracts/variables';
+
+.tab-menu {
+    &__content {
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        overscroll-behavior: contain auto;
+    }
+
+	&__list { 
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        background: white;
+        border-bottom: 2px solid $lightest-gray;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+	&__link { 
+        display: inline-block;
+        border-bottom: 2px solid $lightest-gray;
+        background: white;
+        color: #6c757d;
+        padding: 0.85rem;
+        font-size: 1rem;
+        font-weight: 500;
+        color: $light-gray;
+        margin: 0 0 -2px 0;
+        transition: border-color 0.2s ease 0s, color 0.2s ease 0s;
+
+        &--active {
+            color: $dark-gray;
+            border-color: $dark-gray;
+        }
+
+        &:hover {
+            color: $dark-gray;
+            border-color: $dark-gray;
+        }
+    }
+}
