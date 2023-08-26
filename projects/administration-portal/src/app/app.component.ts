@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Administration-Portal';
+  public title = 'Administration-Portal';
+  public isAuthenticated: boolean = false;
 }

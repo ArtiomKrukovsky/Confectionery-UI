@@ -14,10 +14,10 @@ import { OrdersModule } from './components/orders/orders.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    AuthenticationModule,
     HttpClientModule,
+    AppRoutingModule,
     HeaderModule,
+    AuthenticationModule,
     OrdersModule
   ],
   providers: [],
