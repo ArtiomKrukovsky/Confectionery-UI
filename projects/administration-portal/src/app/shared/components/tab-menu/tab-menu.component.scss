@@ -21,6 +21,7 @@
     }
 
 	&__link { 
+        cursor: pointer;
         display: inline-block;
         border-bottom: 2px solid $lightest-gray;
         background: white;

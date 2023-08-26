@@ -1,13 +1,21 @@
-<div class="tab-menu__content">
-  <ul class="tab-menu__list">
-    <li class="tab-menu__item">
-      <a href="" class="tab-menu__link">В обработке</a>
-    </li>
-    <li class="tab-menu__item">
-      <a href="" class="tab-menu__link tab-menu__link--active">Все Заказы</a>
-    </li>
-    <li class="tab-menu__item">
-      <a href="" class="tab-menu__link">Завершённые</a>
-    </li>
-  </ul>
-</div>
+<section class="tab-menu">
+  <div class="tab-menu__content">
+    <ul class="tab-menu__list">
+      <li 
+        class="tab-menu__item"
+        *ngFor="let menuItem of menuItems"
+      >
+        <a 
+          class="tab-menu__link"
+          [ngClass]="{ 'tab-menu__link--active': menuItem.isSelected }" 
+        >{{ menuItem.label }}</a>
+      </li>
+      <!-- <li class="tab-menu__item">
+        <a href="" class="tab-menu__link tab-menu__link--active">Все Заказы</a>
+      </li>
+      <li class="tab-menu__item">
+        <a href="" class="tab-menu__link">Завершённые</a>
+      </li> -->
+    </ul>
+  </div>
+</section>
