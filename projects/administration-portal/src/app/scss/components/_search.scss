@@ -1,0 +1,20 @@
+.search {
+    position: relative;
+
+	&__image { 
+        position: absolute;
+        top: 8px;
+        left: 10px;
+    }
+
+	&__input { 
+        width: 100%;
+        padding: 8px 40px;
+        border: 1px solid $gray-stroke;
+        border-radius: 4px;
+
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: $dark-gray;
+    }
+}

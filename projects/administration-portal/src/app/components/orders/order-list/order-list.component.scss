@@ -2,7 +2,7 @@
 
 .order-list {
 	&__container { 
-        margin-top: 15px;
+        margin-top: 5px;
     }
 
 	&__title { 
@@ -12,13 +12,6 @@
 	&__tab-menu { 
         display: block;
         margin: 0px 0px 25px 0px;
-    }
-
-	&__toolbar {
-        display: block;
-        background-color: #fbfbfb;
-        border-radius: 7px;
-        margin: 0px 0px 35px 0px;
     }
 
     &__order-table { 

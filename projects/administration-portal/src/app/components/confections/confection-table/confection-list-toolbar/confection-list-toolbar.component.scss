@@ -1,0 +1,10 @@
+.toolbar {
+	&__row { 
+        display: flex;
+        justify-content: space-between;
+    }
+	&__btn { }
+	&__search { 
+        flex: 0 1 40%;
+    }
+}

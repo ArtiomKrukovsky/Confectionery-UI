@@ -7,7 +7,13 @@
       <button class="pagination__btn pagination__btn--number">{{ paginationStartNumber }}</button>
     </div>
     <div class="pagination__item">
+      <button class="pagination__btn pagination__btn--number">{{ paginationStartNumber + 1 }}</button>
+    </div>
+    <div class="pagination__item">
       <button class="pagination__btn pagination__btn--more">...</button>
+    </div>
+    <div class="pagination__item">
+      <button class="pagination__btn pagination__btn--number"> {{ paginationEndNumber - 1 }} </button>
     </div>
     <div class="pagination__item">
       <button class="pagination__btn pagination__btn--number"> {{ paginationEndNumber }} </button>

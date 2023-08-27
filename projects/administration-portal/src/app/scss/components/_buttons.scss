@@ -1,0 +1,25 @@
+.btn-icon { 
+    background: white;
+    border: 1px solid $gray-stroke;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 400;
+    padding: 0.5rem 0.5625rem;
+    color: $light-gray;
+    transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
+
+    & > img {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }   
+
+    &:hover {
+        border-color: #9b9a9a;
+        color: #9b9a9a; 
+    }
+}

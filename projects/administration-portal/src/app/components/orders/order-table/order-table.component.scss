@@ -1,13 +1,20 @@
 @import 'projects/administration-portal/src/app/scss/abstracts/variables';
 
-.order-table {
-    width: 100%;
-    border-collapse: collapse;
+.order-table {  
+    &__toolbar {
+        display: block;
+        margin: 0px 0px 35px 0px;
+    }
 
-    font-size: 1rem;
-    text-align: center;
-    line-height: 1.5;
-    color: $medium-gray;
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+    
+        font-size: 1rem;
+        text-align: center;
+        line-height: 1.5;
+        color: $medium-gray;
+    }
 
     &__column {
         //todo: highlight columns

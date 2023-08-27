@@ -1,101 +1,107 @@
-<table class="order-table">
-  <colgroup>
-    <col class="order-table__column">
-    <col class="order-table__column">
-    <col class="order-table__column order-table__column--highlighted">
-    <col class="order-table__column">
-    <col class="order-table__column">
-    <col class="order-table__column">
-    <col class="order-table__column">
-    <col class="order-table__column order-table__column--highlighted">
-  </colgroup>
-  <thead class="order-table__header">
-    <tr class="order-table__row">
-      <th></th>
-      <th>Order ID</th>
-      <th>Customer</th>
-      <th>Product</th>
-      <th>Status</th>
-      <th>Created </th>
-      <th>Count </th>
-      <th>Total Price </th>
-    </tr>
-  </thead>
-  <tbody class="order-table__body">
-    <tr class="order-table__row">
-      <td>
-        <label class="order-table__checkbox checkbox">
-          <input class="checkbox__input" type="checkbox">
-          <div class="checkbox__indicator"></div>
-        </label>
-      </td>
-      <td>AKN12508</td>
-      <td>Olivera Nules</td>
-      <td>Napoleon</td>
-      <td>Requested</td>
-      <td>06.08.2023</td>
-      <td>2</td>
-      <td>100.40 BYN</td>
-    </tr>
-    <tr class="order-table__row">
-      <td>
-        <label class="order-table__checkbox checkbox">
-          <input class="checkbox__input" type="checkbox">
-          <div class="checkbox__indicator"></div>
-        </label>
-      </td>
-      <td>SRT32123</td>
-      <td>Selman Calman</td>
-      <td>Medovik</td>
-      <td>Canceled</td>
-      <td>12.04.2021</td>
-      <td>1</td>
-      <td>100.40 BYN</td>
-    </tr>
-    <tr class="order-table__row">
-      <td>
-        <label class="order-table__checkbox checkbox">
-          <input class="checkbox__input" type="checkbox">
-          <div class="checkbox__indicator"></div>
-        </label>
-      </td>
-      <td>HJ098713</td>
-      <td>Hanna Marina</td>
-      <td>Traifli</td>
-      <td>Completed</td>
-      <td>20.07.2023</td>
-      <td>12</td>
-      <td>140.12 BYN</td>
-    </tr>
-    <tr class="order-table__row">
-      <td>
-        <label class="order-table__checkbox checkbox">
-          <input class="checkbox__input" type="checkbox">
-          <div class="checkbox__indicator"></div>
-        </label>
-      </td>
-      <td>HJ098713</td>
-      <td>Hanna Marina</td>
-      <td>Traifli</td>
-      <td>Completed</td>
-      <td>20.07.2023</td>
-      <td>12</td>
-      <td>140.12 BYN</td>
-    </tr>
-    <tr class="order-table__row">
-      <td>
-        <label class="order-table__checkbox checkbox">
-          <input class="checkbox__input" type="checkbox">
-          <div class="checkbox__indicator"></div>
-        </label>
-      </td>
-      <td>HJ098713</td>
-      <td>Hanna Marina</td>
-      <td>Traifli</td>
-      <td>Completed</td>
-      <td>20.07.2023</td>
-      <td>12</td>
-      <td>140.12 BYN</td>
-    </tr>
-  </tbody>
-</table>
+<div class="order-table">
+  <app-order-table-toolbar
+    class="order-table__toolbar">
+  </app-order-table-toolbar>
+
+  <table class="order-table__table">
+    <colgroup>
+      <col class="order-table__column">
+      <col class="order-table__column">
+      <col class="order-table__column order-table__column--highlighted">
+      <col class="order-table__column">
+      <col class="order-table__column">
+      <col class="order-table__column">
+      <col class="order-table__column">
+      <col class="order-table__column order-table__column--highlighted">
+    </colgroup>
+    <thead class="order-table__header">
+      <tr class="order-table__row">
+        <th></th>
+        <th>Order ID</th>
+        <th>Customer</th>
+        <th>Product</th>
+        <th>Status</th>
+        <th>Created </th>
+        <th>Count </th>
+        <th>Total Price </th>
+      </tr>
+    </thead>
+    <tbody class="order-table__body">
+      <tr class="order-table__row">
+        <td>
+          <label class="order-table__checkbox checkbox">
+            <input class="checkbox__input" type="checkbox">
+            <div class="checkbox__indicator"></div>
+          </label>
+        </td>
+        <td>AKN12508</td>
+        <td>Olivera Nules</td>
+        <td>Napoleon</td>
+        <td>Requested</td>
+        <td>06.08.2023</td>
+        <td>2</td>
+        <td>100.40 BYN</td>
+      </tr>
+      <tr class="order-table__row">
+        <td>
+          <label class="order-table__checkbox checkbox">
+            <input class="checkbox__input" type="checkbox">
+            <div class="checkbox__indicator"></div>
+          </label>
+        </td>
+        <td>SRT32123</td>
+        <td>Selman Calman</td>
+        <td>Medovik</td>
+        <td>Canceled</td>
+        <td>12.04.2021</td>
+        <td>1</td>
+        <td>100.40 BYN</td>
+      </tr>
+      <tr class="order-table__row">
+        <td>
+          <label class="order-table__checkbox checkbox">
+            <input class="checkbox__input" type="checkbox">
+            <div class="checkbox__indicator"></div>
+          </label>
+        </td>
+        <td>HJ098713</td>
+        <td>Hanna Marina</td>
+        <td>Traifli</td>
+        <td>Completed</td>
+        <td>20.07.2023</td>
+        <td>12</td>
+        <td>140.12 BYN</td>
+      </tr>
+      <tr class="order-table__row">
+        <td>
+          <label class="order-table__checkbox checkbox">
+            <input class="checkbox__input" type="checkbox">
+            <div class="checkbox__indicator"></div>
+          </label>
+        </td>
+        <td>HJ098713</td>
+        <td>Hanna Marina</td>
+        <td>Traifli</td>
+        <td>Completed</td>
+        <td>20.07.2023</td>
+        <td>12</td>
+        <td>140.12 BYN</td>
+      </tr>
+      <tr class="order-table__row">
+        <td>
+          <label class="order-table__checkbox checkbox">
+            <input class="checkbox__input" type="checkbox">
+            <div class="checkbox__indicator"></div>
+          </label>
+        </td>
+        <td>HJ098713</td>
+        <td>Hanna Marina</td>
+        <td>Traifli</td>
+        <td>Completed</td>
+        <td>20.07.2023</td>
+        <td>12</td>
+        <td>140.12 BYN</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,20 @@
+.confection-list {
+	&__container { 
+        margin-top: 5px;
+    }
+
+	&__title { 
+        margin: 0px 0px 25px 0px;
+    }
+
+	&__confection-table { 
+        display: block;
+        margin: 0px 0px 35px 0px;
+    }
+
+	&__pagination { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
