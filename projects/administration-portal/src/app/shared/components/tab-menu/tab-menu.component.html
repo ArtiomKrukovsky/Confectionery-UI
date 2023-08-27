@@ -7,6 +7,7 @@
       >
         <a 
           class="tab-menu__link"
+          routerLink = menuItem.routerLink
           [ngClass]="{ 'tab-menu__link--active': menuItem.isSelected }" 
         >{{ menuItem.label }}</a>
       </li>

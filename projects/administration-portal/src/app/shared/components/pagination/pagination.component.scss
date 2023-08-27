@@ -1,0 +1,61 @@
+@import 'projects/administration-portal/src/app/scss/abstracts/variables';
+
+.pagination {
+	&__items { 
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__item {
+        margin: 0px 0px 0px 8px;
+    }
+
+	&__btn {
+        width: 35px;
+        height: 35px;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.42;
+        color: $dark-gray;
+        background-color: white;
+        border: 1px solid $gray-stroke;
+        transition: border-color .3s ease 0s;
+
+		&--arrow-left,
+        &--arrow-right { 
+            position: relative;
+        }
+
+        &--arrow-right::before {
+            display: inline-block;
+            content: '';
+            background: url('/assets/icons/vector-right.png') no-repeat;
+            background-size: 7.41px 12px;
+            height: 12px;
+            width: 7.41px;
+            margin: 5px 0px 0px 2px;
+        }
+
+        &--arrow-left::before {
+            display: inline-block;
+            content: '';
+            background: url('/assets/icons/vector-left.png') no-repeat;
+            background-size: 7.41px 12px;
+            height: 12px;
+            width: 7.41px;
+            margin: 5px 2px 0px 0px;
+        }
+
+		&--number { }
+		&--more { }
+
+        &:hover {
+            border-color: #9b9a9a;
+        }
+
+        &--disabled {
+            background-color: $gray-stroke;
+        }
+	}
+}

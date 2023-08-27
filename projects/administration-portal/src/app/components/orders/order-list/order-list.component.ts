@@ -7,19 +7,19 @@ import { IMenuItem } from '../../../shared/components/tab-menu/models/menu-item'
   styleUrls: ['./order-list.component.scss']
 })
 export class OrderListComponent implements OnInit {
-  public paginationStartNumber: number = 1;
-  public paginationEndNumber: number = 9;
-
   public menuItems: IMenuItem[] = [
     {
       label: 'В обработке',
+      routerLink: '#'
     },
     {
       label: 'Все Заказы',
+      routerLink: '#',
       isSelected: true
     },
     {
-      label: 'Завершённые'
+      label: 'Завершённые',
+      routerLink: '#'
     }
   ]
 
@@ -27,5 +27,4 @@ export class OrderListComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

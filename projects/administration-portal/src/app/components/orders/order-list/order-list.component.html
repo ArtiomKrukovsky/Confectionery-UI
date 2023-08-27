@@ -7,61 +7,16 @@
       [menuItems]="menuItems"
     ></app-tab-menu>
 
-    <div class="order-list__toolbar toolbar">
-      <div class="toolbar__row">
-        <div class="toolbar__search-container">
-          <img class="toolbar__search-image" src="/assets/icons/search.png"/>
-          <input placeholder="Поиск по Идентификатору, Email, Продукту и другому" class="toolbar__search"/>
-        </div>
-
-        <div class="toolbar__controls">
-          <button class="toolbar__btn btn">
-            <img 
-              class="toolbar__btn-icon" 
-              src="/assets/icons/filter.png"
-            >
-            Фильтр
-          </button>
-          <button class="toolbar__btn btn">
-            <img 
-              class="toolbar__btn-icon" 
-              src="/assets/icons/attachment.png"
-            >
-            Прикрепить
-          </button>
-          <button class="toolbar__btn btn">
-            <img 
-              class="toolbar__btn-icon" 
-              src="/assets/icons/export.png"
-            >
-            Экспорт
-          </button>
-        </div>
-      </div>
-    </div>
+    <app-toolbar 
+      class="order-list__toolbar">
+    </app-toolbar>
 
     <app-order-table 
       class="order-list__order-table"
     ></app-order-table>
 
-    <div class="order-list__pagination">
-      <div class="pagination__items">
-        <div class="pagination__item">
-          <button class="pagination__btn pagination__btn--arrow-left pagination__btn--disabled"></button>
-        </div>
-        <div class="pagination__item">
-          <button class="pagination__btn pagination__btn--number">{{ paginationStartNumber }}</button>
-        </div>
-        <div class="pagination__item">
-          <button class="pagination__btn pagination__btn--more">...</button>
-        </div>
-        <div class="pagination__item">
-          <button class="pagination__btn pagination__btn--number"> {{ paginationEndNumber }} </button>
-        </div>
-        <div class="pagination__item">
-          <button class="pagination__btn pagination__btn--arrow-right"></button>
-        </div>
-      </div>
-    </div>
+    <app-pagination 
+      class="order-list__pagination"
+    ></app-pagination>
   </div>
 </div>
