@@ -13,7 +13,7 @@
         font-size: 1rem;
         text-align: center;
         line-height: 1.5;
-        color: $medium-gray;
+        color: $dark-gray;
     }
 
     &__column {
@@ -50,48 +50,5 @@
 
     &__checkbox {
         margin-bottom: 25px;
-    }
-}
-
-.checkbox {
-    display: block;
-    position: relative;
-    cursor: pointer;
-
-    &__input {
-        display: none;
-    }
-
-    &__indicator {
-        position: absolute;
-        top: 2px;
-        left: 0;
-        height: 20px;
-        width: 20px;
-        border-radius: 4px;
-        border: 2px solid #ccc;
-        background: transparent;
-    
-        &:after {
-            content: '';
-            position: absolute;
-            display: none;
-            transform: rotate(45deg);
-            height: 17px;
-            width: 9px;
-            margin: -2px 0px 4px 4px;
-            border-bottom: 3.5px solid white;
-            border-right: 3.5px solid white
-        }
-    }
-
-    &__input:checked ~ &__indicator {
-        border: 2px solid #007bff;
-        background: #007bff;
-    }
-
-    &__input:checked ~ &__indicator:after {
-        display: block;
-        color: white;
     }
 }
