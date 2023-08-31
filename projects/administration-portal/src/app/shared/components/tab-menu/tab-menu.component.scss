@@ -6,12 +6,18 @@
         overflow-y: hidden;
         scroll-behavior: smooth;
         overscroll-behavior: contain auto;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 
 	&__list { 
+        min-width: 375px;
+
         display: flex;
         justify-content: flex-start;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
 
         background: white;
         border-bottom: 2px solid $lightest-gray;
@@ -38,9 +44,11 @@
             border-color: $dark-gray;
         }
 
-        &:hover {
-            color: $dark-gray;
-            border-color: $dark-gray;
+        @media (min-width: $md3) {
+            &:hover {
+                color: $dark-gray;
+                border-color: $dark-gray;
+            }
         }
     }
 }

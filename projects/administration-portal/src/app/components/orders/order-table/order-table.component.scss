@@ -6,21 +6,20 @@
         margin: 0px 0px 35px 0px;
     }
 
+    &__wrapper {
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
     &__table {
         width: 100%;
+        min-width: 720px;
         border-collapse: collapse;
     
         font-size: 1rem;
         text-align: center;
         line-height: 1.5;
         color: $dark-gray;
-    }
-
-    &__column {
-        //todo: highlight columns
-        &--highlighted {
-            color:$dark-gray;
-        }
     }
 
 	&__header {  
@@ -50,5 +49,25 @@
 
     &__checkbox {
         margin-bottom: 25px;
+    }
+}
+
+.status {
+    padding: 4px 12px;
+    border-radius: 5px;
+
+    &--requested {
+        background: #FFF7E6;
+        color: #FFAE00;
+    }
+
+	&--canceled {
+        background: #FDF4F6;
+        color: #DE486C;
+    }
+
+    &--completed {
+        background: #EBF9F4;
+        color: #2FB182;
     }
 }

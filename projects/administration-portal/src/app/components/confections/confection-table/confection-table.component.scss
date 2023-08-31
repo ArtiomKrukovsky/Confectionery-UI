@@ -6,8 +6,14 @@
         margin: 0px 0px 35px 0px;
     }
 
+    &__wrapper {
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
 	&__table { 
         width: 100%;
+        min-width: 720px;
         border-collapse: collapse;
     
         font-size: 1rem;

@@ -1,4 +1,4 @@
-.btn-icon { 
+%btn {
     background: white;
     border: 1px solid $gray-stroke;
     border-radius: 4px;
@@ -12,14 +12,22 @@
     color: $light-gray;
     transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
 
+    &:hover {
+        border-color: #9b9a9a;
+        color: #9b9a9a; 
+    }
+}
+
+.btn {
+    @extend %btn;
+}
+
+.btn-icon { 
+    @extend %btn;
+
     & > img {
         width: 20px;
         height: 20px;
         margin-right: 5px;
     }   
-
-    &:hover {
-        border-color: #9b9a9a;
-        color: #9b9a9a; 
-    }
 }

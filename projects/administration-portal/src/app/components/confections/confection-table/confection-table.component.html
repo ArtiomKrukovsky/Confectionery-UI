@@ -3,51 +3,53 @@
     class="confection-table__toolbar"
   ></app-confection-list-toolbar>
 
-  <table class="confection-table__table">
-    <thead class="confection-table__header">
-      <tr class="confection-table__row">
-        <th></th>
-        <th>Product Details</th>
-        <th>Category</th>
-        <th>Price</th>
-        <th>Limits</th>
-        <th>Weight</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody class="confection-table__body">
-      <tr class="confection-table__row">
-        <td>
-          <label class="confection-table__checkbox checkbox">
-            <input class="checkbox__input" type="checkbox">
-            <div class="checkbox__indicator"></div>
-          </label>
-        </td>
-        <td>
-          <div class="confection-table__product-details product-details">
-            <div class="product-details__image">
-              <img src="https://media.wired.com/photos/598e35fb99d76447c4eb1f28/master/pass/phonepicutres-TA.jpg" alt="">
+  <div class="confection-table__wrapper">
+    <table class="confection-table__table">
+      <thead class="confection-table__header">
+        <tr class="confection-table__row">
+          <th></th>
+          <th>Product Details</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Limits</th>
+          <th>Weight</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="confection-table__body">
+        <tr class="confection-table__row">
+          <td>
+            <label class="confection-table__checkbox checkbox">
+              <input class="checkbox__input" type="checkbox">
+              <div class="checkbox__indicator"></div>
+            </label>
+          </td>
+          <td>
+            <div class="confection-table__product-details product-details">
+              <div class="product-details__image">
+                <img src="https://media.wired.com/photos/598e35fb99d76447c4eb1f28/master/pass/phonepicutres-TA.jpg" alt="">
+              </div>
+              <div class="product-details__text">
+                  <h3>Наполеон</h3>
+                  <p>Lorem ipsum dolor sit amet, cons...</p>
+              </div>
             </div>
-            <div class="product-details__text">
-                <h3>Наполеон</h3>
-                <p>Lorem ipsum dolor sit amet, cons...</p>
+          </td>
+          <td>
+            <div class="confection-table__category">
+              <span class="category category--сakes">Торт</span>
             </div>
-          </div>
-        </td>
-        <td>
-          <div class="confection-table__category">
-            <span class="category category--сakes">Торт</span>
-          </div>
-        </td>
-        <td>42BYN</td>
-        <td>Nan</td>
-        <td>1000 г</td>
-        <td>
-          <div class="confection-table__controls">
-            <button class="btn-icon">Edit</button>
-            <button class="btn-icon">More</button>
-          </div>
-        </td>
-      </tr>
-  </table>
+          </td>
+          <td>42BYN</td>
+          <td>Nan</td>
+          <td>1000 г</td>
+          <td>
+            <div class="confection-table__controls">
+              <button class="btn">Edit</button>
+              <button class="btn">More</button>
+            </div>
+          </td>
+        </tr>
+    </table>
+  </div>
 </div>
