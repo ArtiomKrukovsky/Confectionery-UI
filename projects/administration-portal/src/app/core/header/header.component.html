@@ -1,12 +1,21 @@
 <header class="header">
   <div class="header__content _container">
     <div class="header__menu menu">
-      <div class="menu__icon icon-menu">
+
+      <div 
+        class="menu__icon icon-menu" 
+        [ngClass]="{ 'active': isMenuOpened }"
+        (click)="openBurgerMenu()"
+      >
         <span></span>
         <span></span>
         <span></span>
       </div>
-      <nav class="menu__body">
+
+      <nav 
+        class="menu__body"
+        [ngClass]="{ 'active': isMenuOpened }"
+      >
         <ul class="menu__list">
           <li>
             <a routerLink="/orders" class="menu__link">Заказы</a>
