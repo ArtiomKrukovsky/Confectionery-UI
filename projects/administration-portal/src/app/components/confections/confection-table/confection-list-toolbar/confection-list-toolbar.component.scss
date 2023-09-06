@@ -3,8 +3,35 @@
         display: flex;
         justify-content: space-between;
     }
-	&__btn { }
+
+	&__btn { 
+        margin: 0px 8px 0px 0px;
+    }
+
 	&__search { 
         flex: 0 1 40%;
+    }
+}
+
+@media (max-width:767px) {
+    .toolbar {
+        &__row {
+            flex-wrap: nowrap;
+            flex-direction: column-reverse; 
+        }
+
+        &__controls {
+            display: flex;
+            flex-direction: row; 
+        }
+
+        &__btn {
+            flex: 0 1 50%;
+            margin: 0px;
+        }
+
+        &__search {
+            margin: 0px 0px 6px 0px;
+        }
     }
 }
