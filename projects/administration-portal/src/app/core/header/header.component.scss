@@ -5,16 +5,17 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        height: 82px;
-        padding: 10px 0;
         position: relative;
         z-index: 10;
+        height: 82px;
+        padding: 10px 0;
     }
 }
 
 .menu {
 	&__list { 
         display: flex;
+        cursor: pointer;
 
         li {
             margin: 0px 0px 0px 33px;

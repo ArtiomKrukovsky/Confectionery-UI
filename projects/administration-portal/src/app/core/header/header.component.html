@@ -18,13 +18,22 @@
       >
         <ul class="menu__list">
           <li>
-            <a routerLink="/orders" class="menu__link">Заказы</a>
+            <a 
+              class="menu__link"
+              (click)="navigateTo('/orders')"
+            >Заказы</a>
           </li>
           <li>
-            <a routerLink="/confections" class="menu__link">Продукты</a>
+            <a 
+              class="menu__link" 
+              (click)="navigateTo('/confections')"
+            >Продукты</a>
           </li>
           <li>
-            <a routerLink="/clients" class="menu__link">Клиенты</a>
+            <a 
+              class="menu__link" 
+              (click)="navigateTo('/clients')"
+            >Клиенты</a>
           </li>
         </ul>
       </nav>

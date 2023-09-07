@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,18 +9,20 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   public isMenuOpened: boolean = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  public openBurgerMenu(): void {
-    // if (this.isMenuOpened) {
-    //   this.windowScrollingSerive.enableScrolling();
-    // } else {
-    //   this.windowScrollingSerive.disableScrolling();
-    // }
+  public navigateTo(routerLink: string, fragment: string = ''): void {
+    if (this.isMenuOpened) {
+      this.isMenuOpened = false;
+    }
 
+    this.router.navigate([routerLink], { fragment });
+  }
+
+  public openBurgerMenu(): void {
     this.isMenuOpened = !this.isMenuOpened;
   }
 }
