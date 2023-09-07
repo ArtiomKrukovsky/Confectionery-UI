@@ -1,3 +1,5 @@
+@import 'projects/administration-portal/src/app/scss/abstracts/variables';
+
 .confection-list {
 	&__container { 
         margin-top: 5px;
@@ -6,6 +8,7 @@
 	&__title { 
         margin: 0px 0px 25px 0px;
     }
+
 
 	&__confection-table { 
         display: block;

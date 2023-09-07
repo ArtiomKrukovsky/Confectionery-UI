@@ -68,11 +68,8 @@ $module-height: 700px;
  		overflow: none;
 
 		img {
-			height: 100%;
-			width: 100%;
  			border-top-right-radius: 20px;
  			border-bottom-right-radius: 20px;
-			object-fit: cover;
  		}
 
 		@media (max-width: $md2) {
