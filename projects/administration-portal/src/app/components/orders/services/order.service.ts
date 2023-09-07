@@ -1,7 +1,7 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { OrderApi } from '../api/order.api';
-import { BehaviorSubject, Observable, tap, zip } from 'rxjs';
-import { IOrder } from '../api/models/order';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { IOrderDetail } from '../api/models/order-detail';
 import { ErrorHandleService } from '../../../services/error-handle.service';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { ErrorHandleService } from '../../../services/error-handle.service';
 })
 export class OrderService implements OnDestroy {
 
-  public get Orders(): Observable<IOrder[]> {
+  public get Orders(): Observable<IOrderDetail[]> {
     return this.orders$.asObservable();
   }
 
@@ -17,14 +17,14 @@ export class OrderService implements OnDestroy {
     return this.isLoading$.asObservable();
   }
 
-  private orders$: BehaviorSubject<IOrder[]>;
+  private orders$: BehaviorSubject<IOrderDetail[]>;
   private isLoading$: BehaviorSubject<boolean>;
 
   constructor(
     private orderApi: OrderApi,
     private errorHandleService: ErrorHandleService
   ) { 
-    this.orders$ = new BehaviorSubject<IOrder[]>([]);
+    this.orders$ = new BehaviorSubject<IOrderDetail[]>([]);
     this.isLoading$ = new BehaviorSubject<boolean>(false); 
   }
 

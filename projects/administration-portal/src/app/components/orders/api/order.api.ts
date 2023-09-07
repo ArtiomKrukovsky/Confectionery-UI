@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IOrder } from './models/order';
+import { IOrderDetail } from './models/order-detail';
 import { Observable } from 'rxjs';
 import { endpoints } from '../../../shared/constants/api.constants';
 import { ApiService } from '../../../core/http/api.service';
@@ -14,8 +14,8 @@ export class OrderApi {
     private apiService: ApiService
   ) { }
 
-  public getOrders(): Observable<IOrder[]> {
+  public getOrders(): Observable<IOrderDetail[]> {
     const url = this.apiService.getApiUrl(endpoints.order.getOrders);
-    return this.httpClient.get<IOrder[]>(url);
+    return this.httpClient.get<IOrderDetail[]>(url);
   }
 }

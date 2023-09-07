@@ -1,5 +1,6 @@
 export const AUTH_URL = "auth";
 export const ORDER_URL = "order"
+export const CONFECTION_URL = "confection"
 
 export const endpoints = {
     authentication: {
@@ -7,5 +8,9 @@ export const endpoints = {
     },
     order: {
       getOrders: `${ORDER_URL}`,
+    },
+    confection: {
+      getConfections: `${CONFECTION_URL}`,
+      getConfection: `${CONFECTION_URL}/${'id'}`
     }
   }
