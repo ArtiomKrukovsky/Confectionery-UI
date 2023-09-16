@@ -14,11 +14,13 @@ export class ConfectionListComponent implements OnInit, OnDestroy {
 
   private subscriptions$: Subscription;
 
-  constructor(private confectionService: ConfectionService) { }
-
-  ngOnInit() {
+  constructor(private confectionService: ConfectionService) { 
     this.subscriptions$ = new Subscription();
     this.subsribeToServices();
+  }
+
+  ngOnInit() {
+    this.confectionService.fetchConfections();
   }
 
   ngOnDestroy(): void {

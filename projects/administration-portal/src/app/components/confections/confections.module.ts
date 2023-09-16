@@ -5,6 +5,7 @@ import { ConfectionListComponent } from './confection-list/confection-list.compo
 import { PaginationModule } from '../../shared/components/pagination/pagination.module';
 import { ConfectionListToolbarComponent } from './confection-table/confection-list-toolbar/confection-list-toolbar.component';
 import { ConfectionTableComponent } from './confection-table/confection-table.component';
+import { TruncatePipe } from '../../shared/pipes/truncate.pipe';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { ConfectionTableComponent } from './confection-table/confection-table.co
   declarations: [
     ConfectionListComponent,
     ConfectionTableComponent,
-    ConfectionListToolbarComponent
+    ConfectionListToolbarComponent,
+    TruncatePipe
   ],
   exports: [ConfectionListComponent]
 })

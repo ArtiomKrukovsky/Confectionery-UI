@@ -3,7 +3,7 @@
     class="confection-table__toolbar"
   ></app-confection-list-toolbar>
 
-  <div class="confection-table__wrapper">
+  <div *ngIf="confections.length && !isLoading" class="confection-table__wrapper">
     <table class="confection-table__table">
       <thead class="confection-table__header">
         <tr class="confection-table__row">
@@ -17,7 +17,10 @@
         </tr>
       </thead>
       <tbody class="confection-table__body">
-        <tr class="confection-table__row">
+        <tr 
+          class="confection-table__row"
+          *ngFor="let confection of confections"
+        >
           <td>
             <label class="confection-table__checkbox checkbox">
               <input class="checkbox__input" type="checkbox">
@@ -27,11 +30,18 @@
           <td>
             <div class="confection-table__product-details product-details">
               <div class="product-details__image _ibg">
-                <img src="https://media.wired.com/photos/598e35fb99d76447c4eb1f28/master/pass/phonepicutres-TA.jpg" alt="">
+                <img 
+                  *ngIf="confection.pictures[0] as picture; else noPictureFound" 
+                  [src]="picture.url" 
+                  [alt]="picture.shortName"
+                >
+                <ng-template #noPictureFound>
+                  <img src="/assets/images/no_image_available.png" alt="Нет картинки">
+                </ng-template>
               </div>
               <div class="product-details__text">
-                  <h3>Наполеон</h3>
-                  <p>Lorem ipsum dolor sit amet, cons...</p>
+                  <h3>{{ confection.name }}</h3>
+                  <p>{{ confection.description | truncate:[25, '...'] }}</p>
               </div>
             </div>
           </td>
@@ -40,9 +50,9 @@
               <span class="category category--сakes">Торт</span>
             </div>
           </td>
-          <td>42BYN</td>
-          <td>Nan</td>
-          <td>1000 г</td>
+          <td>{{ confection.price | currency: 'BYN' }}</td>
+          <td>{{ confection.minimumOrderCount || 'Nan' }}</td>
+          <td>{{ confection.weight }} г.</td>
           <td>
             <div class="confection-table__controls">
               <button class="btn">Edit</button>
