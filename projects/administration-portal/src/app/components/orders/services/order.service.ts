@@ -3,6 +3,8 @@ import { OrderApi } from '../api/order.api';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { IOrderDetail } from '../api/models/order-detail';
 import { ErrorHandleService } from '../../../services/error-handle.service';
+import { StatusType } from '../../../shared/enums/status.enum';
+import { StatusTitlesByTypeMap } from '../../../shared/maps/status-type.map';
 
 @Injectable({
   providedIn: 'root'
@@ -46,5 +48,9 @@ export class OrderService implements OnDestroy {
       next: (orders) => this.orders$.next(orders),
       error: (error) => this.errorHandleService.handle(error)
     })
+  }
+
+  public computeStatusTitle(status: StatusType) : string {
+    return StatusTitlesByTypeMap.get(status);
   }
 }

@@ -3,7 +3,7 @@
     class="order-table__toolbar">
   </app-order-table-toolbar>
 
-  <div class="order-table__wrapper">
+  <div *ngIf="orders.length && !isLoading" class="order-table__wrapper">
     <table class="order-table__table">
       <thead class="order-table__header">
         <tr class="order-table__row">
@@ -18,100 +18,30 @@
         </tr>
       </thead>
       <tbody class="order-table__body">
-        <tr class="order-table__row">
+        <tr 
+          class="order-table__row"
+          *ngFor="let order of orders"
+        >
           <td>
             <label class="order-table__checkbox checkbox">
               <input class="checkbox__input" type="checkbox">
               <div class="checkbox__indicator"></div>
             </label>
           </td>
-          <td>AKN12508</td>
-          <td>Olivera Nules</td>
-          <td>Napoleon</td>
+          <td>{{ order.id | uppercase | slice:0:8 }}</td>
+          <td>{{ order.customerName }}</td>
+          <td>{{ order.productName }}</td>
           <td>
             <div class="order-table__status">
-              <span class="status status--requested">Requested</span>
+              <span 
+                class="status" 
+                [ngClass]="computeStatusClass(order.status)"
+              >{{ computeStatusTitle(order.status) }}</span>
             </div>
           </td>
-          <td>06.08.2023</td>
-          <td>2</td>
-          <td>100.40 BYN</td>
-        </tr>
-        <tr class="order-table__row">
-          <td>
-            <label class="order-table__checkbox checkbox">
-              <input class="checkbox__input" type="checkbox">
-              <div class="checkbox__indicator"></div>
-            </label>
-          </td>
-          <td>SRT32123</td>
-          <td>Selman Calman</td>
-          <td>Medovik</td>
-          <td>
-            <div class="order-table__status">
-              <span class="status status--canceled">Canceled</span>
-            </div>
-          </td>
-          <td>12.04.2021</td>
-          <td>1</td>
-          <td>100.40 BYN</td>
-        </tr>
-        <tr class="order-table__row">
-          <td>
-            <label class="order-table__checkbox checkbox">
-              <input class="checkbox__input" type="checkbox">
-              <div class="checkbox__indicator"></div>
-            </label>
-          </td>
-          <td>HJ098713</td>
-          <td>Hanna Marina</td>
-          <td>Traifli</td>
-          <td>
-            <div class="order-table__status">
-              <span class="status status--completed">Completed</span>
-            </div>
-          </td>
-          <td>20.07.2023</td>
-          <td>12</td>
-          <td>140.12 BYN</td>
-        </tr>
-        <tr class="order-table__row">
-          <td>
-            <label class="order-table__checkbox checkbox">
-              <input class="checkbox__input" type="checkbox">
-              <div class="checkbox__indicator"></div>
-            </label>
-          </td>
-          <td>HJ098713</td>
-          <td>Hanna Marina</td>
-          <td>Traifli</td>
-          <td>
-            <div class="order-table__status">
-              <span class="status status--completed">Completed</span>
-            </div>
-          </td>
-          <td>20.07.2023</td>
-          <td>12</td>
-          <td>140.12 BYN</td>
-        </tr>
-        <tr class="order-table__row">
-          <td>
-            <label class="order-table__checkbox checkbox">
-              <input class="checkbox__input" type="checkbox">
-              <div class="checkbox__indicator"></div>
-            </label>
-          </td>
-          <td>HJ098713</td>
-          <td>Hanna Marina</td>
-          <td>Traifli</td>
-          <td>
-            <div class="order-table__status">
-              <span class="status status--completed">Completed</span>
-            </div>
-          </td>
-          <td>20.07.2023</td>
-          <td>12</td>
-          <td>140.12 BYN</td>
+          <td>{{ order.createdDate | date }}</td>
+          <td>{{ order.quantity }}</td>
+          <td>{{ calculateTotalPrice(order) | currency: 'BYN' }}</td>
         </tr>
       </tbody>
     </table>
