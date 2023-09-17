@@ -3,7 +3,7 @@ import { OrderApi } from '../api/order.api';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { IOrderDetail } from '../api/models/order-detail';
 import { ErrorHandleService } from '../../../services/error-handle.service';
-import { StatusType } from '../../../shared/enums/status.enum';
+import { StatusType } from '../../../shared/enums/status-type.enum';
 import { StatusTitlesByTypeMap } from '../../../shared/maps/status-type.map';
 
 @Injectable({

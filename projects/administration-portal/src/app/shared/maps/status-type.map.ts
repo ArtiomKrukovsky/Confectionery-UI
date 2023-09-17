@@ -1,5 +1,5 @@
 import { StatusTitles } from "../constants/status.constants";
-import { StatusType } from "../enums/status.enum";
+import { StatusType } from "../enums/status-type.enum";
 
 type StatusTypeMap = { get<T extends StatusType>(type: T): string }
 

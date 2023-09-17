@@ -12,9 +12,11 @@
     color: $light-gray;
     transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
 
-    &:hover {
-        border-color: #9b9a9a;
-        color: #9b9a9a; 
+    @media (min-width: $md3) { 
+        &:hover {
+            border-color: #9b9a9a;
+            color: #9b9a9a; 
+        }
     }
 }
 

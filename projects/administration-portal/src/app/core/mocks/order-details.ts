@@ -1,5 +1,5 @@
 import { IOrderDetail } from "../../components/orders/api/models/order-detail";
-import { StatusType } from "../../shared/enums/status.enum";
+import { StatusType } from "../../shared/enums/status-type.enum";
 
 export const ORDER_DETAILS : IOrderDetail[] = [
     {

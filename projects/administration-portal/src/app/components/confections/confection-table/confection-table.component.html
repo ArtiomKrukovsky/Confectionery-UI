@@ -41,17 +41,27 @@
               </div>
               <div class="product-details__text">
                   <h3>{{ confection.name }}</h3>
-                  <p>{{ confection.description | truncate:[25, '...'] }}</p>
+                  <p>{{ confection.description }}</p>
               </div>
             </div>
           </td>
           <td>
             <div class="confection-table__category">
-              <span class="category category--сakes">Торт</span>
+              <span 
+                class="category "
+                [ngClass]="computeCategoryClass(confection.confectionType)"
+              >{{ computeConfectionTitle(confection.confectionType) }}</span>
             </div>
           </td>
           <td>{{ confection.price | currency: 'BYN' }}</td>
-          <td>{{ confection.minimumOrderCount || 'Nan' }}</td>
+          <td>
+            <span *ngIf="confection.isOrderCountLimited; else noCountOrderLimit">
+              {{ confection.minimumOrderCount }}
+            </span>
+            <ng-template #noCountOrderLimit>
+              {{ noneNumber }}
+            </ng-template>
+          </td>
           <td>{{ confection.weight }} г.</td>
           <td>
             <div class="confection-table__controls">

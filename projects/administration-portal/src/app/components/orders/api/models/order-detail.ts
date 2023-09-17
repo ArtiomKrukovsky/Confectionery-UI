@@ -1,4 +1,4 @@
-import { StatusType } from "projects/administration-portal/src/app/shared/enums/status.enum";
+import { StatusType } from "projects/administration-portal/src/app/shared/enums/status-type.enum";
 
 export interface IOrderDetail {
     id: string,

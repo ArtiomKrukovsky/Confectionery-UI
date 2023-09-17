@@ -3,6 +3,8 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { IConfection } from '../api/models/confection';
 import { ConfectionApi } from '../api/confection.api';
 import { ErrorHandleService } from '../../../services/error-handle.service';
+import { ConfectionType } from '../../../shared/enums/confection-type.enum';
+import { ConfectionTitlesByTypeMap } from '../../../shared/maps/confection-type.map';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +28,7 @@ export class ConfectionService implements OnDestroy {
     price: 0,
     weight: 0,
     minimumOrderCount: 1,
+    confectionType: ConfectionType.Default,
     isOrderCountLimited: false,
     isOutOfStock: false,
     pictures: [
@@ -83,5 +86,9 @@ export class ConfectionService implements OnDestroy {
       next: (confection) => this.selectedConfection$.next(confection),
       error: (error) => this.errorHandlerService.handle(error)
     })
+  }
+
+  public computeConfectionTitle(confectionType: ConfectionType): string {
+    return ConfectionTitlesByTypeMap.get(confectionType);
   }
 }

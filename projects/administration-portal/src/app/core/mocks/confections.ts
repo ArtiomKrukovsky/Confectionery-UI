@@ -1,4 +1,5 @@
 import { IConfection } from "../../components/confections/api/models/confection";
+import { ConfectionType } from "../../shared/enums/confection-type.enum";
 
 export const CONFECTIONS : IConfection[] = [
     {
@@ -8,6 +9,7 @@ export const CONFECTIONS : IConfection[] = [
         price: 45.5,
         weight: 1100,
         isOrderCountLimited: false,
+        confectionType: ConfectionType.Cakes,
         minimumOrderCount: 1,
         isOutOfStock: false,
         pictures: [
@@ -24,6 +26,7 @@ export const CONFECTIONS : IConfection[] = [
         description: 'Богатырь нашей пекарни и весьма сытный торт! Настоящий морковный пирог с влажным пряным бисквитом, насыщенный вкусами специй и орехов, с прослойками творожного крема и «юбочкой» из грецкого ореха. Варианты дополнительного декора согласно сезона и доступных на момент заказа ягод. ',
         price: 60,
         weight: 1600,
+        confectionType: ConfectionType.Cakes,
         isOrderCountLimited: false,
         minimumOrderCount: 1,
         isOutOfStock: false,
@@ -41,6 +44,7 @@ export const CONFECTIONS : IConfection[] = [
         description: 'Классический Медовик, сделанный в лучших традициях: ароматные коржи, пропитанные медом, с прослойками из натурального сметанно-сливочного крема. Он вам точно понравится — слово Кондитера!',
         price: 55,
         weight: 1600,
+        confectionType: ConfectionType.Cakes,
         isOrderCountLimited: false,
         minimumOrderCount: 1,
         isOutOfStock: false,
@@ -58,6 +62,7 @@ export const CONFECTIONS : IConfection[] = [
         description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
         price: 80,
         weight: 2000,
+        confectionType: ConfectionType.Cakes,
         isOrderCountLimited: false,
         minimumOrderCount: 1,
         isOutOfStock: false,
@@ -75,6 +80,7 @@ export const CONFECTIONS : IConfection[] = [
         description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
         price: 85,
         weight: 1900,
+        confectionType: ConfectionType.Cakes,
         isOrderCountLimited: false,
         minimumOrderCount: 1,
         isOutOfStock: false,
@@ -92,6 +98,7 @@ export const CONFECTIONS : IConfection[] = [
         description: 'i-Гоголь-Моголь или французская меренга. На вид десерт выглядит симпатичным, при этом он больше вкусный, чем красивый, представляете? Оказывает терапевтическое воздействие через удовлетворение потребности: «хочется чего-то вкусненького»',
         price: 55,
         weight: 1170,
+        confectionType: ConfectionType.Desserts,
         isOrderCountLimited: false,
         minimumOrderCount: 1,
         isOutOfStock: false,
@@ -109,6 +116,7 @@ export const CONFECTIONS : IConfection[] = [
         description: 'Пирожное на основе шоколадного бисквита с марципаном, ванильного бисквита с добавлением шоколада, орехов и пасты «Пралине».',
         price: 7.6,
         weight: 150,
+        confectionType: ConfectionType.Desserts,
         isOrderCountLimited: true,
         minimumOrderCount: 4,
         isOutOfStock: false,
@@ -126,6 +134,7 @@ export const CONFECTIONS : IConfection[] = [
         description: 'Печенье Савоярди, именуемое «дамским пальчиком» пропитанное кофе, под слоем воздушного маскарпоне',
         price: 10,
         weight: 250,
+        confectionType: ConfectionType.Desserts,
         isOrderCountLimited: true,
         minimumOrderCount: 4,
         isOutOfStock: false,
@@ -143,6 +152,7 @@ export const CONFECTIONS : IConfection[] = [
         description: 'В основании тарталетки «Монблан» от Brioche Paris песочно-миндальное тесто, ванильный крем и свежая голубика.',
         price: 12,
         weight: 250,
+        confectionType: ConfectionType.Tartelettes,
         isOrderCountLimited: true,
         minimumOrderCount: 6,
         isOutOfStock: false,

@@ -50,12 +50,16 @@
 		&--number { }
 		&--more { }
 
-        &:hover {
-            border-color: #9b9a9a;
-        }
-
         &--disabled {
             background-color: $gray-stroke;
+            pointer-events: none;
+        }
+
+
+        @media (min-width: $md3) {
+            &:hover {
+                border-color: #9b9a9a;
+            }
         }
 	}
 }

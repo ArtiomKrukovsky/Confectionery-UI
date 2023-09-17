@@ -13,11 +13,11 @@
 
 	&__table { 
         width: 100%;
-        min-width: 720px;
+        min-width: 800px;
         border-collapse: collapse;
     
         font-size: 1rem;
-        text-align: left;
+        text-align: center;
         line-height: 1.5;
         color: $dark-gray;
     }
@@ -44,6 +44,12 @@
             font-size: 0.9375rem;
             font-weight: 300;
             padding: 1rem 0.75rem;
+
+            // #if needed can be extracted as separate class, with the ability to pass it in the component 
+            &:nth-child(2) {
+                text-align: left;
+                padding: 0.75rem 2rem;
+            }
         } 
     }
     
@@ -62,22 +68,33 @@
 
 .product-details {
     display: inline-flex;
+    text-align: left;
 
     &__image { 
         width: 65px;
         height: 65px;
         overflow: hidden;
         border-radius: 5px;
+        flex: 0 0 65px;
     }
 
 	&__text { 
         padding: 0px 0px 0px 1rem;
+        white-space: nowrap;
 
         h3 {
             font-size: 1rem;
             font-weight: 500;
 
             margin: 0px 0px 0.3em 0px;
+        }
+
+        p {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            white-space: pre-wrap;
         }
     }
 }
@@ -86,16 +103,28 @@
     padding: 4px 12px;
     border-radius: 5px;
 
-    &--сakes {
-        background: #cff6dd;
-        color: #1fa750;
+    &--cakes {
+        background: #ffede9;
+        color: #eea187;
     }
 
-    &--desserts { }
+    &--desserts { 
+        background: #FFF7E6;
+        color: #FFAE00;
+    }
 
-    &--tartelettes { }
+    &--tartelettes { 
+        background: #fffdd7;
+        color: #f2d306;
+    }
 
-    &--marshmallow { }
+    &--marshmallow { 
+        background: #a2f4f6;
+        color: #1cbcd2;
+    }
 
-    &--marmalade { }
+    &--marmalade {
+        background: #FDF4F6;
+        color: #DE486C;
+    }
 }

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IOrderDetail } from '../api/models/order-detail';
 import { OrderService } from '../services/order.service';
-import { StatusType } from '../../../shared/enums/status.enum';
+import { StatusType } from '../../../shared/enums/status-type.enum';
 
 @Component({
   selector: 'app-order-table',
