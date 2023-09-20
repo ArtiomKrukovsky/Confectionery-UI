@@ -28,6 +28,6 @@ export class OrderTableComponent implements OnInit {
   }
 
   public computeStatusClass(status: StatusType): string {
-    return `status--${StatusType[status].toLocaleLowerCase()}`;
+    return `status--${StatusType[status]?.toLocaleLowerCase()}`;
   }
 }

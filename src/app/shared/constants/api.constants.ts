@@ -4,6 +4,7 @@ export const ORDER_URL = 'order';
 
 export const endpoints = {
     confection: {
+      getConfetionMappings: `${CONFECTION_URL}/mappings`,
       getConfetions: `${CONFECTION_URL}`,
       getConfection: `${CONFECTION_URL}/${'id'}`
     },

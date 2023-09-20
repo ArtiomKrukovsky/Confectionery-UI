@@ -18,9 +18,8 @@ export class ConfectionApi {
 
   public getAllConfection(): Observable<IConfection[]> {
     const url = this.apiService.getApiUrl(endpoints.confection.getConfections);
-    //return this.httpClient.get<IConfection[]>(url);
-
-    return of(CONFECTIONS);
+    return this.httpClient.get<IConfection[]>(url);
+    //return of(CONFECTIONS);
   }
 
   public getConfection(id: number) : Observable<IConfection> {

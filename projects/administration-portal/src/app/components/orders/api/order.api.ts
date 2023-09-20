@@ -17,8 +17,8 @@ export class OrderApi {
 
   public getOrders(): Observable<IOrderDetail[]> {
     const url = this.apiService.getApiUrl(endpoints.order.getOrders);
-    return of(ORDER_DETAILS);
+    return this.httpClient.get<IOrderDetail[]>(url);
     
-    //return this.httpClient.get<IOrderDetail[]>(url);
+    //return of(ORDER_DETAILS);
   }
 }

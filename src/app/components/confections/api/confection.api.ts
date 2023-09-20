@@ -18,7 +18,7 @@ export class ConfectionApi {
     ) { }
 
     public getAllConfectionMappings(): Observable<IConfectionMapping[]> {
-        const url = this.apiService.getApiUrl(endpoints.confection.getConfetions);
+        const url = this.apiService.getApiUrl(endpoints.confection.getConfetionMappings);
         return this.httpClient.get<IConfectionMapping[]>(url);
     }
 
