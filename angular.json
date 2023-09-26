@@ -140,6 +140,7 @@
               "projects/administration-portal/src/assets"
             ],
             "styles": [
+              "node_modules/ngx-toastr/toastr.css",
               "projects/administration-portal/src/app/scss/main.scss"
             ],
             "stylePreprocessorOptions": {
@@ -217,6 +218,7 @@
               "projects/administration-portal/src/assets"
             ],
             "styles": [
+              "node_modules/ngx-toastr/toastr.css",
               "projects/administration-portal/src/app/scss/main.scss"
             ],
             "scripts": []

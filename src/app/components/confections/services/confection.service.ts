@@ -7,8 +7,8 @@ import { ConfectionType } from 'src/app/shared/enums/confection-type.enum';
 import { ErrorHandleService } from 'src/app/services/error-handle.service';
 import { ORDER_TITLE, SUCCESS_ORDER_MESSAGE } from 'src/app/shared/constants/notification.constants';
 import { NotificationMessage } from 'src/app/services/notification/models/notification-message';
-import { IUser } from '../api/models/user/user';
-import { UserApi } from '../api/user.api';
+import { IClient } from '../api/models/client/client';
+import { ClientApi } from '../api/client.api';
 import { PopupService } from 'src/app/services/popup.service';
 import { NotificationService } from 'src/app/services/notification/notification.service';
 import { OrderApi } from '../api/order.api';
@@ -55,7 +55,7 @@ export class ConfectionService implements OnDestroy {
 
   constructor(
     private confectionApi: ConfectionApi,
-    private userApi: UserApi,
+    private clientApi: ClientApi,
     private orderApi: OrderApi,
     private popupService: PopupService,
     private notificationService: NotificationService,
@@ -110,28 +110,28 @@ export class ConfectionService implements OnDestroy {
     instagramProfile: string, 
     mobileNumber: string
   ): void {
-    const newUser: IUser = {
+    const newClient: IClient = {
       fullName: fullName,
       email: email,
       instagramProfile: instagramProfile,
       mobileNumber: mobileNumber
     }
 
-    this.userApi.getUser(newUser.email)
+    this.clientApi.getClient(newClient.email)
     .pipe(
-      switchMap(user => {
-        if(user) {
-          const userId = user.id as string;
-          return of(userId);
+      switchMap(client => {
+        if(client) {
+          const clientId = client.id as string;
+          return of(clientId);
         }
         
-        return this.userApi.createUser(newUser);
+        return this.clientApi.createClient(newClient);
       }),
-      switchMap(userId => {
+      switchMap(clientId => {
         const order: IOrder = {
           confectionId: confectionId,
           unitPrice: unitPrice,
-          userId: userId,
+          clientId: clientId,
           quantity: quantity
         }
 

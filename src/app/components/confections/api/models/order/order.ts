@@ -1,7 +1,7 @@
 export interface IOrder {
     id?: string;
     confectionId: string;
-    userId: string;
+    clientId: string;
     unitPrice: number,
     quantity: number
 }

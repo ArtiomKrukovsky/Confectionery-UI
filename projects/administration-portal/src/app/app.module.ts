@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { AuthenticationModule } from './components/authentication/authentication.module';
 import { HeaderModule } from './core/header/header.module';
 import { OrdersModule } from './components/orders/orders.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,12 @@ import { OrdersModule } from './components/orders/orders.module';
     AppRoutingModule,
     HeaderModule,
     AuthenticationModule,
-    OrdersModule
+    OrdersModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 3500,
+      preventDuplicates: true
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
