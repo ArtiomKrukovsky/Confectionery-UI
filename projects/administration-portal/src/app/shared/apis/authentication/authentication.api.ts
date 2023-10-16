@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { ApiService } from "../../../core/http/api.service";
-import { endpoints } from "../../../shared/constants/api.constants";
+import { endpoints } from "../../constants/api.constants";
 import { ILogin } from "./models/login";
 import { ITokens } from "./models/tokens";
 

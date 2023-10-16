@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AuthenticationApi } from '../api/authentication.api';
-import { ILogin } from '../api/models/login';
+import { AuthenticationApi } from '../../../shared/apis/authentication/authentication.api';
+import { ILogin } from '../../../shared/apis/authentication/models/login';
 import { ErrorHandleService } from '../../../services/error-handle.service';
 import { Router } from '@angular/router';
 import { JwtTokenService } from '../../../services/authentication/jwt-token.service';

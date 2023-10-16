@@ -8,10 +8,10 @@ import {
 } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
 import { JwtTokenService } from '../../services/authentication/jwt-token.service';
-import { ITokens } from '../../components/authentication/api/models/tokens';
+import { ITokens } from '../../shared/apis/authentication/models/tokens';
 import { LOGIN_PAGE_PATH } from '../../shared/constants/page.constants';
 import { Router } from '@angular/router';
-import { AuthenticationApi } from '../../components/authentication/api/authentication.api';
+import { AuthenticationApi } from '../../shared/apis/authentication/authentication.api';
 
 @Injectable()
 export class RefreshTokenInterceptor implements HttpInterceptor {
