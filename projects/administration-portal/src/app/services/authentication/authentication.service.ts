@@ -4,6 +4,7 @@ import { ILogin } from '../../shared/apis/authentication/models/login';
 import { ErrorHandleService } from '../error-handle.service';
 import { Router } from '@angular/router';
 import { JwtTokenService } from './jwt-token.service';
+import { ORDERS_PAGE_PATH } from '../../shared/constants/page.constants';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,7 @@ export class AuthenticationService {
           tokens.refreshToken
         );
 
-        this.router.navigate(['/orders'])
+        this.router.navigate([ORDERS_PAGE_PATH])
       }, 
       error: (error) => this.errorHandleService.handle(error)
     });
