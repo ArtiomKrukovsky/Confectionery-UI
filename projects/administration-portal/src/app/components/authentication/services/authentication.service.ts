@@ -3,6 +3,7 @@ import { AuthenticationApi } from '../api/authentication.api';
 import { ILogin } from '../api/models/login';
 import { ErrorHandleService } from '../../../services/error-handle.service';
 import { Router } from '@angular/router';
+import { JwtTokenService } from '../../../services/authentication/jwt-token.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class AuthenticationService {
   constructor(
     private authApi: AuthenticationApi,
     private errorHandleService: ErrorHandleService,
+    private jwtTokenService: JwtTokenService,
     private router: Router
   ) { }
 
@@ -23,8 +25,19 @@ export class AuthenticationService {
 
     this.authApi.logIn(login)
     .subscribe({
-      next: () => this.router.navigate(['/orders']), 
+      next: (tokens) => {
+        this.jwtTokenService.saveUser(
+          tokens.accessToken,
+          tokens.refreshToken
+        );
+
+        this.router.navigate(['/orders'])
+      }, 
       error: (error) => this.errorHandleService.handle(error)
-    });;
+    });
+  }
+
+  public isUserAuthorized(): boolean {
+    return this.jwtTokenService.isUserAuthorized();
   }
 }

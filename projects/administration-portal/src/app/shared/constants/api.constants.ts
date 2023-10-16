@@ -4,7 +4,8 @@ export const CONFECTION_URL = "confection"
 
 export const endpoints = {
     authentication: {
-      logIn: `${AUTH_URL}/logIn`
+      logIn: `${AUTH_URL}/logIn`,
+      refreshToken: `${AUTH_URL}/refreshToken`
     },
     order: {
       getOrders: `${ORDER_URL}`,

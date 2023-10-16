@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,6 +10,9 @@ import { OrdersModule } from './components/orders/orders.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { RefreshTokenInterceptor } from './core/interceptors/refresh-token.interceptor';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
+import { HttpErrorInterceptor } from './core/interceptors/http-error.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,24 @@ import { ToastrModule } from 'ngx-toastr';
       preventDuplicates: true
     })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true,
+    },
+
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RefreshTokenInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

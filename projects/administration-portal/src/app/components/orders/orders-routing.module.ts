@@ -3,10 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { OrderListComponent } from './order-list/order-list.component';
 import { registerLocaleData } from '@angular/common';
 import localeBY  from '@angular/common/locales/ru-BY';
+import { AuthGuard } from '../../core/guards/authorized.guard';
 registerLocaleData(localeBY);
 
 const routes: Routes = [
-  { path: '', component: OrderListComponent }
+  { path: '', component: OrderListComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
