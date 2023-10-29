@@ -23,8 +23,8 @@ export class OrderService implements OnDestroy {
 
   private defaultPaginatedOrders: IPagedList<IOrderDetail> = {
     items: [],
-    currentPage: 0,
-    pageSize: 0,
+    currentPage: 1,
+    pageSize: 10,
     totalCount: 0,
     totalPages: 0
   }
