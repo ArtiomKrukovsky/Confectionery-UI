@@ -9,12 +9,17 @@
 
     <app-order-table 
       class="order-list__order-table"
-      [orders]="orders"
+      [orders]="paginatedOrders.items"
       [isLoading]="isLoading"
     ></app-order-table>
 
     <app-pagination 
       class="order-list__pagination"
+      [currentPage]="currentPage"
+      [pageSize]="pageSize"
+      [totalPages]="totalPages"
+      [totalCount]="totalCount"
+      (pageChanged)="onPageChange($event)"
     ></app-pagination>
   </div>
 </div>

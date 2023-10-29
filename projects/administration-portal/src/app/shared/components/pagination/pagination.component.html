@@ -1,25 +1,60 @@
 <section class="pagination">
   <div class="pagination__items">
-    <div class="pagination__item">
-      <button class="pagination__btn pagination__btn--arrow-left pagination__btn--disabled"></button>
+    <div class="pagination__page-size">
+      <div class="pagination__page-size-label">
+        Items per page: 
+      </div>
+      <div class="pagination__page-size-value">
+        {{ pageSize }}
+      </div>
     </div>
-    <div class="pagination__item">
-      <button class="pagination__btn pagination__btn--number">{{ paginationStartNumber }}</button>
+
+    <div class="pagination__range-label">
+      Page {{ currentPage }} of {{ totalPages }}
     </div>
-    <div class="pagination__item">
-      <button class="pagination__btn pagination__btn--number">{{ paginationStartNumber + 1 }}</button>
+
+    <div class="pagination__actions">
+      <div class="pagination__item">
+        <button 
+          class="pagination__btn" 
+          (click)="goToPreviousPage()" 
+          [disabled]="!hasPreviousPage()"
+        >First</button>
+      </div>
+      <div class="pagination__item">
+        <button 
+          class="pagination__btn" 
+          (click)="goToPreviousPage()" 
+          [disabled]="!hasPreviousPage()"
+        >Prev</button>
+      </div>
+      <div class="pagination__item">
+        <button 
+          class="pagination__btn" 
+          (click)="goToNextPage()" 
+          [disabled]="!hasNextPage()"
+        >Next</button>
+      </div>
+      <div class="pagination__item">
+        <button 
+          class="pagination__btn" 
+          (click)="goToLastPage()" 
+          [disabled]="!hasNextPage()"
+        >Last</button>
+      </div>
     </div>
-    <div class="pagination__item">
-      <button class="pagination__btn pagination__btn--more">...</button>
+    <!-- <div class="pagination__item">
+      <button class="pagination__btn pagination__btn--arrow-left" [disabled]="!hasPreviousPage"></button>
     </div>
-    <div class="pagination__item">
-      <button class="pagination__btn pagination__btn--number"> {{ paginationEndNumber - 1 }} </button>
-    </div>
-    <div class="pagination__item">
-      <button class="pagination__btn pagination__btn--number"> {{ paginationEndNumber }} </button>
-    </div>
-    <div class="pagination__item">
-      <button class="pagination__btn pagination__btn--arrow-right"></button>
-    </div>
+    <div *ngFor="let page of pages" class="pagination__item">
+      <button 
+        class="pagination__btn pagination__btn--number" 
+        [ngClass]="{ 'pagination__btn--active' : currentPage === page }"
+        (onclick)="changePage(page)"
+      >{{ page }}</button>
+    </div> -->
+    <!-- <div class="pagination__item">
+      <button class="pagination__btn pagination__btn--arrow-right" [disabled]="!hasNextPage"></button>
+    </div> -->
   </div>
 </section>

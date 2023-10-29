@@ -5,47 +5,57 @@ import { IOrderDetail } from '../api/models/order-detail';
 import { ErrorHandleService } from '../../../services/error-handle.service';
 import { StatusType } from '../../../shared/enums/status-type.enum';
 import { StatusTitlesByTypeMap } from '../../../shared/maps/status-type.map';
+import { IQueryParameters } from '../../../shared/models/query-parameters';
+import { IPagedList } from '../../../shared/models/paged-list';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService implements OnDestroy {
 
-  public get Orders(): Observable<IOrderDetail[]> {
-    return this.orders$.asObservable();
+  public get PaginatedOrders(): Observable<IPagedList<IOrderDetail>> {
+    return this.paginatedOrders$.asObservable();
   }
 
   public get IsLoading(): Observable<boolean> {
     return this.isLoading$.asObservable();
   }
 
-  private orders$: BehaviorSubject<IOrderDetail[]>;
+  private defaultPaginatedOrders: IPagedList<IOrderDetail> = {
+    items: [],
+    currentPage: 0,
+    pageSize: 0,
+    totalCount: 0,
+    totalPages: 0
+  }
+
+  private paginatedOrders$: BehaviorSubject<IPagedList<IOrderDetail>>;
   private isLoading$: BehaviorSubject<boolean>;
 
   constructor(
     private orderApi: OrderApi,
     private errorHandleService: ErrorHandleService
   ) { 
-    this.orders$ = new BehaviorSubject<IOrderDetail[]>([]);
+    this.paginatedOrders$ = new BehaviorSubject<IPagedList<IOrderDetail>>(this.defaultPaginatedOrders);
     this.isLoading$ = new BehaviorSubject<boolean>(false); 
   }
 
   ngOnDestroy(): void {
-    this.orders$.next([]);
-    this.orders$.complete();
+    this.paginatedOrders$.next(this.defaultPaginatedOrders);
+    this.paginatedOrders$.complete();
     this.isLoading$.next(false);
     this.isLoading$.complete();
   }
 
-  public fetchOrders() : void {
+  public fetchPaginatedOrders(queryParameters: IQueryParameters) : void {
     this.isLoading$.next(true);
 
-    this.orderApi.getOrders()
+    this.orderApi.getPaginatedOrders(queryParameters)
     .pipe(
       tap(() => this.isLoading$.next(false))
     )
     .subscribe({
-      next: (orders) => this.orders$.next(orders),
+      next: (paginatedOrders) => this.paginatedOrders$.next(paginatedOrders),
       error: (error) => this.errorHandleService.handle(error)
     })
   }

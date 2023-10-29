@@ -1,13 +1,39 @@
 @import 'projects/administration-portal/src/app/scss/abstracts/variables';
 
 .pagination {
+    font-size: 0.9375rem;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.87);
+    letter-spacing: 0.4px;
+    line-height: 20px;
+
 	&__items { 
         display: flex;
-        flex-direction: row;
+        align-items: center;
+        padding: 0.75rem 0px;
+    }
+
+    &__page-size { 
+        display: flex;
+    }
+
+	&__page-size-label { }
+	&__page-size-value { }
+
+    &__range-label { 
+        margin: 0 2rem 0 1.5rem;
+    }
+
+	&__actions { 
+        display: flex;
     }
 
     &__item {
-        margin: 0px 0px 0px 8px;
+        margin: 0px 8px 0px 0px;
+
+        &:last-child {
+            margin: 0px;
+        }
     }
 
 	&__btn {
@@ -50,11 +76,14 @@
 		&--number { }
 		&--more { }
 
-        &--disabled {
+        &--active {
+            background-color: $lightest-gray-alfa650;
+        }
+
+        &:disabled {
             background-color: $gray-stroke;
             pointer-events: none;
         }
-
 
         @media (min-width: $md3) {
             &:hover {

@@ -1,10 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IOrderDetail } from './models/order-detail';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { endpoints } from '../../../shared/constants/api.constants';
 import { ApiService } from '../../../core/http/api.service';
-import { ORDER_DETAILS } from '../../../core/mocks/order-details';
+import { IPagedList } from '../../../shared/models/paged-list';
+import { IQueryParameters } from '../../../shared/models/query-parameters';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +16,13 @@ export class OrderApi {
     private apiService: ApiService
   ) { }
 
-  public getOrders(): Observable<IOrderDetail[]> {
+  public getPaginatedOrders(queryParameters: IQueryParameters): Observable<IPagedList<IOrderDetail>> {
+    const params = new HttpParams()
+      .set('pageNumber', queryParameters.pageNumber)
+      .set('pageSize', queryParameters.pageSize)
+      .set('searchTerm', queryParameters.searchTerm ?? '')
+
     const url = this.apiService.getApiUrl(endpoints.order.getOrders);
-    return this.httpClient.get<IOrderDetail[]>(url);
-    
-    //return of(ORDER_DETAILS);
+    return this.httpClient.get<IPagedList<IOrderDetail>>(url, { params });
   }
 }

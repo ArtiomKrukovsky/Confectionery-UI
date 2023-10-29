@@ -3,6 +3,8 @@ import { IMenuItem } from '../../../shared/components/tab-menu/models/menu-item'
 import { OrderService } from '../services/order.service';
 import { Subscription } from 'rxjs';
 import { IOrderDetail } from '../api/models/order-detail';
+import { IQueryParameters } from '../../../shared/models/query-parameters';
+import { IPagedList } from '../../../shared/models/paged-list';
 
 @Component({
   selector: 'app-order-list',
@@ -10,8 +12,13 @@ import { IOrderDetail } from '../api/models/order-detail';
   styleUrls: ['./order-list.component.scss']
 })
 export class OrderListComponent implements OnInit, OnDestroy {
-  public orders: IOrderDetail[];
+  public paginatedOrders: IPagedList<IOrderDetail>;
   public isLoading: boolean;
+
+  public currentPage: number = 1;
+  public pageSize: number = 10;
+  public totalPages: number;
+  public totalCount: number;
 
   public menuItems: IMenuItem[] = [
     {
@@ -37,15 +44,37 @@ export class OrderListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.orderService.fetchOrders();
+    const orderQueryParameters = this.computeOrderQueryParameters();
+    this.orderService.fetchPaginatedOrders(orderQueryParameters);
   }
   
   ngOnDestroy(): void {
     this.subscriptions$.unsubscribe();
   }
 
+  public onPageChange(pageNumber: number): void {
+    this.currentPage = pageNumber;
+
+    const orderQueryParameters = this.computeOrderQueryParameters();
+    this.orderService.fetchPaginatedOrders(orderQueryParameters);
+  }
+
+  private computeOrderQueryParameters(): IQueryParameters {
+    return {
+      pageNumber: this.currentPage,
+      pageSize: this.pageSize,
+      searchTerm: ''
+    } as IQueryParameters;
+  }
+
   private subscribeToServices(): void {
-    this.subscriptions$.add(this.orderService.Orders.subscribe(orders => this.orders = orders));
+    this.subscriptions$.add(this.orderService.PaginatedOrders.subscribe(paginatedOrders => { 
+      this.paginatedOrders = paginatedOrders;
+      this.pageSize = paginatedOrders.pageSize;
+      this.totalPages = paginatedOrders.totalPages;
+      this.totalCount = paginatedOrders.totalCount;
+    }));
+
     this.subscriptions$.add(this.orderService.IsLoading.subscribe(isLoading => this.isLoading = isLoading));
   }
 }
