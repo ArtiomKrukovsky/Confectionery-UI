@@ -2,6 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IConfection } from '../api/models/confection';
 import { Subscription } from 'rxjs';
 import { ConfectionService } from '../services/confection.service';
+import { IPagedList } from '../../../shared/models/paged-list';
+import { IQueryParameters } from '../../../shared/models/query-parameters';
 
 @Component({
   selector: 'app-confection-list',
@@ -9,8 +11,13 @@ import { ConfectionService } from '../services/confection.service';
   styleUrls: ['./confection-list.component.scss']
 })
 export class ConfectionListComponent implements OnInit, OnDestroy {
-  public confections: IConfection[];
+  public paginatedConfections: IPagedList<IConfection>;
   public isLoading: boolean;
+
+  public currentPage: number = 1;
+  public pageSize: number = 10;
+  public totalPages: number;
+  public totalCount: number;
 
   private subscriptions$: Subscription;
 
@@ -20,15 +27,37 @@ export class ConfectionListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.confectionService.fetchConfections();
+    const confectionQueryParameters = this.computeConfectionQueryParameters();
+    this.confectionService.fetchPaginatedConfections(confectionQueryParameters);
   }
 
   ngOnDestroy(): void {
     this.subscriptions$.unsubscribe();
   }
 
+  public onPageChange(pageNumber: number): void {
+    this.currentPage = pageNumber;
+
+    const confectionQueryParameters = this.computeConfectionQueryParameters();
+    this.confectionService.fetchPaginatedConfections(confectionQueryParameters);
+  }
+
+  private computeConfectionQueryParameters(): IQueryParameters {
+    return {
+      pageNumber: this.currentPage,
+      pageSize: this.pageSize,
+      searchTerm: ''
+    } as IQueryParameters;
+  }
+
   private subsribeToServices(): void {
-    this.subscriptions$.add(this.confectionService.Confections.subscribe(confections => this.confections = confections));
+    this.subscriptions$.add(this.confectionService.PaginatedConfections.subscribe(paginatedConfections => {
+      this.paginatedConfections = paginatedConfections;
+      this.pageSize = paginatedConfections.pageSize;
+      this.totalPages = paginatedConfections.totalPages;
+      this.totalCount = paginatedConfections.totalCount;
+    }));
+
     this.subscriptions$.add(this.confectionService.IsLoading.subscribe(isLoading => this.isLoading = isLoading));
   }
 }

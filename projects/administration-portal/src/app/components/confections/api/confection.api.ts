@@ -1,11 +1,12 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ApiService } from '../../../core/http/api.service';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { IConfection } from './models/confection';
 import { CONFECTION_URL, endpoints } from '../../../shared/constants/api.constants';
 import { environment } from 'src/environments/environment';
-import { CONFECTIONS } from '../../../core/mocks/confections';
+import { IPagedList } from '../../../shared/models/paged-list';
+import { IQueryParameters } from '../../../shared/models/query-parameters';
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +17,15 @@ export class ConfectionApi {
     private apiService: ApiService
   ) { }
 
-  public getAllConfection(): Observable<IConfection[]> {
+  public getPaginatedConfections(queryParameters: IQueryParameters): Observable<IPagedList<IConfection>> {
+    const params = new HttpParams({ fromObject: { 
+      pageNumber: queryParameters.pageNumber, 
+      pageSize: queryParameters.pageSize, 
+      searchTerm: queryParameters.searchTerm ?? '' 
+    }})
+
     const url = this.apiService.getApiUrl(endpoints.confection.getConfections);
-    return this.httpClient.get<IConfection[]>(url);
-    //return of(CONFECTIONS);
+    return this.httpClient.get<IPagedList<IConfection>>(url, { params });
   }
 
   public getConfection(id: number) : Observable<IConfection> {
