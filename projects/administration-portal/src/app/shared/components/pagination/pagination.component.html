@@ -15,32 +15,32 @@
 
     <div class="pagination__actions">
       <div class="pagination__item">
-        <button 
-          class="pagination__btn" 
+        <button
+          class="pagination__btn pagination__btn--arrow-first"
           (click)="goToFirstPage()" 
           [disabled]="!hasPreviousPage()"
-        >First</button>
+        ></button>
       </div>
       <div class="pagination__item">
         <button 
-          class="pagination__btn" 
+          class="pagination__btn pagination__btn--arrow-previous" 
           (click)="goToPreviousPage()" 
           [disabled]="!hasPreviousPage()"
-        >Prev</button>
+        ></button>
       </div>
       <div class="pagination__item">
         <button 
-          class="pagination__btn" 
+          class="pagination__btn pagination__btn--arrow-next" 
           (click)="goToNextPage()" 
           [disabled]="!hasNextPage()"
-        >Next</button>
+        ></button>
       </div>
       <div class="pagination__item">
         <button 
-          class="pagination__btn" 
+          class="pagination__btn pagination__btn--arrow-last" 
           (click)="goToLastPage()" 
           [disabled]="!hasNextPage()"
-        >Last</button>
+        ></button>
       </div>
     </div>
     <!-- <div class="pagination__item">

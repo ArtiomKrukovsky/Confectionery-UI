@@ -1,11 +1,14 @@
 @import 'projects/administration-portal/src/app/scss/abstracts/variables';
+@import 'projects/administration-portal/src/app/scss/abstracts/mixins';
 
 .pagination {
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     font-weight: 300;
+    letter-spacing: 0.0285em;
+    line-height: 1.429em;
+
+    background-color: white;
     color: rgba(0, 0, 0, 0.87);
-    letter-spacing: 0.4px;
-    line-height: 20px;
 
 	&__items { 
         display: flex;
@@ -17,9 +20,6 @@
         display: flex;
     }
 
-	&__page-size-label { }
-	&__page-size-value { }
-
     &__range-label { 
         margin: 0 2rem 0 1.5rem;
     }
@@ -29,7 +29,7 @@
     }
 
     &__item {
-        margin: 0px 8px 0px 0px;
+        margin: 0px .5rem 0px 0px;
 
         &:last-child {
             margin: 0px;
@@ -37,57 +37,68 @@
     }
 
 	&__btn {
-        width: 34px;
-        height: 34px;
-        border-radius: 4px;
-        font-size: 1rem;
-        font-weight: 700;
-        line-height: 1.42;
-        color: $dark-gray;
+        width: 48px;
+        height: 48px;
         background-color: white;
-        border: 1px solid $gray-stroke;
-        transition: border-color .3s ease 0s;
+        border-radius: 20%;
 
-		&--arrow-left,
-        &--arrow-right { 
+        transition: background-color .3s ease 0s;
+
+		&--arrow-next,
+        &--arrow-previous,
+        &--arrow-first,
+        &--arrow-last { 
             position: relative;
         }
 
-        &--arrow-right::before {
+        &--arrow-next::before,
+        &--arrow-previous::before {
             display: inline-block;
             content: '';
-            background: url('/assets/icons/vector-right.png') no-repeat;
-            background-size: 7.41px 12px;
+            background-size: 7.8px 12px;
             height: 12px;
-            width: 7.41px;
+            width: 7.8px;
             margin: 5px 0px 0px 2px;
+            
+            @include colored-icon('/assets/icons/vector-next.svg', $medium-gray);
         }
 
-        &--arrow-left::before {
+        &--arrow-first::before,
+        &--arrow-last::before {
             display: inline-block;
             content: '';
-            background: url('/assets/icons/vector-left.png') no-repeat;
-            background-size: 7.41px 12px;
-            height: 12px;
-            width: 7.41px;
-            margin: 5px 2px 0px 0px;
+            background-size: 11.5px 14px;
+            height: 14px;
+            width: 11.5px;
+            margin: 5px 0px 0px 0px;
+
+            @include colored-icon('/assets/icons/vector-taget.svg', $medium-gray);
         }
 
-		&--number { }
-		&--more { }
-
-        &--active {
-            background-color: $lightest-gray-alfa650;
+        &--arrow-previous::before,
+        &--arrow-first::before {
+            transform: scale(-1, 1);
         }
 
         &:disabled {
-            background-color: $gray-stroke;
+            cursor: default;
             pointer-events: none;
+ 
+            &.pagination__btn--arrow-next::before,
+            &.pagination__btn--arrow-previous::before,
+            &.pagination__btn--arrow-first::before,
+            &.pagination__btn--arrow-last::before { 
+                background-color: $gray-stroke;
+            }
         }
 
         @media (min-width: $md3) {
             &:hover {
-                border-color: #9b9a9a;
+                background-color: $lightest-gray-alfa650;
+            }
+
+            &:active {
+                background-color: $gray-stroke;
             }
         }
 	}

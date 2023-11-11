@@ -1,0 +1,8 @@
+@mixin colored-icon($image, $color : black) {
+    background-color: $color;
+
+    -webkit-mask-image: url($image);
+    mask-image: url($image);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
