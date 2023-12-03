@@ -16,8 +16,10 @@ export class ConfectionListComponent implements OnInit, OnDestroy {
 
   public currentPage: number = 1;
   public pageSize: number = 10;
-  public totalPages: number;
+  public totalPages: number; // we can remove this
   public totalCount: number;
+
+  public searchTerm: string = '';
 
   private subscriptions$: Subscription;
 
@@ -46,7 +48,7 @@ export class ConfectionListComponent implements OnInit, OnDestroy {
     return {
       pageNumber: this.currentPage,
       pageSize: this.pageSize,
-      searchTerm: ''
+      searchTerm: this.searchTerm
     } as IQueryParameters;
   }
 

@@ -11,6 +11,7 @@
       class="order-list__order-table"
       [orders]="paginatedOrders.items"
       [isLoading]="isLoading"
+      (onSearch)="search($event)"
     ></app-order-table>
 
     <app-pagination 

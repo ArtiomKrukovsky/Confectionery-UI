@@ -17,10 +17,12 @@ export class OrderApi {
   ) { }
 
   public getPaginatedOrders(queryParameters: IQueryParameters): Observable<IPagedList<IOrderDetail>> {
-    const params = new HttpParams()
-      .set('pageNumber', queryParameters.pageNumber)
-      .set('pageSize', queryParameters.pageSize)
-      .set('searchTerm', queryParameters.searchTerm ?? '')
+    // todo: beautify
+    const params = new HttpParams({ fromObject: { 
+        pageNumber: queryParameters.pageNumber, 
+        pageSize: queryParameters.pageSize, 
+        searchTerm: queryParameters.searchTerm ?? '' 
+    }})
 
     const url = this.apiService.getApiUrl(endpoints.order.getOrders);
     return this.httpClient.get<IPagedList<IOrderDetail>>(url, { params });

@@ -17,8 +17,10 @@ export class OrderListComponent implements OnInit, OnDestroy {
 
   public currentPage: number = 1;
   public pageSize: number = 10;
-  public totalPages: number;
+  public totalPages: number; // we can remove this
   public totalCount: number;
+
+  public searchTerm: string = '';
 
   public menuItems: IMenuItem[] = [
     {
@@ -59,11 +61,18 @@ export class OrderListComponent implements OnInit, OnDestroy {
     this.orderService.fetchPaginatedOrders(orderQueryParameters);
   }
 
+  public search(searchTerm: string): void {
+    this.searchTerm = searchTerm;
+
+    const orderQueryParameters = this.computeOrderQueryParameters();
+    this.orderService.fetchPaginatedOrders(orderQueryParameters);
+  }
+
   private computeOrderQueryParameters(): IQueryParameters {
     return {
       pageNumber: this.currentPage,
       pageSize: this.pageSize,
-      searchTerm: ''
+      searchTerm: this.searchTerm
     } as IQueryParameters;
   }
 

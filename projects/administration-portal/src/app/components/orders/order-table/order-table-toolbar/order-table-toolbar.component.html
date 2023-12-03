@@ -2,7 +2,13 @@
   <div class="toolbar__row">
     <div class="toolbar__search search">
       <img class="search__image" src="/assets/icons/search.png"/>
-      <input placeholder="Поиск по Идентификатору, Email, Продукту и другому" class="search__input"/>
+      <input 
+        type="search"
+        class="search__input" 
+        [(ngModel)]="searchTerm" 
+        (input)="search()"
+        placeholder="Поиск по Идентификатору, Email, Продукту и другому"
+      />
     </div>
 
     <div class="toolbar__controls">
