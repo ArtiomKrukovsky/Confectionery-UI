@@ -6,19 +6,21 @@ import { PaginationModule } from '../../shared/components/pagination/pagination.
 import { ConfectionListToolbarComponent } from './confection-table/confection-list-toolbar/confection-list-toolbar.component';
 import { ConfectionTableComponent } from './confection-table/confection-table.component';
 import { TruncatePipe } from '../../shared/pipes/truncate.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     ConfectionsRoutingModule,
-    PaginationModule
+    PaginationModule,
+    FormsModule,
   ],
   declarations: [
     ConfectionListComponent,
     ConfectionTableComponent,
     ConfectionListToolbarComponent,
-    TruncatePipe
+    TruncatePipe,
   ],
-  exports: [ConfectionListComponent]
+  exports: [ConfectionListComponent],
 })
-export class ConfectionsModule { }
+export class ConfectionsModule {}

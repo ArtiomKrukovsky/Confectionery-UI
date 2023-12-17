@@ -9,7 +9,7 @@ import { IPagedList } from '../../../shared/models/paged-list';
 @Component({
   selector: 'app-order-list',
   templateUrl: './order-list.component.html',
-  styleUrls: ['./order-list.component.scss']
+  styleUrls: ['./order-list.component.scss'],
 })
 export class OrderListComponent implements OnInit, OnDestroy {
   public paginatedOrders: IPagedList<IOrderDetail>;
@@ -17,7 +17,6 @@ export class OrderListComponent implements OnInit, OnDestroy {
 
   public currentPage: number = 1;
   public pageSize: number = 10;
-  public totalPages: number; // we can remove this
   public totalCount: number;
 
   public searchTerm: string = '';
@@ -25,22 +24,22 @@ export class OrderListComponent implements OnInit, OnDestroy {
   public menuItems: IMenuItem[] = [
     {
       label: 'В обработке',
-      routerLink: '#'
+      routerLink: '#',
     },
     {
       label: 'Все Заказы',
       routerLink: '#',
-      isSelected: true
+      isSelected: true,
     },
     {
       label: 'Завершённые',
-      routerLink: '#'
-    }
+      routerLink: '#',
+    },
   ];
 
   private subscriptions$: Subscription;
 
-  constructor(private orderService: OrderService) { 
+  constructor(private orderService: OrderService) {
     this.subscriptions$ = new Subscription();
     this.subscribeToServices();
   }
@@ -49,7 +48,7 @@ export class OrderListComponent implements OnInit, OnDestroy {
     const orderQueryParameters = this.computeOrderQueryParameters();
     this.orderService.fetchPaginatedOrders(orderQueryParameters);
   }
-  
+
   ngOnDestroy(): void {
     this.subscriptions$.unsubscribe();
   }
@@ -61,7 +60,7 @@ export class OrderListComponent implements OnInit, OnDestroy {
     this.orderService.fetchPaginatedOrders(orderQueryParameters);
   }
 
-  public search(searchTerm: string): void {
+  public onSearchChanged(searchTerm: string): void {
     this.searchTerm = searchTerm;
 
     const orderQueryParameters = this.computeOrderQueryParameters();
@@ -72,18 +71,23 @@ export class OrderListComponent implements OnInit, OnDestroy {
     return {
       pageNumber: this.currentPage,
       pageSize: this.pageSize,
-      searchTerm: this.searchTerm
+      searchTerm: this.searchTerm,
     } as IQueryParameters;
   }
 
   private subscribeToServices(): void {
-    this.subscriptions$.add(this.orderService.PaginatedOrders.subscribe(paginatedOrders => { 
-      this.paginatedOrders = paginatedOrders;
-      this.pageSize = paginatedOrders.pageSize;
-      this.totalPages = paginatedOrders.totalPages;
-      this.totalCount = paginatedOrders.totalCount;
-    }));
+    this.subscriptions$.add(
+      this.orderService.PaginatedOrders.subscribe((paginatedOrders) => {
+        this.paginatedOrders = paginatedOrders;
+        this.pageSize = paginatedOrders.pageSize;
+        this.totalCount = paginatedOrders.totalCount;
+      })
+    );
 
-    this.subscriptions$.add(this.orderService.IsLoading.subscribe(isLoading => this.isLoading = isLoading));
+    this.subscriptions$.add(
+      this.orderService.IsLoading.subscribe(
+        (isLoading) => (this.isLoading = isLoading)
+      )
+    );
   }
 }

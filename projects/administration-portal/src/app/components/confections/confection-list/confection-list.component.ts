@@ -8,7 +8,7 @@ import { IQueryParameters } from '../../../shared/models/query-parameters';
 @Component({
   selector: 'app-confection-list',
   templateUrl: './confection-list.component.html',
-  styleUrls: ['./confection-list.component.scss']
+  styleUrls: ['./confection-list.component.scss'],
 })
 export class ConfectionListComponent implements OnInit, OnDestroy {
   public paginatedConfections: IPagedList<IConfection>;
@@ -16,14 +16,13 @@ export class ConfectionListComponent implements OnInit, OnDestroy {
 
   public currentPage: number = 1;
   public pageSize: number = 10;
-  public totalPages: number; // we can remove this
   public totalCount: number;
 
   public searchTerm: string = '';
 
   private subscriptions$: Subscription;
 
-  constructor(private confectionService: ConfectionService) { 
+  constructor(private confectionService: ConfectionService) {
     this.subscriptions$ = new Subscription();
     this.subsribeToServices();
   }
@@ -44,22 +43,37 @@ export class ConfectionListComponent implements OnInit, OnDestroy {
     this.confectionService.fetchPaginatedConfections(confectionQueryParameters);
   }
 
+  public onSearchChanged(searchTerm: string): void {
+    this.searchTerm = searchTerm;
+    this.currentPage = 1;
+
+    const confectionQueryParameters = this.computeConfectionQueryParameters();
+    this.confectionService.fetchPaginatedConfections(confectionQueryParameters);
+  }
+
   private computeConfectionQueryParameters(): IQueryParameters {
     return {
       pageNumber: this.currentPage,
       pageSize: this.pageSize,
-      searchTerm: this.searchTerm
+      searchTerm: this.searchTerm,
     } as IQueryParameters;
   }
 
   private subsribeToServices(): void {
-    this.subscriptions$.add(this.confectionService.PaginatedConfections.subscribe(paginatedConfections => {
-      this.paginatedConfections = paginatedConfections;
-      this.pageSize = paginatedConfections.pageSize;
-      this.totalPages = paginatedConfections.totalPages;
-      this.totalCount = paginatedConfections.totalCount;
-    }));
+    this.subscriptions$.add(
+      this.confectionService.PaginatedConfections.subscribe(
+        (paginatedConfections) => {
+          this.paginatedConfections = paginatedConfections;
+          this.pageSize = paginatedConfections.pageSize;
+          this.totalCount = paginatedConfections.totalCount;
+        }
+      )
+    );
 
-    this.subscriptions$.add(this.confectionService.IsLoading.subscribe(isLoading => this.isLoading = isLoading));
+    this.subscriptions$.add(
+      this.confectionService.IsLoading.subscribe(
+        (isLoading) => (this.isLoading = isLoading)
+      )
+    );
   }
 }

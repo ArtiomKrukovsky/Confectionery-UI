@@ -1,18 +1,28 @@
-import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   selector: 'app-pagination',
   templateUrl: './pagination.component.html',
-  styleUrls: ['./pagination.component.scss']
+  styleUrls: ['./pagination.component.scss'],
 })
 export class PaginationComponent {
   @Input() currentPage: number = 1;
   @Input() pageSize: number = 10;
-  @Input() totalPages: number;
   @Input() totalCount: number;
   @Output() pageChanged: EventEmitter<number> = new EventEmitter();
 
-  constructor() { }
+  get totalPages(): number {
+    return Math.ceil(this.totalCount / this.pageSize);
+  }
+
+  constructor() {}
 
   public goToNextPage(): void {
     if (!this.hasNextPage()) {

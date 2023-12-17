@@ -6,13 +6,13 @@
       class="confection-list__confection-table"
       [confections]="paginatedConfections.items"
       [isLoading]="isLoading"
+      (searchChanged)="onSearchChanged($event)"
     ></app-confection-table>
 
     <app-pagination 
       class="confection-list__pagination"
       [currentPage]="currentPage"
       [pageSize]="pageSize"
-      [totalPages]="totalPages"
       [totalCount]="totalCount"
       (pageChanged)="onPageChange($event)"
     ></app-pagination>

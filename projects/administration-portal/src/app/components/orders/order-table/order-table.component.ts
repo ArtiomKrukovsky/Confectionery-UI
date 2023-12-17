@@ -6,27 +6,26 @@ import { StatusType } from '../../../shared/enums/status-type.enum';
 @Component({
   selector: 'app-order-table',
   templateUrl: './order-table.component.html',
-  styleUrls: ['./order-table.component.scss']
+  styleUrls: ['./order-table.component.scss'],
 })
 export class OrderTableComponent implements OnInit {
   @Input() orders: IOrderDetail[] = [];
   @Input() isLoading: boolean = false;
 
-  @Output() onSearch: EventEmitter<string> = new EventEmitter(); 
+  @Output() searchChanged: EventEmitter<string> = new EventEmitter();
 
   public statusTypes = StatusType;
 
-  constructor(private orderService: OrderService) { }
+  constructor(private orderService: OrderService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   public calculateTotalPrice(order: IOrderDetail): string {
     return (order.unitPrice * order.quantity).toFixed(2);
   }
 
-  public search(searchTerm: string): void {
-    this.onSearch.emit(searchTerm);
+  public onSearchChanged(searchTerm: string): void {
+    this.searchChanged.emit(searchTerm);
   }
 
   public computeStatusTitle(status: StatusType): string {

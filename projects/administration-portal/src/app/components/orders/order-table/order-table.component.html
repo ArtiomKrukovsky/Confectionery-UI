@@ -1,9 +1,9 @@
 <div class="order-table">
   <app-order-table-toolbar
     class="order-table__toolbar"
-    (onSearch)="search($event)">
-  </app-order-table-toolbar>
-
+    (searchChanged)="onSearchChanged($event)"
+  ></app-order-table-toolbar>
+  
   <div *ngIf="orders.length && !isLoading" class="order-table__wrapper">
     <table class="order-table__table">
       <thead class="order-table__header">

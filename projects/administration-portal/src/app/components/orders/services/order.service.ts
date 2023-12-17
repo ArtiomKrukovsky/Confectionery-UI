@@ -26,8 +26,7 @@ export class OrderService implements OnDestroy {
     currentPage: 1,
     pageSize: 10,
     totalCount: 0,
-    totalPages: 0
-  }
+  };
 
   private paginatedOrders$: BehaviorSubject<IPagedList<IOrderDetail>>;
   private isLoading$: BehaviorSubject<boolean>;

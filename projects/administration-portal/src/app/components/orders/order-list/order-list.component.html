@@ -11,14 +11,13 @@
       class="order-list__order-table"
       [orders]="paginatedOrders.items"
       [isLoading]="isLoading"
-      (onSearch)="search($event)"
+      (searchChanged)="onSearchChanged($event)"
     ></app-order-table>
 
     <app-pagination 
       class="order-list__pagination"
       [currentPage]="currentPage"
       [pageSize]="pageSize"
-      [totalPages]="totalPages"
       [totalCount]="totalCount"
       (pageChanged)="onPageChange($event)"
     ></app-pagination>

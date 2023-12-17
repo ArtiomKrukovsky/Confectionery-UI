@@ -1,6 +1,7 @@
 <div class="confection-table">
   <app-confection-list-toolbar 
     class="confection-table__toolbar"
+    (searchChanged)="onSearchChanged($event)"
   ></app-confection-list-toolbar>
 
   <div *ngIf="confections.length && !isLoading" class="confection-table__wrapper">
