@@ -6,26 +6,26 @@
   <input 
     type="text"
     class="form__input"
-    placeholder="Название торта"
+    placeholder="Название продукта"
     formControlName="title"
   >
 
   <div *ngIf="title.touched && title.invalid">
-    <p class="error-message" *ngIf="title.errors!['required']">Пожалуйста, введите название торта</p>
-    <p class="error-message" *ngIf="title.errors!['minLength']">Наименование торта слишком коротное</p>
+    <p class="error-message" *ngIf="title.errors!['required']">Пожалуйста, введите название продукта</p>
+    <p class="error-message" *ngIf="title.errors!['minLength']">Наименование продукта слишком коротное</p>
   </div>
 
   <textarea 
     type="text"
     class="form__input"
-    placeholder="Описание"
+    placeholder="Описание продукта"
     formControlName="description"
   ></textarea>
 
   <div *ngIf="description.touched && description.invalid">
-    <p class="error-message" *ngIf="description.errors!['required']">Пожалуйста, введите описание для торта</p>
-    <p class="error-message" *ngIf="description.errors!['minLength']">Описание для торта слишком короткое</p>
-    <p class="error-message" *ngIf="description.errors!['maxLength']">Описание для торта слишком длинное</p>
+    <p class="error-message" *ngIf="description.errors!['required']">Пожалуйста, введите описание продукта</p>
+    <p class="error-message" *ngIf="description.errors!['minLength']">Описание продукта слишком короткое</p>
+    <p class="error-message" *ngIf="description.errors!['maxLength']">Описание продукта слишком длинное</p>
   </div>
 
   <input
@@ -36,13 +36,14 @@
   >
 
   <div *ngIf="price.touched && price.invalid">
-    <p class="error-message" *ngIf="price.errors!['required']">Пожалуйста, введите цену для торта</p>
+    <p class="error-message" *ngIf="price.errors!['required']">Пожалуйста, введите цену продукта</p>
     <p class="error-message" *ngIf="price.errors!['min']">Цена не может меньше или равна 0</p>
     <p class="error-message" *ngIf="price.errors!['max']">Цена слишком большая</p>
   </div>
 
   <input 
-    type="time"
+    type="file"
+    accept="image/*"
     class="form__input"
     placeholder="Картинка"
     formControlName="imageUrl"

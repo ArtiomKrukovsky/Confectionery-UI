@@ -33,8 +33,7 @@ export class ConfectionListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    const confectionQueryParameters = this.computeConfectionQueryParameters();
-    this.confectionService.fetchPaginatedConfections(confectionQueryParameters);
+    this.fetchPaginatedConfections();
   }
 
   ngOnDestroy(): void {
@@ -48,14 +47,17 @@ export class ConfectionListComponent implements OnInit, OnDestroy {
   public onPageChange(pageNumber: number): void {
     this.currentPage = pageNumber;
 
-    const confectionQueryParameters = this.computeConfectionQueryParameters();
-    this.confectionService.fetchPaginatedConfections(confectionQueryParameters);
+    this.fetchPaginatedConfections();
   }
 
   public onSearchChanged(searchTerm: string): void {
     this.searchTerm = searchTerm;
     this.currentPage = 1;
 
+    this.fetchPaginatedConfections();
+  }
+
+  private fetchPaginatedConfections(): void {
     const confectionQueryParameters = this.computeConfectionQueryParameters();
     this.confectionService.fetchPaginatedConfections(confectionQueryParameters);
   }

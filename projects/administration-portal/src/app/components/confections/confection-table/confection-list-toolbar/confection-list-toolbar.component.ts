@@ -9,6 +9,7 @@ import { Subject, Subscription, debounceTime, filter } from 'rxjs';
 export class ConfectionListToolbarComponent implements OnInit {
   public searchTerm: string = '';
   @Output() searchChanged: EventEmitter<string> = new EventEmitter();
+  @Output() createNewClicked: EventEmitter<void> = new EventEmitter();
 
   private searchTermChanged$: Subject<string> = new Subject<string>();
   private subscription$: Subscription;
@@ -35,5 +36,9 @@ export class ConfectionListToolbarComponent implements OnInit {
 
   public search(): void {
     this.searchTermChanged$.next(this.searchTerm);
+  }
+
+  public create(): void {
+    this.createNewClicked.emit();
   }
 }

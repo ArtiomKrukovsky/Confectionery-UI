@@ -14,6 +14,7 @@ export class ConfectionTableComponent implements OnInit {
   @Input() isLoading: boolean = false;
 
   @Output() searchChanged: EventEmitter<string> = new EventEmitter();
+  @Output() createNewClicked: EventEmitter<void> = new EventEmitter();
 
   public noneNumber: string = NONE_NUMBER;
 
@@ -23,6 +24,10 @@ export class ConfectionTableComponent implements OnInit {
 
   public onSearchChanged(searchTerm: string): void {
     this.searchChanged.emit(searchTerm);
+  }
+
+  public onCreateNewClicked(): void {
+    this.createNewClicked.emit();
   }
 
   public computeConfectionTitle(confectionType: ConfectionType): string {
