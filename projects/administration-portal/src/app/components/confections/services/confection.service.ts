@@ -7,6 +7,9 @@ import { ConfectionType } from '../../../shared/enums/confection-type.enum';
 import { ConfectionTitlesByTypeMap } from '../../../shared/maps/confection-type.map';
 import { IPagedList } from '../../../shared/models/paged-list';
 import { IQueryParameters } from '../../../shared/models/query-parameters';
+import { NotificationService } from '../../../services/notification/notification.service';
+import { NotificationMessage } from '../../../services/notification/models/notification-message';
+import { CONFECTION_CREATION_TITLE, SUCCESS_CONFECTION_CREATED_MESSAGE } from '../../../shared/constants/notification.constants';
 
 @Injectable({
   providedIn: 'root'
@@ -55,7 +58,8 @@ export class ConfectionService implements OnDestroy {
 
   constructor(
     private confectionApi: ConfectionApi,
-    private errorHandlerService: ErrorHandleService
+    private errorHandlerService: ErrorHandleService,
+    private notificationService: NotificationService,
   ) { 
     this.paginatedConfections$ = new BehaviorSubject<IPagedList<IConfection>>(this.defaultPaginatedConfections);
     this.selectedConfection$ = new BehaviorSubject<IConfection>(this.defaultConfection);
@@ -93,6 +97,24 @@ export class ConfectionService implements OnDestroy {
     )
     .subscribe({
       next: (confection) => this.selectedConfection$.next(confection),
+      error: (error) => this.errorHandlerService.handle(error)
+    })
+  }
+
+  public saveConfection(confection: IConfection): void {
+    this.confectionApi.saveConfection(confection)
+    .pipe(
+      tap(() => this.isLoading$.next(false))
+    )
+    .subscribe({
+      next: () => {
+        const successCreationMessage: NotificationMessage = {
+          title: CONFECTION_CREATION_TITLE,
+          message: SUCCESS_CONFECTION_CREATED_MESSAGE
+        }
+
+        this.notificationService.showSuccess(successCreationMessage)
+      },
       error: (error) => this.errorHandlerService.handle(error)
     })
   }

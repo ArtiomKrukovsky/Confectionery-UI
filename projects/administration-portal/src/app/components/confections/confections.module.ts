@@ -6,7 +6,9 @@ import { PaginationModule } from '../../shared/components/pagination/pagination.
 import { ConfectionListToolbarComponent } from './confection-table/confection-list-toolbar/confection-list-toolbar.component';
 import { ConfectionTableComponent } from './confection-table/confection-table.component';
 import { TruncatePipe } from '../../shared/pipes/truncate.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PopupModule } from '../../shared/components/popup/popup.module';
+import { CreateConfectionComponent } from './create-confection/create-confection.component';
 
 @NgModule({
   imports: [
@@ -14,11 +16,14 @@ import { FormsModule } from '@angular/forms';
     ConfectionsRoutingModule,
     PaginationModule,
     FormsModule,
+    ReactiveFormsModule,
+    PopupModule,
   ],
   declarations: [
     ConfectionListComponent,
     ConfectionTableComponent,
     ConfectionListToolbarComponent,
+    CreateConfectionComponent,
     TruncatePipe,
   ],
   exports: [ConfectionListComponent],

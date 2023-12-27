@@ -1,3 +1,4 @@
+import { PopupService } from './../../../services/popup.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IConfection } from '../api/models/confection';
 import { Subscription } from 'rxjs';
@@ -18,11 +19,15 @@ export class ConfectionListComponent implements OnInit, OnDestroy {
   public pageSize: number = 10;
   public totalCount: number;
 
+  public isDisplayCreatationModal: boolean = false;
   public searchTerm: string = '';
 
   private subscriptions$: Subscription;
 
-  constructor(private confectionService: ConfectionService) {
+  constructor(
+    private confectionService: ConfectionService,
+    private popupService: PopupService
+  ) {
     this.subscriptions$ = new Subscription();
     this.subsribeToServices();
   }
@@ -34,6 +39,10 @@ export class ConfectionListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscriptions$.unsubscribe();
+  }
+
+  public displayCreationModal(): void {
+    this.popupService.open();
   }
 
   public onPageChange(pageNumber: number): void {
@@ -60,20 +69,14 @@ export class ConfectionListComponent implements OnInit, OnDestroy {
   }
 
   private subsribeToServices(): void {
-    this.subscriptions$.add(
-      this.confectionService.PaginatedConfections.subscribe(
-        (paginatedConfections) => {
-          this.paginatedConfections = paginatedConfections;
-          this.pageSize = paginatedConfections.pageSize;
-          this.totalCount = paginatedConfections.totalCount;
-        }
-      )
+    this.subscriptions$.add(this.confectionService.PaginatedConfections.subscribe((paginatedConfections) => {
+        this.paginatedConfections = paginatedConfections;
+        this.pageSize = paginatedConfections.pageSize;
+        this.totalCount = paginatedConfections.totalCount;
+      })
     );
 
-    this.subscriptions$.add(
-      this.confectionService.IsLoading.subscribe(
-        (isLoading) => (this.isLoading = isLoading)
-      )
-    );
+    this.subscriptions$.add(this.confectionService.IsLoading.subscribe((isLoading) => (this.isLoading = isLoading)));
+    this.subscriptions$.add(this.popupService.isVisible$.subscribe(value => this.isDisplayCreatationModal = value));
   }
 }

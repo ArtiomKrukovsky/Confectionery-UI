@@ -17,19 +17,29 @@ export class ConfectionApi {
     private apiService: ApiService
   ) { }
 
-  public getPaginatedConfections(queryParameters: IQueryParameters): Observable<IPagedList<IConfection>> {
-    const params = new HttpParams({ fromObject: { 
+  public getPaginatedConfections(queryParameters: IQueryParameters) : Observable<IPagedList<IConfection>> {
+    const httpParameters = new HttpParams({ fromObject: { 
       pageNumber: queryParameters.pageNumber, 
       pageSize: queryParameters.pageSize, 
       searchTerm: queryParameters.searchTerm ?? '' 
     }})
 
     const url = this.apiService.getApiUrl(endpoints.confection.getConfections);
-    return this.httpClient.get<IPagedList<IConfection>>(url, { params });
+    return this.httpClient.get<IPagedList<IConfection>>(url, { params: httpParameters });
   }
 
   public getConfection(id: number) : Observable<IConfection> {
     const url = `${environment.apiUrl}${CONFECTION_URL}/${id}`;
     return this.httpClient.get<IConfection>(url)
+  }
+
+  public saveConfection(confection: IConfection) : Observable<void> {
+    const url = this.apiService.getApiUrl(endpoints.confection.saveConfection);
+    return this.httpClient.post<void>(url, confection);
+  }
+
+  public updateConfection(confection: IConfection) : Observable<void> {
+    const url = this.apiService.getApiUrl(endpoints.confection.updateConfection);
+    return this.httpClient.put<void>(url, confection);
   }
 }

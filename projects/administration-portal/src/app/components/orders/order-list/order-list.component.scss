@@ -1,31 +1,30 @@
-@import 'projects/administration-portal/src/app/scss/abstracts/variables';
+@import "projects/administration-portal/src/app/scss/abstracts/variables";
 
 .order-list {
-	&__container { 
-        margin-top: 5px;
-    }
+  &__container {
+    margin-top: 5px;
+  }
 
-	&__title { 
-        margin: 0px 0px 20px 0px;
-
-        @media (max-width: $md3) {
-            margin: 0px 0px 15px 0px;
-        }
+  &__title {
+    margin: 0px 0px 20px 0px;
+    @media (max-width: $md3) {
+      margin: 0px 0px 15px 0px;
     }
+  }
 
-	&__tab-menu { 
-        display: block;
-        margin: 0px 0px 25px 0px;
-    }
+  &__tab-menu {
+    display: block;
+    margin: 0px 0px 25px 0px;
+  }
 
-    &__order-table { 
-        display: block;
-        margin: 0px 0px 35px 0px;
-    }
+  &__order-table {
+    display: block;
+    margin: 0px 0px 35px 0px;
+  }
 
-    &__pagination {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
+  &__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
 }
