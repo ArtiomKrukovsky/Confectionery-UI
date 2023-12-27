@@ -14,8 +14,6 @@ import { ConfectionService } from '../services/confection.service';
 })
 export class ConfectionCatalogComponent implements OnInit, OnDestroy {
   public confectionMappings: IConfectionMapping[];
-
-  public isDisplayModal: boolean;
   public isLoading: boolean;
 
   private subscriptions$: Subscription;
@@ -42,16 +40,11 @@ export class ConfectionCatalogComponent implements OnInit, OnDestroy {
     this.subscriptions$.unsubscribe();
   }
 
-  public displayModal(): void {
-    this.popupService.open();
-  }
-
   public computeSectionRoute(confectionType: ConfectionType): string {
     return this.confectionService.computeConfectionRoute(confectionType);
   }
 
   private subscribeToServices() {
-    this.subscriptions$.add(this.popupService.isVisible$.subscribe(value => this.isDisplayModal = value));
     this.subscriptions$.add(this.progressSpinnerService.isLoading$.subscribe(value => this.isLoading = value));
   }
 }

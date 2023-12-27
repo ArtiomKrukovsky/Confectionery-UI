@@ -21,12 +21,3 @@
 </div> -->
 
 <app-scroll-sidebar></app-scroll-sidebar>
-
-<app-popup *ngIf="isDisplayModal" title="Добавить продукт">
-  <app-create-confection></app-create-confection>
-</app-popup>
-
-<button
-  class="rounded-full bg-red-700 text-white fixed right-5 bottom-5 py-2 px-4"
-  (click)="displayModal()"
->+</button>

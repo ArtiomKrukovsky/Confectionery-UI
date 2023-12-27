@@ -6,7 +6,6 @@ import { ConfectionCatalogComponent } from './confection-catalog/confection-cata
 import { ConfectionCardComponent } from './confection-card/confection-card.component';
 import { FilterConfectionsPipe } from 'src/app/shared/pipes/filter-confections.pipe';
 
-import { CreateConfectionComponent } from './create-confection/create-confection.component';
 import { ConfectionDetailComponent } from './confection-detail/confection-detail.component';
 import { OrderConfectionComponent } from './order-confection/order-confection.component';
 import { ConfectionSectionComponent } from './confection-section/confection-section.component';
@@ -34,7 +33,6 @@ import { ConfectionsRoutingModule } from './confections-routing.module';
     ConfectionSectionComponent,
     ConfectionCardComponent,
     ConfectionDetailComponent,
-    CreateConfectionComponent,
     OrderConfectionComponent,
     FilterConfectionsPipe
   ],

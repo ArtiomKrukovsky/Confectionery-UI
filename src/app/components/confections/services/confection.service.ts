@@ -152,14 +152,6 @@ export class ConfectionService implements OnDestroy {
     });
   }
 
-  public saveConfection(confection: IConfection) : void {
-    this.confectionApi.save(confection)
-    .pipe(
-      tap(() => this.confections$.next([...this.confections$.value, confection]))
-    )
-    .subscribe()
-  }
-
   public computeConfectionRoute(confectionType: ConfectionType): string {
     return ConfectionRoutesByTypeMap.get(confectionType);
   }
